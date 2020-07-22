@@ -1,0 +1,10 @@
+{{- if .Site.IsServer -}} {{ "<!-- Partial: footer.html -->" |safeHTML }} {{- end -}}
+
+  <h2>partial/footer.html</h2>
+  {{ range .Site.Menus.footer }}
+    <ul>
+      <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+    </ul>
+  {{ end }}
+
+{{- if .Site.IsServer -}} {{ "<!-- End Partial: footer.html -->" | safeHTML }} {{- end -}}
