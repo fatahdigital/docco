@@ -1,12 +1,27 @@
 baseURL = "/"
-title = "Docco - Documetation Theme"
-contentDir = "content"
-defaultContentLanguage = "en"
 languageCode = "en-us"
+defaultContentLanguage = "en"
 
+title = "Docco - Documetation Theme"
+summaryLength = "30"
 
 #Hugo version = 0.55.6
 #Hugo_version_link = "https://github.com/gohugoio/hugo/releases/tag/v0.55.6/"
+
+[params]
+
+  #meta data
+  author = ""
+  description = ""
+
+  #header logo
+  logo = ""
+  logo_alt = ""
+
+  #footer detail
+  footer_description = ""
+  copyright = ""
+  
 
 [menu]
   ## Menu bar
@@ -40,33 +55,33 @@ languageCode = "en-us"
     name = "Contact Us"
     weight = 5
 
-    ## Footer menu
-    [[menu.footer]]
-      identifire= ""
-      url = "/"
-      name = "Home"
-      weight = 1
+  ## Footer menu
+  [[menu.footer]]
+    identifire= ""
+    url = "/"
+    name = "Home"
+    weight = 1
+
+  [[menu.footer]]
+    identifire= ""
+    url = "/about/"
+    name = "About"
+    weight = 2
+
+  [[menu.footer]]
+    identifire= ""
+    url = "/#pricing"
+    name = "Pricing"
+    weight = 3
+  
+  [[menu.footer]]
+    identifire= ""
+    url = "/help/"
+    name = "Help"
+    weight = 4
 
     [[menu.footer]]
-      identifire= ""
-      url = "/about/"
-      name = "About"
-      weight = 2
-
-    [[menu.footer]]
-      identifire= ""
-      url = "/#pricing"
-      name = "Pricing"
-      weight = 3
-    
-    [[menu.footer]]
-      identifire= ""
-      url = "/help/"
-      name = "Help"
-      weight = 4
-
-      [[menu.footer]]
-      identifire= ""
-      url = "/contact/"
-      name = "Contact Us"
-      weight = 5
+    identifire= ""
+    url = "/contact/"
+    name = "Contact Us"
+    weight = 5
