@@ -2,16 +2,12 @@
 
   <!DOCTYPE html>
   <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-  </head>
+    {{ partial "head.html" . }}
   <body>
-      {{ block "header" . }} {{ end }}
+      {{ block "header" . }} {{ partial "header.html" . }} {{ end }}
       {{ block "main" . }} {{ .Content }} {{ end }}
-      {{ block "footer" . }} {{ end }}
-      {{ block "scripts" . }} {{ end }}
+      {{ block "footer" . }} {{ partial "footer.html" . }} {{ end }}
+      {{ block "scripts" . }}  {{ end }}
   </body>
   </html>
 
