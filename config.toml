@@ -45,7 +45,7 @@ summaryLength = "30"
   
   [[menu.main]]
     identifire= ""
-    url = "/help/"
+    url = "/docs/"
     name = "Help"
     weight = 4
 
@@ -76,7 +76,7 @@ summaryLength = "30"
   
   [[menu.footer]]
     identifire= ""
-    url = "/help/"
+    url = "/docs/"
     name = "Help"
     weight = 4
 
