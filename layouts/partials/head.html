@@ -1,7 +1,15 @@
 {{- if .Site.IsServer -}} {{ "<!-- Partial: head.html -->" |safeHTML }} {{- end -}}
   <head>
+
+    {{ .Hugo.Generator }}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+
+    {{ with .Site.Params.author }}
+      <meta name="author" content="{{ . }}">
+    {{ end }}
 
      
     {{- if .Site.IsServer -}}
@@ -16,6 +24,8 @@
     <link rel="stylesheet" media="screen" type="text/css" href="{{ $mainCSS.Permalink }}" />
     
     {{- end -}}
+
+    {{ block "header_css" . }}{{ end }}
 
     <title>{{ block "title" . }}{{ .Title | default .Site.Title }}{{ end }}</title>
   </head>
