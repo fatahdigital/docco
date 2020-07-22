@@ -1,0 +1,72 @@
+baseURL = "/"
+title = "Docco - Documetation Theme"
+contentDir = "content"
+defaultContentLanguage = "en"
+languageCode = "en-us"
+
+
+#Hugo version = 0.55.6
+#Hugo_version_link = "https://github.com/gohugoio/hugo/releases/tag/v0.55.6/"
+
+[menu]
+  ## Menu bar
+  [[menu.main]]
+    identifire= ""
+    url = "/"
+    name = "Home"
+    weight = 1
+
+  [[menu.main]]
+    identifire= ""
+    url = "/about/"
+    name = "About"
+    weight = 2
+
+  [[menu.main]]
+    identifire= ""
+    url = "/#pricing"
+    name = "Pricing"
+    weight = 3
+  
+  [[menu.main]]
+    identifire= ""
+    url = "/help/"
+    name = "Help"
+    weight = 4
+
+    [[menu.main]]
+    identifire= ""
+    url = "/contact/"
+    name = "Contact Us"
+    weight = 5
+
+    ## Footer menu
+    [[menu.footer]]
+      identifire= ""
+      url = "/"
+      name = "Home"
+      weight = 1
+
+    [[menu.footer]]
+      identifire= ""
+      url = "/about/"
+      name = "About"
+      weight = 2
+
+    [[menu.footer]]
+      identifire= ""
+      url = "/#pricing"
+      name = "Pricing"
+      weight = 3
+    
+    [[menu.footer]]
+      identifire= ""
+      url = "/help/"
+      name = "Help"
+      weight = 4
+
+      [[menu.footer]]
+      identifire= ""
+      url = "/contact/"
+      name = "Contact Us"
+      weight = 5
