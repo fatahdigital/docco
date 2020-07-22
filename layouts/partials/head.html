@@ -1,2 +1,22 @@
 {{- if .Site.IsServer -}} {{ "<!-- Partial: head.html -->" |safeHTML }} {{- end -}}
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     
+    {{- if .Site.IsServer -}}
+    {{ "<!-- Load CSS without minification -->" | safeHTML }}
+    {{ $mainCSS := resources.Get "css/main.scss" | toCSS }}
+    <link rel="stylesheet" media="screen" type="text/css" href="{{ $mainCSS.Permalink }}" />
+    
+    {{ else }}
+
+    {{ "<!-- Load CSS with minification and fingerprinting -->" | safeHTML }}
+    {{ $mainCSS := resources.Get "css/main.scss" | toCSS ( dict "enableSourceMap" true ) | minify | fingerprint }}
+    <link rel="stylesheet" media="screen" type="text/css" href="{{ $mainCSS.Permalink }}" />
+    
+    {{- end -}}
+
+    <title>{{ block "title" . }}{{ .Title | default .Site.Title }}{{ end }}</title>
+  </head>
 {{- if .Site.IsServer -}} {{ "<!-- End Partial: head.html -->" | safeHTML }} {{- end -}}
