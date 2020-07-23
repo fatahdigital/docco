@@ -1,5 +1,6 @@
 {{ define "main" }}
   {{- if .Site.IsServer -}} {{ "<!-- docs: single.html -->" |safeHTML }} {{- end -}}
     <h1>docs/single.html</h1>
+    {{ .Content | markdownify }}
   {{- if .Site.IsServer -}} {{ "<!-- End docs: single.html -->" | safeHTML }} {{- end -}}
 {{ end }}
