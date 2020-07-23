@@ -1,7 +1,7 @@
 {{- if .Site.IsServer -}} {{ "<!-- Layout: _default/baseof.html -->" | safeHTML }} {{- end -}}
 
   <!DOCTYPE html>
-  <html lang="en">
+  <html lang="{{ .Page.Language | default "en" }}">
     {{ partial "head.html" . }}
   <body>
       {{ block "header" . }} {{ partial "header.html" . }} {{ end }}
