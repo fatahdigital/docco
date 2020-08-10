@@ -1,6 +1,8 @@
 ---
-title: Configration
+title: "Configration"
 ---
+
+# Global site parameters
 
 On top of [Hugo global configuration](https://gohugo.io/overview/configuration/), **Hugo-theme-learn** lets you define the following parameters in your `config.toml` (here, values are default).
 

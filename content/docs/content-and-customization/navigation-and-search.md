@@ -148,5 +148,98 @@ algolia_docsearch = true
 2. Remove or comment out any GCSE ID in config.toml and ensure local search is set to false as you can only have one type of search enabled. See Disabling GCSE search.
 
 3. Disable the sidebar search in config.toml as this is not currently supported for Algolia DocSearch. See Disabling the sidebar search box.
++ Select **Look and feel**. Change from the default **Overlay** layout to **Results only**, as this option means your search results are embedded in your search page rather than appearing in a separate box. Click Save to **save** your changes.
 
-4. 
++ Edit the default result link behavior so that search results from your site don’t open in a new tab. To do this, select **Search Features** - **Advanced** - **Websearch Settings**. In the **Link Target** field, type “_parent”. Click Save to **save** your changes.
+
+> #### Tip
+Your site search results should show up within a couple of days. If it takes longer than that, you can manually request that your site is indexed by submitting a sitemap through the Google Search Console. 
+
+### Adding the search page 
+Once you have your search engine set up, you can add the feature to your site:
+1. Ensure you have a Markdown file in `content/en/search.md` (and one per other languages if needed) to display your search results. It only needs a title and `layout: search`, as in the following example:
+
+```
+---
+title: Search Results
+layout: search
+---
+```
+
+2. Add your Google Custom Search Engine ID to the site params in `config.toml`. You can add different values per language if needed.
+```
+#Google Custom Search Engine ID. Remove or comment out to disable search.
+gcs_engine_id = "011737558837375720776:fsdu1nryfng"
+```
+### Disabling GCSE search 
+
+If you don’t specify a Google Custom Search Engine ID for your project and haven’t enabled any other search options, the search box won’t appear in your site. If you’re using the default `config.toml` from the example site and want to disable search, just comment out or remove the relevant line.
+
+## Configure local search with Lunr 
+
+Lunr is a Javascript-based search option that lets you index your site and make it searchable without the need for external, server-side search services. This is a good option particularly for smaller or non-public sites.
+
+To add Lunr search to your Docsy site:
+
+1. Enable local search in `config.toml`.
+
+```
+# Enable local search
+offlineSearch = true
+```
+
+2. Remove or comment out any GCSE ID in config.toml and ensure Algolia DocSearch is set to false, as you can only have one type of search enabled. See Disabling GCSE search.
+
+Once you’ve completed these steps, local search is enabled for your site and results appear in a drop down when you use the search box.
+
+> #### Tip
+If you’re ***testing this locally*** using Hugo’s local server functionality, you need to build your offline-search-index.xxx.json file first by running hugo. If you have the Hugo server running while you build offline-search-index.xxx.json, you may need to stop the server and restart it in order to see your search results.
+
+### Changing the summary length of the local search results
+
+You can customize the summary length by setting `offlineSearchSummaryLength` in `config.toml`.
+
+```
+#Enable offline search with Lunr.js
+offlineSearch = true
+offlineSearchSummaryLength = 200
+```
+
+### Changing the maximum result count of the local search
+
+You can customize the maximum result count by setting `offlineSearchMaxResults` in `config.toml`.
+
+```
+#Enable offline search with Lunr.js
+offlineSearch = true
+offlineSearchMaxResults = 25
+```
+
+### Changing the width of the local search results popover 
+
+The width of the search results popover will automatically widen according to the content.
+
+If you want to limit the width, add the following scss into `assets/scss/_variables_project.scss`.
+
+```
+body {
+    .popover.offline-search-result {
+        max-width: 460px;
+    }
+}
+```
+### Excluding pages from local search results 
+
+To exclude pages from local search results, add `exclude_search: true` to the the frontmatter of each page:
+
+```
+---
+title: "Index"
+weight: 10
+exclude_search: true
+---
+```
+
+  
+
+
