@@ -3,16 +3,29 @@ languageCode = "en-us"
 defaultContentLanguage = "en"
 
 title = "Docco - Documetation Theme"
+theme = ""
+themesdir = "../.."
+metaDataFormat = "yaml"
+defaultContentLanguageInSubdir= true
+
 summaryLength = "30"
+google_analytics_id = ""  
+
 
 #Hugo version = 0.55.6
 #Hugo_version_link = "https://github.com/gohugoio/hugo/releases/tag/v0.55.6/"
 
 [params]
-
-  #meta data
   author = ""
   description = ""
+  summary = ""
+  images = [""]
+  showVisitedLinks = true
+  disableBreadcrumb = false
+  disableNextPrev = false
+
+  [outputs]
+  home = [ "HTML"]
 
   #header logo
   logo = ""
