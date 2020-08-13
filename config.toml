@@ -9,7 +9,7 @@ metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= true
 
 summaryLength = "30"
-google_analytics_id = ""  
+googleAnalytics = ""  
 
 
 #Hugo version = 0.55.6
