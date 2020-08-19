@@ -1,0 +1,5 @@
+{{- if .Site.IsServer -}} {{ "<!-- Partial: favicon.html -->" |safeHTML }} {{- end -}}
+
+  <link rel="icon" href="{{"images/favicon.png" | relURL}}" type="image/png">
+
+{{- if .Site.IsServer -}} {{ "<!-- End Partial: favicon.html -->" | safeHTML }} {{- end -}}
