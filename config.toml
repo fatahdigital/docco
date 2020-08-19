@@ -9,8 +9,11 @@ metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= true
 
 summaryLength = "30"
-googleAnalytics = ""  
+googleAnalytics = "" 
 
+[markup]
+  [markup.blackFriday]
+    hrefTargetBlank = false
 
 #Hugo version = 0.55.6
 #Hugo_version_link = "https://github.com/gohugoio/hugo/releases/tag/v0.55.6/"
