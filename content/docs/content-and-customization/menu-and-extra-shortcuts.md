@@ -1,5 +1,10 @@
 ---
 title: Menu and Extra Shortcuts
+
+summary:
+description: 
+images: 
+  - ""
 ---
 
 # MENU EXTRA SHORTCUTS

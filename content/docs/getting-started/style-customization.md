@@ -1,5 +1,10 @@
 ---
 title: "Style customization"
+
+summary:
+description: 
+images: 
+  - ""
 ---
 
 # STYLE CUSTOMIZATION

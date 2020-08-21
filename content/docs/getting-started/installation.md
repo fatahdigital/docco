@@ -1,5 +1,10 @@
 ---
 title: "Installation"
+
+summary:
+description: 
+images: 
+  - ""
 ---
 
 # Installation

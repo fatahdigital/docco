@@ -1,5 +1,10 @@
 ---
 title: "Previews and Deployment"
+
+summary:
+description: 
+images: 
+  - ""
 ---
 
 Deploying your Docco site.

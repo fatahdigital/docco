@@ -1,5 +1,10 @@
 ---
-title: _index.md
+title: "Docco Documetaion"
+
+summary:
+description: 
+images: 
+  - ""
 ---
 
 Welcome to Docco

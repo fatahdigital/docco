@@ -1,5 +1,10 @@
 ---
 title: "Configration"
+
+summary:
+description: 
+images: 
+  - ""
 ---
 
 # Global site parameters

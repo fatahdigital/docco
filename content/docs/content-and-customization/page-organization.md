@@ -1,5 +1,9 @@
 ---
 title: Page Organization
+summary:
+description: 
+images: 
+  - ""
 ---
 
 ## PAGES ORGANIZATION

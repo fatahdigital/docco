@@ -1,5 +1,10 @@
 ---
 title: Navigation and Search
+
+summary:
+description: 
+images: 
+  - ""
 ---
 
 # Navigation and Search
