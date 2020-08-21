@@ -3,10 +3,13 @@
   <html lang="{{ .Page.Language | default "en" }}">
     {{ partial "head.html" . }}
   <body>
-      {{ block "header" . }} {{ partial "home-navigation.html" . }} {{ end }}
-      {{ block "main" . }} {{ .Content }} {{ end }}
-      {{ block "footer" . }} {{ partial "home-footer.html" . }} {{ end }}
-      {{ block "scripts" . }}  {{ end }}
+    {{ block "header" . }} {{ partial "home-navigation.html" . }} {{ end }}
+    {{ block "main" . }} {{ .Content }} {{ end }}
+
+    {{ block "custom-comments" . }}{{ partial "custom-comments.html" . }} {{ end }}
+    {{ block "home-footer" . }} {{ partial "home-footer.html" . }} {{ end }}
+    {{ block "custom-footer" . }}{{ partial "custom-footer.html" . }} {{ end }}
+    {{ block "scripts" . }} {{ partial "script.html" }} {{ end }}
   </body>
   </html>
 
