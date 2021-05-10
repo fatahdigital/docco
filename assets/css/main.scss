@@ -182,6 +182,73 @@ body {
   margin-bottom: 30px;
 }
 
+
+/******* Documetation Pages ********/
+
+.doc-navigation img {
+  width: 180px;
+}
+
+.doc-navigation {
+  background-color: #000;
+}
+
+.doc-navigation .navbar-collapse{
+  justify-content: flex-end; 
+}
+
+.doc-navigation .navbar-light .navbar-nav .nav-link {
+  color: #fff;
+}
+
+
+
+.doc-navigation .button-link {
+  color: #fff;
+}
+
+.doc-navigation .button-link.btn-transparent::before {
+  border: 2px solid #fff;
+  z-index: 0;
+}
+
+.doc-navigation .button-link.btn-transparent::after {
+  background-color: #fff;
+}
+
+.doc-navigation .button-link.btn-transparent:hover::after {
+  background-color: #fff;
+  z-index: 1;
+  
+}
+
+.doc-navigation .button-link.btn-transparent:hover span.button-icon,.doc-navigation .button-link.btn-transparent:hover span.button-text {
+  color: #000000;
+  position: relative;
+  z-index: 11;
+}
+
+.doc-navigation .button-link.btn-transparent span.button-icon {
+  border-color: transparent transparent transparent #fff;
+}
+
+.doc-navigation .navbar-expand-lg .navbar-nav .nav-link {
+  padding: 1rem;
+}
+
+.doc-navigation .button-link.btn-transparent:hover span.button-icon {
+  border-color: transparent transparent transparent #000000;
+}
+
+.doc-navigation.navigation-default.sticky  {
+  background-color: #000;
+  padding: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  box-shadow: 0 8px 20px 0 rgba(255, 255, 255, 0.1);
+}
+
 @media only screen and (max-width:991px) {
   .navigation .navbar-nav {
     text-align: center;
