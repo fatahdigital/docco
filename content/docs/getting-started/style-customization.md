@@ -1,5 +1,6 @@
 ---
 title: "Style customization"
+weight: 5
 
 summary:
 description: 
