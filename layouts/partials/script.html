@@ -1,1 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{{- if .Site.IsServer -}} {{ "<!--Partial: script.html -->" | safeHTML }} {{- end -}}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{{- if .Site.IsServer -}} {{ "<!--END Partial: script.html -->" | safeHTML }} {{- end -}}

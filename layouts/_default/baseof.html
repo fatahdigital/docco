@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-  {{- if .Site.IsServer -}} {{ "<!-- Layout: _default/baseof.html -->" | safeHTML }} {{- end -}}
+  {{- if .Site.IsServer -}} {{ "<!-- _default: baseof.html -->" | safeHTML }} {{- end -}}
   <html lang="{{ .Page.Language | default "en" }}">
     {{ partial "head.html" . }}
   <body>
@@ -13,6 +14,4 @@
   </body>
   </html>
 
-
-
-{{- if .Site.IsServer -}} {{ "<!-- End Layout : _default/baseof.html -->" | safeHTML }} {{- end -}}
+{{- if .Site.IsServer -}} {{ "<!-- End _default : baseof.html -->" | safeHTML }} {{- end -}}

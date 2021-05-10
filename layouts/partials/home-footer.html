@@ -1,4 +1,4 @@
-{{- if .Site.IsServer -}} {{ "<!-- Partial: footer.html -->" |safeHTML }} {{- end -}}
+{{- if .Site.IsServer -}} {{ "<!-- Partial: home-footer.html -->" |safeHTML }} {{- end -}}
 
   <h2>partial/footer.html</h2>
   {{ range .Site.Menus.footer }}
@@ -7,4 +7,4 @@
     </ul>
   {{ end }}
 
-{{- if .Site.IsServer -}} {{ "<!-- End Partial: footer.html -->" | safeHTML }} {{- end -}}
+{{- if .Site.IsServer -}} {{ "<!-- End Partial: home-footer.html -->" | safeHTML }} {{- end -}}
