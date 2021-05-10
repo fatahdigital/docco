@@ -1,5 +1,6 @@
 ---
 title: Code Highlighting
+weight: 10
 
 summary:
 description: 

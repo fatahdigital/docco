@@ -1,5 +1,6 @@
 ---
 title: "Build in Shortcode"
+weight: 20
 
 summary:
 description: 
@@ -31,9 +32,7 @@ images:
 </section>
 {{< /highlight >}}
 
-## instagram
 
-{{< instagram BWNjjyYFxVx >}}
 
 
 ## tweet
