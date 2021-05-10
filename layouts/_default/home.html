@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{- if .Site.IsServer -}} {{ "<!-- Partial:home.html -->" |safeHTML }} {{- end -}}
-    <h1>{{ .Content | markdownify }}</h1>
-  {{- if .Site.IsServer -}} {{ "<!-- End Partial: home.html -->" | safeHTML }} {{- end -}}
+  {{- if .Site.IsServer -}} {{ "<!-- _default : home.html -->" |safeHTML }} {{- end -}}
+    <h1>{{ .Content }}</h1>
+  {{- if .Site.IsServer -}} {{ "<!-- End _default : home.html -->" | safeHTML }} {{- end -}}
 {{ end }}

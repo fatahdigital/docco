@@ -1,7 +1,7 @@
-{{- if .Site.IsServer -}} {{ "<!-- Partial: header.html -->" |safeHTML }} {{- end -}}
+{{- if .Site.IsServer -}} {{ "<!-- Partial: home-navigation.html -->" |safeHTML }} {{- end -}}
   {{ range .Site.Menus.main }}
     <ul>
       <li><a href="{{ .URL }}">{{ .Name }}</a></li>
     </ul>
   {{ end }}
-{{- if .Site.IsServer -}} {{ "<!-- End Partial: header.html -->" | safeHTML }} {{- end -}}
+{{- if .Site.IsServer -}} {{ "<!-- End Partial: home-navigation.html -->" | safeHTML }} {{- end -}}
