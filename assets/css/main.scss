@@ -201,6 +201,8 @@ body {
   color: #fff;
 }
 
+
+
 .doc-navigation .button-link {
   color: #fff;
 }
@@ -236,6 +238,15 @@ body {
 
 .doc-navigation .button-link.btn-transparent:hover span.button-icon {
   border-color: transparent transparent transparent #000000;
+}
+
+.doc-navigation.navigation-default.sticky  {
+  background-color: #000;
+  padding: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  box-shadow: 0 8px 20px 0 rgba(255, 255, 255, 0.1);
 }
 
 @media only screen and (max-width:991px) {

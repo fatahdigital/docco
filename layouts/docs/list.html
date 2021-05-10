@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{- if .Site.IsServer -}} {{ "<!-- docs: list.html -->" |safeHTML }} {{- end -}}
-  <header class="doc-navigation">
+  <header class="doc-navigation navigation-default">
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light ">
         <a class="navbar-brand" href="{{ .Site.BaseURL }}">
