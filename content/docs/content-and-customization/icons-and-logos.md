@@ -1,5 +1,6 @@
 ---
 title: "Icons and Logos"
+weight: 12
 
 summary:
 description: 
