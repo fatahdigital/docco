@@ -1,5 +1,7 @@
 {{ define "main" }}
   {{- if .Site.IsServer -}} {{ "<!-- _default : home.html -->" |safeHTML }} {{- end -}}
-    <h1>{{ .Content }}</h1>
+  {{ partial "home-navigation.html" . }}
+    {{ .Content }}
+  {{ block "home-footer" . }} {{ partial "home-footer.html" . }} {{ end }}
   {{- if .Site.IsServer -}} {{ "<!-- End _default : home.html -->" | safeHTML }} {{- end -}}
 {{ end }}
