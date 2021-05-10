@@ -1,5 +1,5 @@
 ---
-title: "Docco - Documetation"
+title: "Documetation"
 
 summary:
 description: 
