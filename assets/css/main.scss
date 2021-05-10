@@ -1,1 +1,121 @@
 @import "__auto-complete.scss";
+
+body {
+  font-size: 16px;
+}
+
+.logo {
+  padding: .5rem 1rem;
+}
+
+.navigation img {
+  width: 180px;
+}
+
+.navigation .navbar-collapse{
+  justify-content: flex-end;
+}
+
+.navigation .navbar-expand-lg .navbar-nav .nav-link {
+  padding: 1rem;
+  color: #000;
+}
+
+.navigation .navbar-expand-lg .navbar-nav .nav-link:hover {
+  color: blue;
+}
+
+.button-wrapper {
+  margin-left: 40px;
+  position: relative;
+}
+.button-wrapper a {
+  outline: none;
+  text-decoration: none;
+}
+
+.button-link {
+  padding: 0 20px;
+  color: #000;
+  height: 50px;
+  line-height: 50px;
+}
+
+.button-link.btn-transparent {
+  background-color: transparent;
+}
+
+.button-link.btn-transparent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border: 2px solid #000;
+  border-radius: 5px;
+  transition: all .3s;
+}
+
+.button-link.btn-transparent::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+  background-color: #000;
+  transition: all .3s;
+  transform: scale(0.5,0.5);
+}
+
+.button-link.btn-transparent:hover {
+  color: #fff;
+}
+
+
+.button-link.btn-transparent:hover::after {
+  opacity: 1;
+  transform: scale(1.1);
+  background-color: #000;
+  border-radius: 5px;
+}
+
+.button-link.btn-transparent span {
+  display: inline-block;
+}
+
+.button-link.btn-transparent span.button-text {
+  padding-right: 10px;
+}
+
+.button-link.btn-transparent span.button-icon {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4.5px 0 4.5px 6px;
+  border-color: transparent transparent transparent #000;
+}
+
+.button-link.btn-transparent:hover span.button-icon {
+  border-color: transparent transparent transparent #fff;
+}
+
+@media only screen and (max-width:991px) {
+  .navigation .navbar-nav {
+    text-align: center;
+  }
+  .navigation .navbar-expand-lg .navbar-nav .nav-link {
+    padding: .5rem;
+  }
+}
+
+@media only screen and (max-width:767px) {
+  .navigation img {
+    width: 150px;
+  }
+ 
+}
