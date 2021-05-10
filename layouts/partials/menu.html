@@ -2,6 +2,14 @@
   
   {{ $currentNode := . }}
   {{ $showvisitedlinks := .Site.Params.showVisitedLinks }}
+  <div id="header-wrapper">
+    <!-- <div id="header">
+      {{ partial "logo.html" . }}
+    </div> -->
+    {{if not .Site.Params.disableSearch}}
+        {{ partial "search.html" . }}
+    {{end}}
+  </div>
   <ul>
     {{if eq .Site.Params.ordersectionsby "title"}}  
       {{range .Site.Home.Sections.ByTitle}}
