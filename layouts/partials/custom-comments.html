@@ -1,0 +1,7 @@
+{{- if .Site.IsServer -}} {{ "<!-- Partial: custom-comments.html -->" |safeHTML }} {{- end -}}
+
+  <!-- import your comments system 
+  {{ template "_internal/disqus.html" . }}
+  -->
+
+{{- if .Site.IsServer -}} {{ "<!-- End Partial: custom-comments.html -->" | safeHTML }} {{- end -}}

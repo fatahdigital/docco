@@ -1,15 +1,11 @@
 {{- if .Site.IsServer -}} {{ "<!-- Partial: head.html -->" |safeHTML }} {{- end -}}
   <head>
 
-    {{ .Hugo.Generator }}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ partial "meta.html" . }}
 
-    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    {{ partial "favicon.html" . }}
 
-    {{ with .Site.Params.author }}
-      <meta name="author" content="{{ . }}">
-    {{ end }}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
      
     {{- if .Site.IsServer -}}
@@ -25,8 +21,14 @@
     
     {{- end -}}
 
+    {{ range .Site.Params.custom_css -}}
+      <link href="{{(printf "%s" .) | relURL}}" rel="stylesheet">
+    {{- end }}
+
     {{ block "header_css" . }}{{ end }}
 
     <title>{{ block "title" . }}{{ .Title | default .Site.Title }}{{ end }}</title>
+
+    {{ partial "custom-head.html" . }}
   </head>
 {{- if .Site.IsServer -}} {{ "<!-- End Partial: head.html -->" | safeHTML }} {{- end -}}

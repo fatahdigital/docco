@@ -1,3 +1,0 @@
----
-title: Docco - Documetation Theme
----

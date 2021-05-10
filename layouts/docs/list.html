@@ -1,0 +1,9 @@
+{{ define "main" }}
+  {{- if .Site.IsServer -}} {{ "<!-- docs: list.html -->" |safeHTML }} {{- end -}}
+    
+  {{ partial "menu.html" . }}
+  {{ .Content | markdownify }}
+  {{ partial "next-prev.html" . }}
+
+  {{- if .Site.IsServer -}} {{ "<!-- End docs: list.html -->" | safeHTML }} {{- end -}}
+{{ end }}
