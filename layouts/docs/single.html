@@ -1,7 +1,12 @@
 {{ define "main" }}
   {{- if .Site.IsServer -}} {{ "<!-- docs: single.html -->" |safeHTML }} {{- end -}}
   {{ partial "menu.html" . }}
-  {{ .Content | markdownify }}
+  {{ partial "top-bar.html" . }}
+  {{ .Content }}
+  {{$toc := (and (not .Params.disableToc) (not .Params.chapter))}}
+   {{ if $toc }}
+      {{ partial "toc.html" . }}
+    {{ end }}
   {{ partial "next-prev.html" . }}
   {{- if .Site.IsServer -}} {{ "<!-- End docs: single.html -->" | safeHTML }} {{- end -}}
 {{ end }}
