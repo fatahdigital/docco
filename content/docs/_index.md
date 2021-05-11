@@ -5,6 +5,7 @@ summary:
 description: 
 images: 
   - ""
+remove_class: "d-none"
 ---
 
 Docco is a theme for the Hugo static site generator that is explicitly intended for specialized documentation sets. Our point is to assist you with getting a working documentation site going as effectively as could reasonably be expected, so you can focus on making incredible substance for your clients.
