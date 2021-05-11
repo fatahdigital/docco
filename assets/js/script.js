@@ -10,7 +10,8 @@
     this._document = $(document)
     },
     methods: function (e) {
-      Key.stickHeader();         
+      Key.stickHeader();    
+      Key.stickHeader1();      
     },
     stickHeader: function () {
       Key._window.scroll(function () {
@@ -18,6 +19,16 @@
             $('.navigation-default').addClass('sticky')
           }else{
             $('.navigation-default').removeClass('sticky')
+          }
+      })
+    },
+
+    stickHeader1: function () {
+      Key._window.scroll(function () {
+          if ($(this).scrollTop() > 0) {
+            $('.doc-navigation.navigation-default').addClass('sticky')
+          }else{
+            $('.doc-navigation.navigation-default').removeClass('sticky')
           }
       })
     },
