@@ -1,12 +1,57 @@
 {{ define "main" }}
-  {{- if .Site.IsServer -}} {{ "<!-- docs: single.html -->" |safeHTML }} {{- end -}}
-  {{ partial "menu.html" . }}
-  {{ partial "top-bar.html" . }}
-  {{ .Content }}
-  {{$toc := (and (not .Params.disableToc) (not .Params.chapter))}}
-   {{ if $toc }}
-      {{ partial "toc.html" . }}
-    {{ end }}
-  {{ partial "next-prev.html" . }}
+{{- if .Site.IsServer -}} {{ "<!--docs: single.html -->" | safeHTML }} {{- end -}}
+  <header class="doc-navigation navigation-default">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand" href="{{ .Site.BaseURL }}">
+          <img src="/images/logo/Docco-white-02.svg">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ">
+            {{ range .Site.Menus.main }}
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ .URL }}">{{ .Name }} </a>
+            </li>
+            {{ end }}
+          
+          </ul>
+          <div class="button-wrapper d-none d-lg-block d-md-none d-sm-block">
+            <a class="button-link btn-large btn-transparent" href="/contact/">
+              <span class="button-text">Contact Us</span>
+              <span class="button-icon"></span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="documetation-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-3 p-0">
+          {{ partial "menu.html" . }}
+        </div>
+        <div class="col-lg-6">
+          {{ partial "top-bar.html" . }}
+          {{ .Content }}
+          {{ partial "next-prev.html" . }}
+        </div>
+        <div class="col-lg-3">
+          {{$toc := (and (not .Params.disableToc) (not .Params.chapter))}}
+          {{ if $toc }}
+              {{ partial "toc.html" . }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
   {{- if .Site.IsServer -}} {{ "<!-- End docs: single.html -->" | safeHTML }} {{- end -}}
 {{ end }}
