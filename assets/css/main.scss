@@ -1,8 +1,28 @@
 @import "__auto-complete.scss";
-@import "_perfect-scrollbar.min.scss";
+// @import "_perfect-scrollbar.min.scss";
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-size: 16px;
+}
+
+
+body {
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
 }
 
 .t-center {
@@ -322,14 +342,15 @@ body {
 
 ::-webkit-scrollbar
 {
-	width: 10px;
+	width: 5px;
 	background-color: #F5F5F5;
 }
 
 ::-webkit-scrollbar-thumb
 {
 	background-color: #000000;
-	border: 2px solid #555555;
+  border: 2px solid #555555;
+  border-radius: 15px;
 }
 
 
@@ -380,8 +401,63 @@ body {
   padding-right: 10px;
 }
 
+/********** table of content ********/
 
+.tableofcontent-wrapper {
+  position: fixed;
+  top: 15%;
+  height: 100%;
+  overflow-y: auto;
+}
 
+#TableOfContents ul {
+  list-style: square;
+  padding-left: 18px;
+}
+
+#TableOfContents ul li  {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  position: relative;
+  // padding-left: 10px;
+}
+
+#TableOfContents ul li::marker {
+  color: #0b75b4;
+  font-size: 16px;
+}
+
+#TableOfContents ul li a {
+  color: #0b75b4;
+}
+
+#TableOfContents ul li a:hover {
+  text-decoration: none;
+}
+
+// #TableOfContents ul li:before {
+//   position: absolute;
+//   color: #0b75b4;
+//   font-family: "FontAwesome";
+//   font-size: 18px;
+//   line-height: 18px;
+//   content: "\f105";
+//   left: -8px;
+//   top: 50%;
+//   transform: translateY(-50%);
+// }
+
+// #TableOfContents ul li ul li:before {
+//   position: absolute;
+//   color: #0b75b4;
+//   font-family: "FontAwesome";
+//   font-size: 18px;
+//   line-height: 18px;
+//   content: "\f105";
+//   left: -8px;
+//   top: 50%;
+//   transform: translateY(-50%);
+// }
 
 
 

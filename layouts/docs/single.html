@@ -42,10 +42,16 @@
           {{ partial "next-prev.html" . }}
         </div>
         <div class="col-lg-3">
-          {{$toc := (and (not .Params.disableToc) (not .Params.chapter))}}
-          {{ if $toc }}
-              {{ partial "toc.html" . }}
-          {{ end }}
+          <div class="tableofcontent-wrapper">
+            <div class="toc-title">
+              <h2>In this Page</h2>
+            </div>
+            {{$toc := (and (not .Params.disableToc) (not .Params.chapter))}}
+            {{ if $toc }}
+                {{ partial "toc.html" . }}
+            {{ end }}
+          </div>
+         
         </div>
       </div>
     </div>
