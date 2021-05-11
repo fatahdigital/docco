@@ -1,12 +1,9 @@
 {{- if .Site.IsServer -}} {{ "<!-- Partial: top-bar.html -->" |safeHTML }} {{- end -}}
-  <div class="top-bar-wrapper">
+  <div class="top-bar-wrapper sticky-wrapper">
     {{if not .IsHome}}
       <div id="top-bar">
         {{$toc := (and (not .Params.disableToc) (not .Params.chapter))}}
         <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-          {{ if $toc }}
-            <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-          {{ end }}
           <span class="links">
             {{$showBreadcrumb := (and (not .Params.disableBreadcrumb) (not .Site.Params.disableBreadcrumb))}}
             {{if $showBreadcrumb}}
@@ -23,7 +20,7 @@
   {{define "breadcrumb"}}
     {{$parent := .page.Parent }}
     {{ if $parent }}
-      {{ $value := (printf "<a href='%s'>%s</a> > %s" $parent.RelPermalink $parent.Title .value) }}
+      {{ $value := (printf "<a href='%s' class='highlight'>%s</a><span> > </span>%s" $parent.RelPermalink $parent.Title .value) }}
       {{ template "breadcrumb" dict "page" $parent "value" $value }}
     {{else}}
       {{.value|safeHTML}}

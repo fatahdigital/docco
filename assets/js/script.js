@@ -37,3 +37,18 @@
   Key.k();
 })(window, document, jQuery);
 
+
+var $root = $('html, body');
+
+$('#TableOfContents ul li a').click(function() {
+    var href = $.attr(this, 'href');
+
+    $root.animate({
+        scrollTop: $(href).offset().top
+    }, 200, function () {
+        window.location.hash = href;
+    });
+
+    return false;
+});
+

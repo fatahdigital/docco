@@ -37,21 +37,30 @@
           {{ partial "menu.html" . }}
         </div>
         <div class="col-lg-6">
-          {{ partial "top-bar.html" . }}
-          {{ .Content }}
-          {{ partial "next-prev.html" . }}
+          <div class="content-wrapper">
+            {{ partial "top-bar.html" . }}
+            {{ .Content }}
+            {{ partial "next-prev.html" . }}
+          </div>
         </div>
         <div class="col-lg-3">
-          {{$toc := (and (not .Params.disableToc) (not .Params.chapter))}}
-          {{ if $toc }}
-              {{ partial "toc.html" . }}
-          {{ end }}
+          <div class="tableofcontent-wrapper">
+            <div class="toc-title">
+              <h2>In this Page</h2>
+            </div>
+            {{$toc := (and (not .Params.disableToc) (not .Params.chapter))}}
+            {{ if $toc }}
+                {{ partial "toc.html" . }}
+            {{ end }}
+          </div>
+         
         </div>
       </div>
     </div>
   </section>
-
-  
+  <div class="doc-footer">
+    {{ block "home-footer" . }} {{ partial "home-footer.html" . }} {{ end }}
+  </div>
 
   {{- if .Site.IsServer -}} {{ "<!-- End docs: single.html -->" | safeHTML }} {{- end -}}
 {{ end }}
