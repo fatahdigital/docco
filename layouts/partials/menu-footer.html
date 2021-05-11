@@ -1,14 +1,28 @@
 {{- if .Site.IsServer -}} {{ "<!-- Partial : menu-footer.html -->" | safeHTML }} {{- end -}}
-
+<div class="menu-footer-wrapper">
+	<div class="widget">
 		<!-- Place this tag where you want the button to render. -->
-		<a class="github-button" href="https://github.com/fatahdigital/docco/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download fatahdigital/docco on GitHub">Download</a>
-
+		<a class="github-button" href="https://github.com/fatahdigital/docco/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download fatahdigital/docco on GitHub"><span>Download</span></a>
+	</div>
+	<div class="widget">
 		<!-- Place this tag where you want the button to render. -->
-		<a class="github-button" href="https://github.com/fatahdigital/docco" data-icon="octicon-star" data-show-count="true" aria-label="Star fatahdigital/docco on GitHub">Star</a>
+		<a class="github-button" href="https://github.com/fatahdigital/docco" data-icon="octicon-star" data-show-count="true" aria-label="Star fatahdigital/docco on GitHub"><span>Star</span></a>
+	</div>
+	<div class="widget">
+			<!-- Place this tag where you want the button to render. -->
+			<a class="github-button" href="https://github.com/fatahdigital/docco/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork fatahdigital/docco on GitHub"><span>Fork</span></a>
+	</div>
+
+</div>
+<div class="widget-link">
+	<p>Built with <a href="https://github.com/fatahdigital/docco"><i class="fa fa-heart"></i></a> from <a href="https://fatah.co">Fatah Digital</a> and <a href="https://gohugo.io/">Hugo</a></p>
+</div>
 		
-		<!-- Place this tag where you want the button to render. -->
-    <a class="github-button" href="https://github.com/fatahdigital/docco/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork fatahdigital/docco on GitHub">Fork</a>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+		
+		
+	
 
-		<p>Built with <a href="https://github.com/fatahdigital/docco"><i class="fa fa-heart"></i></a> from <a href="https://github.com/fatahdigital">Fatah Digital</a> and <a href="https://gohugo.io/">Hugo</a></p>
+		
 
 {{- if .Site.IsServer -}} {{ "<!-- END Partial : menu-footer.html -->" | safeHTML }} {{- end -}}
