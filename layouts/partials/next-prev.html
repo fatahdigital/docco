@@ -36,12 +36,50 @@
 
   {{$showPrevNext := (and (not .Params.disableNextPrev) (not .Site.Params.disableNextPrev))}}
   {{if $showPrevNext}}
-		{{with ($.Scratch.Get "prevPage")}}
-			<a class="nav nav-prev" href="{{.RelPermalink}}" title="{{.Title}}"> <i class="fa fa-chevron-left"></i></a>
-		{{end}}
-		{{with ($.Scratch.Get "nextPage")}}
-			<a class="nav nav-next" href="{{.RelPermalink}}" title="{{.Title}}" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
-		{{end}}
-	{{end}}
+    <div class="next-prev-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col d-grid {{ .Params.remove_class }}">	
+            {{with ($.Scratch.Get "prevPage")}}
+            <a class="navigation nav-prev" href="{{.RelPermalink}}" title="{{.Title}}"> 
+              <div class="linkIcon">
+                <img src="/images/icons/left-arrow.svg">
+            </div>
+            <div class="link-prev">
+              <div class="linkTitle">
+                <span class="linkTitle-text">prev</span>
+              </div>
+              <div class="pageTitle">
+                <span class="pageTitle-text">{{.Title}}</span>
+              </div>
+            </div>
+            </a>
+            {{end}}
+          </div>
+          <div class="col d-grid">
+            {{with ($.Scratch.Get "nextPage")}}
+            <a class="navigation nav-next" href="{{.RelPermalink}}" title="{{.Title}}" style="margin-right: 0px;">
+              <div class="link-next">
+                <div class="linkTitle">
+                  <span class="linkTitle-text">next</span>
+                </div>
+                <div class="pageTitle">
+                  <span class="pageTitle-text">{{.Title}}</span>
+                </div>
+              </div>
+              <div class="linkIcon linkIcon-right">
+                <img src="/images/icons/right-arrow.svg">
+            </div>
+        </a>
+          {{end}}
+        </div>
+        </div>
+      </div>
+    </div>
+	
+		
+  {{end}}
+  
+  
 
 {{- if .Site.IsServer -}} {{ "<!-- End Partial: next-prev.html -->" | safeHTML }} {{- end -}}

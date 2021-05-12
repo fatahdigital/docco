@@ -33,6 +33,10 @@ body {
   justify-content: center;
 }
 
+.d-grid {
+  display: grid;
+}
+
 .logo {
   padding: .5rem 1rem;
 }
@@ -248,8 +252,6 @@ body {
 .doc-navigation .navbar-light .navbar-nav .nav-link {
   color: #fff;
 }
-
-
 
 .doc-navigation .button-link {
   color: #fff;
@@ -549,6 +551,68 @@ body {
 }
 
 
+/********** next prev **********/
+
+.next-prev-wrapper {
+  margin-top: 60px;
+}
+
+.next-prev-wrapper .navigation {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #0b75b4;
+  width: 100%;
+  padding: 16px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.next-prev-wrapper .navigation:hover {
+  border: 2px solid #000;
+}
+
+.next-prev-wrapper .linkIcon {
+  width: 20%;
+  font-size: 20px;
+} 
+
+.next-prev-wrapper .linkIcon  img {
+  width: 30px;
+}
+
+.linkIcon-right {
+  text-align: right;
+}
+
+.link-prev {
+  width: 80%;
+  text-align: right;
+}
+
+.link-next {
+  width: 70%;
+  text-align: left;
+}
+
+.linkTitle-text {
+  font-size: 14px;
+  line-height: 12px;
+  font-weight: 300;
+  color: #727B86;
+  text-transform: capitalize;
+}
+
+.pageTitle-text {
+  font-size: 16px;
+  line-height: 12px;
+  font-weight: 400;
+  color: #454C55;
+  text-transform: capitalize;
+}
+
+.next-prev-wrapper .navigation:hover .linkTitle-text, .next-prev-wrapper .navigation:hover .pageTitle-text{
+  color: #0b75b4;
+}
 
 
 @media only screen and (max-width:991px) {
