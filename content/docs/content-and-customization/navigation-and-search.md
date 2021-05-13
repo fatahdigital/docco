@@ -39,11 +39,11 @@ If you want to add a link to an external site to this menu, add it in config.tom
     url = "/"
 ```
 
-### Adding a language drop-down
+<!-- ### Adding a language drop-down
 
 If you configure more than one language in config.toml, the Docco theme adds a language selector drop down to the top-level menu. Selecting a language takes the user to the translated version of the current page, or the home page for the given language.
 
-You can find out more in Multi-language support.
+You can find out more in Multi-language support. -->
 
 ## Section menu 
 
@@ -90,11 +90,11 @@ sidebar_search_disable = true
 
 ### Configure search with a Google Custom Search Engine
 
-By default Docsy uses a Google Custom Search Engine (GCSE) to search your site. To enable this feature, you’ll first need to make sure that you have built a public production version of your site, as otherwise your site won’t be crawled and indexed.
+By default Docco uses a Google Custom Search Engine (GCSE) to search your site. To enable this feature, you’ll first need to make sure that you have built a public production version of your site, as otherwise your site won’t be crawled and indexed.
 
 ### Setting up site search
 
-1. Deploy your site and ensure that it’s built with HUGO_ENV="production", as Google will only crawl and index Docsy sites built with this setting (you probably don’t want your not-ready-for-prime-time site to be searchable!). You can specify this variable as a command line flag to Hugo:
+1. Deploy your site and ensure that it’s built with HUGO_ENV="production", as Google will only crawl and index Docco sites built with this setting (you probably don’t want your not-ready-for-prime-time site to be searchable!). You can specify this variable as a command line flag to Hugo:
 
   ```
   $ env HUGO_ENV="production" hugo
@@ -113,7 +113,7 @@ By default Docsy uses a Google Custom Search Engine (GCSE) to search your site. 
 > #### Tip
 Your site search results should show up within a couple of days. If it takes longer than that, you can manually request that your site is indexed by submitting a sitemap through the Google Search Console.
 
-### Adding the search page 
+<!-- ### Adding the search page 
 
 Once you have your search engine set up, you can add the feature to your site:
 
@@ -130,7 +130,7 @@ layout: search
 ```
 # Google Custom Search Engine ID. Remove or comment out to disable search.
 gcs_engine_id = "011737558837375720776:fsdu1nryfng"
-```
+``` -->
 ### Disabling GCSE search 
 
 If you don’t specify a Google Custom Search Engine ID for your project and haven’t enabled any other search options, the search box won’t appear in your site. If you’re using the default config.toml from the example site and want to disable search, just comment out or remove the relevant line.
