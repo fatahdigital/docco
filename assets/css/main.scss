@@ -1,5 +1,5 @@
 @import "__auto-complete.scss";
-// @import "_perfect-scrollbar.min.scss";
+@import "_atom-one-dark-reasonable.scss";
 
 html {
   scroll-behavior: smooth;
@@ -23,6 +23,10 @@ body {
   100% {
       opacity: 1;
    }
+}
+
+img {
+  width: 100%;
 }
 
 .t-center {
@@ -372,6 +376,8 @@ body {
 	background-color: #F5F5F5;
 }
 
+
+
 ::-webkit-scrollbar-thumb
 {
 	background-color: #000000;
@@ -613,6 +619,45 @@ body {
 .next-prev-wrapper .navigation:hover .linkTitle-text, .next-prev-wrapper .navigation:hover .pageTitle-text{
   color: #0b75b4;
 }
+
+/******** content section *******/
+pre {
+  padding: 1rem;
+  margin: 2rem 0;
+  background: #282c34;
+  border: 0;
+  border-radius: 2px;
+  line-height: 1.15;
+}
+
+code {
+  border-radius: 2px;
+  white-space: nowrap;
+  color: #0b75b4;
+  background: #FFF7DD;
+  border: 1px solid #fbf0cb;
+  padding: 0px 2px;
+}
+
+pre code {
+  border-radius: 2px;
+  white-space: nowrap;
+  color: unset;
+  background: unset;
+  border: unset;
+  padding: 0px 2px;
+}
+
+.content-wrapper a {
+  color: #0b75b4;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+.content-wrapper a:hover {
+  color: #000;
+}
+
 
 
 @media only screen and (max-width:991px) {
