@@ -697,6 +697,47 @@ pre code {
   text-align: center;
 }
 
+/********* tags *********/
+
+.tags-wrapper {
+  margin-top: 40px;
+  display: flex;
+}
+
+.tags-icons .fa, .tags-icons span {
+  padding-right: 10px;
+}
+
+.tags-icons span {
+  padding-right: 8px;
+}
+
+.tags-link-wrapper a {
+  padding-right: 10px;
+}
+
+/******** Taxonomy **********/ 
+
+
+.content-wrapper .back-to-page-link a {
+  color: #0b75b4;
+  font-size: 20px!important;
+  position: relative;
+  padding-top: 20px;
+}
+
+.content-wrapper .back-to-page-link a:hover {
+  color: #000;
+}
+
+.content-wrapper .back-to-page-link a:before {
+  content: "\f0c8";
+  position: absolute;
+  font-family: FontAwesome;
+}
+.content-wrapper .back-to-page-link a span {
+  padding-left: 30px;
+}
 
 
 @media only screen and (max-width:991px) {
