@@ -7,6 +7,7 @@ description:
 images: 
   - ""
 pre: "<b>3. </b>"
+lastmod: 2017-03-03T14:15:59-06:00
 ---
 
 Hugo uses Markdown for its simple content format. However, there are a lot of things that Markdown doesn’t support well. You could use pure HTML to expand possibilities.
