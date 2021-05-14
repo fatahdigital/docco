@@ -1,0 +1,42 @@
+{{- if .Site.IsServer -}} {{ "<!-- partials/last-updated.html -->" | safeHTML }} {{- end -}}
+<div class="lastUpdated">
+  <div class="last-updated-wrapper">
+   
+      
+      <div class="editedDate">
+
+       
+
+        <span>Last Updated {{ .Lastmod.Format "January 2, 2006" }}.</span>
+        <span class="editedDate-text">
+        {{ $ageDays := div (sub now.Unix .Lastmod.Unix) 86400 }}
+        {{ $ageMonths := div (sub now.Unix .Lastmod.Unix) 2592000 }}
+
+        
+        {{ if eq $ageDays 0 }}
+
+          Last updated today.
+
+        
+        {{ else if lt $ageDays 31 }}
+
+          Last updated {{ $ageDays }}
+          {{ cond (eq $ageDays 1) "day" "days"}}
+          ago.
+
+        
+        {{ else }}
+
+          {{ $ageMonths }}
+          {{ cond (eq $ageMonths 1) "month" "months" }}
+          ago.
+
+        {{ end }}
+        </span>
+        
+      </div>
+      
+  
+  </div>
+</div>
+{{- if .Site.IsServer -}} {{ "<!-- END partials/last-updated.html -->" | safeHTML }} {{- end -}}

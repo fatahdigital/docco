@@ -43,7 +43,7 @@ content
 
 ## Types
 
-**Hugo-theme-learn** defines two types of pages. Default and Chapter. Both can be used at any level of the documentation, the only difference being layout display.
+**Hugo-theme-Docco** defines two types of pages. Default and Chapter. Both can be used at any level of the documentation, the only difference being layout display.
 
 A **Chapter** displays a page meant to be used as introduction for a set of child pages. Commonly, it contains a simple title and a catch line to define content that can be found under it. You can define any HTML as prefix for the menu. In the example below, it’s just a number but that could be an [icon](https://fortawesome.github.io/Font-Awesome/).
 
@@ -57,19 +57,19 @@ pre = "<b>1. </b>"
 
 ### Chapter 1
 
-# Basics
+# Getting Started
 
 Discover what this Hugo theme is all about and the core-concepts behind it.
 ```
 
-To tell **Hugo-theme-learn** to consider a page as a chapter, set `chapter=true` in the Front Matter of the page.
+To tell **Hugo-theme-Docco** to consider a page as a chapter, set `chapter=true` in the Front Matter of the page.
 
 A `Default` page is any other content page.
 
 ```
 +++
 title = "Installation"
-weight = 15
+weight = 3
 +++
 ```
 
@@ -82,7 +82,7 @@ Hugo provides a `new` command to create a new website.
 ```
 hugo new site <new_project>
 ```
-**Hugo-theme-learn** provides archetypes to help you create this kind of pages.
+**Hugo-theme-Docco** provides archetypes to help you create this kind of pages.
 
 ## Front Matter configuration
 
@@ -130,7 +130,7 @@ weight = 5
 
 ## Using a custom title for menu entries
 
-By default, Hugo-theme-learn will use a page’s `title` attribute for the menu item (or `linkTitle` if defined).
+By default, Hugo-theme-docco will use a page’s `title` attribute for the menu item (or `linkTitle` if defined).
 
 But a page’s title has to be descriptive on its own while the menu is a hierarchy. We’ve added the `menuTitle` parameter for that purpose:
 
@@ -147,6 +147,6 @@ menuTitle = "Linux"
 
 To configure your home page, you basically have three choices:
 
-1. Create an _index.md document in content folder and fill the file with Markdown content
-1. Create an index.html file in the static folder and fill the file with HTML content
+1. Create an `_index.md` document in `content` folder and fill the file with Markdown content
+1. Create an `index.html` file in the `static` folder and fill the file with HTML content
 1. Configure your server to automatically redirect home page to one your documentation page

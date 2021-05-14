@@ -1,6 +1,8 @@
 ---
 title: Requirements
 weight: 2
+
+draft: true
 ---
 
 Thanks to the simplicity of Hugo, this page is as empty as this theme needs requirements.

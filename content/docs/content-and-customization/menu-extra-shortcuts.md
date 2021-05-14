@@ -1,5 +1,5 @@
 ---
-title: Menu and Extra Shortcuts
+title: Menu Extra Shortcuts
 weight: 11
 
 summary:
@@ -22,7 +22,7 @@ Example from the current website:
 [[menu.shortcuts]] 
 name = "<i class='fab fa-github'></i> Github repo"
 identifier = "ds"
-url = "https://github.com/matcornic/hugo-theme-learn"
+url = "https://github.com/matcornic/docco"
 weight = 10
 
 [[menu.shortcuts]]
