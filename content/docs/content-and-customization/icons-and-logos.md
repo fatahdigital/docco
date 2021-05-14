@@ -6,6 +6,7 @@ summary:
 description: 
 images: 
   - ""
+lastmod: 2017-03-03T14:15:59-06:00
 ---
 The Docco theme for Hugo loads the [Font Awesome](https://fontawesome.com) library, allowing you to easily display any icon or logo available in the Font Awesome free collection.
 
