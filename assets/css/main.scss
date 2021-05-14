@@ -694,7 +694,7 @@ pre code {
     padding: .5rem;
   }
   .menu-section, .tableofcontent-wrapper, .search-wrapper {
-    display: none;
+    display: none!important;
   }
   .dropdown-menu.show {
     top: 150px!important;
@@ -790,6 +790,15 @@ pre code {
   .dropdown-section .btn {
     box-shadow: unset!important;
     border: 1px solid #0b75b4;
+  }
+
+  .dropdown-section .dropdown .btn {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .dropdown-section .dropdown .btn .fa {
+    padding-left: 15px;
   }
  
 }
