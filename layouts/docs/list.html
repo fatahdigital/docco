@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{- if .Site.IsServer -}} {{ "<!-- docs: list.html -->" |safeHTML }} {{- end -}}
-  <header class="doc-navigation navigation-default">
+  <header class="doc-navigation navigation-default" id="myNavbar">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg navbar-light ">
         <a class="navbar-brand" href="{{ .Site.BaseURL }}">
@@ -30,12 +30,46 @@
     </div>
     
   </header>
+  <div class="dropdown-wrapper" id="mydropdownwrapper">
+    <div class="container">
+      <div class="row  d-lg-none">
+
+        <div class="col dropdown-section  my-3">
+          <div class="dropdown">
+
+            <button class="btn btn-wrapper dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Topic Title <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+            
+            <div class="dropdown-menu pl-3 pr-3" aria-labelledby="dropdownMenuButton">
+              {{ partial  "menu.html" . }}
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col dropdown-section my-3" >
+          <div class="dropdown">
+
+            <button class="btn btn-wrapper dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="float: right;">In this Page <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+
+            <div class="dropdown-menu toc pl-3 pr-3" aria-labelledby="dropdownMenuButton">
+              <h3 class="page-menu-heading">In This Page</h3>
+              {{ .TableOfContents }}
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <section class="documetation-wrapper">
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-3 p-0">
-          {{ partial "menu.html" . }}
+          <div class="menu-section" id="sidebar">
+            {{ partial "menu.html" . }}
+          </div>
         </div>
         <div class="col-lg-7 p-0">
           <div class="content-wrapper">
@@ -45,13 +79,13 @@
           </div>
         </div>
         <div class="col-lg-2">
-          <div class="tableofcontent-wrapper">
+          <div class="tableofcontent-wrapper documentation-rightSidebar">
             <div class="toc-title">
               <h2>In this Page</h2>
             </div>
             {{$toc := (and (not .Params.disableToc) (not .Params.chapter))}}
             {{ if $toc }}
-                {{ partial "toc.html" . }}
+              {{ partial "toc.html" . }}
             {{ end }}
           </div>
          

@@ -38,17 +38,53 @@
 })(window, document, jQuery);
 
 
-var $root = $('html, body');
+// var $root = $('html, body');
 
-$('#TableOfContents ul li a').click(function() {
-    var href = $.attr(this, 'href');
+// $('#TableOfContents ul li a').click(function() {
+//     var href = $.attr(this, 'href');
 
-    $root.animate({
-        scrollTop: $(href).offset().top
-    }, 200, function () {
-        window.location.hash = href;
+//     $root.animate({
+//         scrollTop: $(href).offset().top
+//     }, 200, function () {
+//         window.location.hash = href;
+//     });
+
+//     return false;
+// });
+
+$(document).ready(function () {
+  // Add smooth scrolling to all links
+  $("#TableOfContents a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: ($(hash).offset().top - $('#myNavbar').height())
+      }, 800, function(){
+      });
+    }
+  });
+
+  /* hide if nothing to display in TOC */
+  if($("#TableOfContents a").length){
+    $(".documentation-rightSidebar").show();
+  }
+  /* hide if nothing to display in TOC */
+  $(window).scroll(function() {
+    $(".content-wrapper :header").each(function() {
+      if ( $(this).tagName != "H1" ) {
+        if ( ( $(window).scrollTop() + 90) >= $(this).offset().top - 110) {
+          var id = $(this).attr('id');
+          $('#TableOfContents ul li a').removeClass('active');
+          $('#TableOfContents ul li a[href="#' + id + '"]').addClass('active');
+        }
+  
+      }
     });
+  });
 
-    return false;
-});
+
+
+  
+}); // document ready
 
