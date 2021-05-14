@@ -1,0 +1,167 @@
+# Configuration of Hugo
+# This file is formatted using TOML syntax - learn more at https://learnxinyminutes.com/docs/toml/
+# Each configuration section is defined by a name in square brackets (e.g. `[outputs]`).
+
+# The URL of your site.
+# End your URL with a `/` trailing slash, e.g. `https://example.com/`.
+baseURL = "/"
+
+languageCode = "en-us"
+defaultContentLanguage = "en"
+
+# Title of your site
+title = "Docco - Documetation Theme"
+
+subtitle = "" # site tagline that appears below site title in masthead
+
+# Name of Docco theme folder in `themes/`.
+theme = ""
+
+themesdir = "../.."
+metaDataFormat = "yaml"
+defaultContentLanguageInSubdir= true
+
+summaryLength = 30  # Listing summary length in words. Also, see `abstract_length` in `params.toml`.
+
+paginate = 10  # Number of items per page in paginated lists.
+
+## Added Google Tags Manager id and added Google Analytics id
+google_analytics = ""
+google_tag_manager = ""
+
+repository = "https://github.com/fatahdigital/docco"
+
+search = "true" # true, false (default)
+search_full_content = "false" # true, false (default)
+search_provider = "lunr" # lunr (default), algolia, google
+
+[blackfriday]
+   plainIDAnchors = true
+   hrefTargetBlank = true
+
+# SEO Related
+google_site_verification = ""
+bing_site_verification = ""
+yandex_site_verification = ""
+naver_site_verification = ""
+
+# Social Sharing
+twitter_username = ""
+twitter_url = ""
+
+facebook_username = ""
+facebook_url = ""
+
+#Hugo version = 0.55.6
+#Hugo_version_link = "https://github.com/gohugoio/hugo/releases/tag/v0.55.6/"
+
+[params]
+  editURL = "https://github.com/fatahdigital/docco/edit/master/exampleSite/content/" ### change url
+  author = ""
+  description = "Documentation for Docco Theme"
+  summary = ""
+  showVisitedLinks = true
+  disableBreadcrumb = false
+  disableNextPrev = false
+  custom_css = ["/css/"] # Your Custom css file Name File Add in Static/css/File_name.css
+
+  images = [""]
+
+  # Enter a copyright notice to display in the site footer.
+  
+  copyright = "By Docco. Website Designed And Developed By "
+
+  # Local business type (optional)
+  # If you entered "LocalBusiness" above, choose the type of business from https://schema.org/LocalBusiness#subtypes
+  local_business_type = ""
+
+  # Address format (choose from the [address_formats] list below or add you own to the list).
+  address_format = "en-us"
+
+  # Website type
+  #   Improve how search engines understand your site.
+  #   For personal sites, choose "Person".
+  #   For organizations and projects, choose from https://schema.org/Organization#subtypes
+  #   E.g. Person, Organization, LocalBusiness, Project, EducationalOrganization
+  site_type = "Organization"
+
+  [outputs]
+  home = [ "HTML", "RSS", "JSON"]
+
+  # Configure the Markdown renderer.
+  [markup]
+    [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3  
+
+
+  #header logo
+  logo = ""
+  logo_alt = ""
+
+  #footer detail
+  footer_description = ""
+  
+
+[menu]
+  ## Menu bar
+  [[menu.main]]
+    identifire= ""
+    url = "/"
+    name = "Home"
+    weight = 1
+
+  [[menu.main]]
+    identifire= ""
+    url = "/about/"
+    name = "About"
+    weight = 2
+
+  [[menu.main]]
+    identifire= ""
+    url = "/#pricing"
+    name = "Pricing"
+    weight = 3
+  
+  [[menu.main]]
+    identifire= ""
+    url = "/docs/"
+    name = "Help"
+    weight = 4
+
+    [[menu.main]]
+    identifire= ""
+    url = "/contact/"
+    name = "Contact Us"
+    weight = 5
+
+  ## Footer menu
+  [[menu.footer]]
+    identifire= ""
+    url = "/"
+    name = "Home"
+    weight = 1
+
+  [[menu.footer]]
+    identifire= ""
+    url = "/about/"
+    name = "About"
+    weight = 2
+
+  [[menu.footer]]
+    identifire= ""
+    url = "/#pricing"
+    name = "Pricing"
+    weight = 3
+  
+  [[menu.footer]]
+    identifire= ""
+    url = "/docs/"
+    name = "Help"
+    weight = 4
+
+    [[menu.footer]]
+    identifire= ""
+    url = "/contact/"
+    name = "Contact Us"
+    weight = 5

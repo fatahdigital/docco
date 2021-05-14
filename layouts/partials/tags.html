@@ -1,0 +1,5 @@
+{{- if .Site.IsServer -}} {{ "<!-- Partial: tags.html -->" |safeHTML }} {{- end -}}
+  {{range .Params.tags}}
+    <a href="{{ "  /tags/" | urlize }}">{{ . }}</a>
+  {{end}}
+{{- if .Site.IsServer -}} {{ "<!-- End Partial: tags.html -->" | safeHTML }} {{- end -}}

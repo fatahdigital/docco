@@ -1,0 +1,28 @@
+{{- if .Site.IsServer -}} {{ "<!-- Partial: home-footer.html -->" |safeHTML }} {{- end -}}
+   <section class="footer-wrapper">
+    <div class="footer-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 col-md-12 col-12 md-order-2">
+            <div class="copyright">
+             Copyright © <span id="year"></span> {{ .Site.Params.copyright }}<a href="https://fatah.co" target="_blank">Fatah Digital</a>
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-12 col-12">
+            <div class="footer-navigation">
+              {{ range .Site.Menus.footer }}
+              <ul>
+                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+              </ul>
+            {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    document.querySelector("#year").innerHTML = (new Date()).getFullYear();
+  </script>
+
+{{- if .Site.IsServer -}} {{ "<!-- End Partial: home-footer.html -->" | safeHTML }} {{- end -}}

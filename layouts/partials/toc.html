@@ -1,0 +1,3 @@
+{{- if .Site.IsServer -}} {{ "<!-- Partial: toc.html -->" |safeHTML }} {{- end -}}
+  {{ .TableOfContents }}
+{{- if .Site.IsServer -}} {{ "<!-- End Partial: toc.html -->" | safeHTML }} {{- end -}}

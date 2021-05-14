@@ -1,0 +1,9 @@
+{{- if .Site.IsServer -}} {{ "<!-- Partial: custom-footer.html -->" |safeHTML }} {{- end -}}
+
+  <!-- Partial intended to be overwritten with tags loaded at the end of the page loading (usually for Javascript) 
+  <script>
+      console.log("running some javascript");
+  </script>
+  -->
+
+{{- if .Site.IsServer -}} {{ "<!-- End Partial: custom-footer.html -->" | safeHTML }} {{- end -}}
