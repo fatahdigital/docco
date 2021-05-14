@@ -2,7 +2,7 @@
   
   {{ $currentNode := . }}
   {{ $showvisitedlinks := .Site.Params.showVisitedLinks }}
-  <section class="side-navigation-wrapper" id="sidebar">
+  <section class="side-navigation-wrapper" >
     <div id="header-wrapper" class="search-wrapper">
       {{if not .Site.Params.disableSearch}}
           {{ partial "search.html" . }}
