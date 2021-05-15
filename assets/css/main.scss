@@ -628,7 +628,7 @@ img {
 }
 
 /******** content section *******/
-pre {
+.content-wrapper pre {
   padding: 1rem;
   margin: 2rem 0;
   background: #282c34;
@@ -637,23 +637,23 @@ pre {
   line-height: 1.15;
 }
 
-code {
-  border-radius: 2px;
-  white-space: nowrap;
-  color: #0b75b4;
-  background: #FFF7DD;
-  border: 1px solid #fbf0cb;
-  padding: 0px 2px;
-}
+// code {
+//   border-radius: 2px;
+//   white-space: nowrap;
+//   color: #0b75b4;
+//   background: #FFF7DD;
+//   border: 1px solid #fbf0cb;
+//   padding: 0px 2px;
+// }
 
-pre code {
-  border-radius: 2px;
-  white-space: nowrap;
-  color: unset;
-  background: unset;
-  border: unset;
-  padding: 0px 2px;
-}
+// pre code {
+//   border-radius: 2px;
+//   white-space: nowrap;
+//   color: unset;
+//   background: unset;
+//   border: unset;
+//   padding: 0px 2px;
+// }
 
 .content-wrapper a {
   color: #0b75b4;

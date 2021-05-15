@@ -61,7 +61,7 @@ description: >
 ---
 ```
 
-To hide a page or section from the menu, set toc_hide: true in front matter.
+To hide a page or section from the menu, set `draft: true` in front matter.
 
 By default, the section menu will show the current section fully expanded all the way down. This may make the left nav too long and difficult to scan for bigger sites. Try setting site param ui.sidebar_menu_compact = true in config.toml.
 
