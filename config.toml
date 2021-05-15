@@ -23,6 +23,13 @@ defaultContentLanguageInSubdir= true
 
 summaryLength = 30  # Listing summary length in words. Also, see `abstract_length` in `params.toml`.
 
+enableRobotsTXT = true
+
+# Will give values to .Lastmod etc.
+enableGitInfo = true
+
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
 paginate = 10  # Number of items per page in paginated lists.
 
 ## Added Google Tags Manager id and added Google Analytics id
@@ -52,8 +59,8 @@ twitter_url = ""
 facebook_username = ""
 facebook_url = ""
 
-#Hugo version = 0.55.6
-#Hugo_version_link = "https://github.com/gohugoio/hugo/releases/tag/v0.55.6/"
+#Hugo version = 0.72.0
+#Hugo_version_link = "https://github.com/gohugoio/hugo/releases/tag/v0.72.0/"
 
 [params]
   editURL = "https://github.com/fatahdigital/docco/edit/master/exampleSite/content/" ### change url
@@ -64,6 +71,7 @@ facebook_url = ""
   disableBreadcrumb = false
   disableNextPrev = false
   custom_css = ["/css/"] # Your Custom css file Name File Add in Static/css/File_name.css
+  titleSeparator = "::"
 
   images = [""]
 
@@ -84,6 +92,11 @@ facebook_url = ""
   #   For organizations and projects, choose from https://schema.org/Organization#subtypes
   #   E.g. Person, Organization, LocalBusiness, Project, EducationalOrganization
   site_type = "Organization"
+
+  # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
+  github_repo = ""
+  #  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
+  navbar_logo = true
 
   [outputs]
   home = [ "HTML", "RSS", "JSON"]
