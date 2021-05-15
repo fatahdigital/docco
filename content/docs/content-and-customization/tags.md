@@ -5,7 +5,7 @@ tags: ["documentation", "tutorial"]
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 
-*Learn theme* support one default taxonomy of gohugo: the *tag* feature.
+*Docco theme* support one default taxonomy of gohugo: the *tag* feature.
 
 ## Configuration 
 
