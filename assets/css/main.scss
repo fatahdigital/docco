@@ -1020,7 +1020,7 @@ div.notices.warning p:first-child:after {
   border-width: 1px 1px 1px 1px !important;
   border-color: #ccc !important;
   border-radius: 4px 4px 0 0 !important;
-  background-color: #ddd !important;
+  background-color: #F6F6F6 !important;
   float: left;
   display: block;
   position: relative;
@@ -1053,6 +1053,11 @@ div.notices.warning p:first-child:after {
 
 .tab-content .tab-item {
   display: none;
+}
+
+.tab-nav .btn:focus{
+  box-shadow: 0 0 0 0.2rem #98c7e3;
+
 }
 
 @media only screen and (max-width:991px) {
