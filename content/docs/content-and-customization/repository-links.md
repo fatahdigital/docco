@@ -34,14 +34,14 @@ The URL for your site’s source repository. This is used to generate the **Edit
 github_repo = "https://github.com/fatahdigital/docco"
 ```
 
-### `github_subdir (optional)`
+### github_subdir (optional)
 
 Specify a value here if your content directory is not in your repo’s root directory. For example, this site is in the userguide subdirectory of its repo. Setting this value means that your edit links will go to the right page.
 
 ```
 github_subdir = "userguide"
 ```
-### `github_project_repo (optional) `
+### github_project_repo (optional)
 
 Specify a value here if you have a separate project repo and you’d like your users to be able to create issues against your project from the relevant docs. The Create project issue link appears only if this is set.
 

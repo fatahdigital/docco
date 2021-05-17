@@ -796,6 +796,133 @@ h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover
   visibility: visible;
 }
 
+/****** panel ******/
+
+.panel {
+  margin-top: 20px;
+}
+
+.panel {
+  --panel-font-color: #000;
+  --panel-background-color: unset;
+  --panel-border-color: transparent;
+  padding: 1.28rem;
+  color: var(--panel-font-color, #000);
+  background: var(--panel-background-color, unset);
+  border: 1px solid;
+  border-color: var(--panel-border-color, transparent);
+}
+
+.panel a {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.panel-primary {
+  --panel-border-color: #f0f0f0;
+}
+
+.panel-notice {
+  --panel-font-color: #fff;
+  --panel-background-color: #4ba0e1;
+  --custom-link-text-color: #fff;
+  --custom-link-text-hover-color: #fff;
+}
+
+.panel-success {
+  --panel-font-color: #fff;
+  --panel-background-color: #609f43;
+  --custom-link-text-color: #fff;
+  --custom-link-text-hover-color: #fff;
+}
+
+.panel-caution {
+  --panel-font-color: #fff;
+  --panel-background-color: #de776d;
+  --custom-link-text-color: #fff;
+  --custom-link-text-hover-color: #fff;
+}
+
+.panel-warning {
+  --panel-font-color: #fff;
+  --panel-background-color: #e67e22;
+  --custom-link-text-color: #fff;
+  --custom-link-text-hover-color: #fff;
+}
+
+.panel-danger {
+  --panel-font-color: #fff;
+  --panel-background-color: #ce3426;
+  --custom-link-text-color: #fff;
+  --custom-link-text-hover-color: #fff;
+}
+
+
+.content-wrapper .button {
+  display: inline-block;
+  font-size: 120%;
+  padding: 0.5rem 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 0.8rem;
+  --button-font-color: #000;
+  --button-font-hover-color: #000;
+  --button-background-color: #fafafa;
+  --button-background-hover-color: #f7f7f7;
+  --button-border-color: #f0f0f0;
+  color: var(--button-font-color, #000);
+  background: var(--button-background-color, unset);
+  border: 2px solid;
+  border-color: var(--button-border-color, transparent);
+}
+.content-wrapper .button:hover {
+  color: var(--button-font-hover-color, #000);
+  text-decoration: none;
+  background: var(--button-background-hover-color, unset);
+}
+
+.content-wrapper .button-notice {
+  --button-font-color: #fff;
+  --button-font-hover-color: #fff;
+  --button-background-color: #4ba0e1;
+  --button-background-hover-color: #3b89c5;
+  --button-border-color: transparent;
+}
+
+.content-wrapper .button-success {
+  --button-font-color: #fff;
+  --button-font-hover-color: #fff;
+  --button-background-color: #369b08;
+  --button-background-hover-color: #256905;
+  --button-border-color: transparent;
+}
+
+.content-wrapper .button-caution {
+  --button-font-color: #fff;
+  --button-font-hover-color: #fff;
+  --button-background-color: #f56558;
+  --button-background-hover-color: #d45145;
+  --button-border-color: transparent;
+}
+
+.content-wrapper .button-warning {
+  --button-font-color: #fff;
+  --button-font-hover-color: #fff;
+  --button-background-color: #f5811b;
+  --button-background-hover-color: #db7012;
+  --button-border-color: transparent;
+}
+
+.content-wrapper.button-danger {
+  --button-font-color: #fff;
+  --button-font-hover-color: #fff;
+  --button-background-color: #ce3426;
+  --button-background-hover-color: #a0281d;
+  --button-border-color: transparent;
+}
+
+
+
 @media only screen and (max-width:991px) {
   .navigation .navbar-nav {
     text-align: center;
