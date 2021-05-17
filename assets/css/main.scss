@@ -1009,6 +1009,52 @@ div.notices.warning p:first-child:after {
 }
 
 
+/******* tabs panel *********/
+
+.tab-panel {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.tab-nav-button {
+  border-width: 1px 1px 1px 1px !important;
+  border-color: #ccc !important;
+  border-radius: 4px 4px 0 0 !important;
+  background-color: #ddd !important;
+  float: left;
+  display: block;
+  position: relative;
+  margin-left: 4px;
+  bottom: -1px;
+}
+
+.tab-nav-button:first-child {
+  margin-left: 0px;
+}
+
+.tab-nav-button.active {
+  background-color: #fff !important;
+  border-bottom-color: #fff !important;
+}
+
+.tab-content {
+  display: block;
+  clear: both;
+  padding: 8px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc;
+
+}
+
+.tab-content .tab-item.active {
+  display: block;
+}
+
+.tab-content .tab-item {
+  display: none;
+}
+
 @media only screen and (max-width:991px) {
   .navigation .navbar-nav {
     text-align: center;
