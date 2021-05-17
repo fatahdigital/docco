@@ -921,6 +921,24 @@ h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover
   --button-border-color: transparent;
 }
 
+/******* table *******/
+
+table {
+    border: 1px solid #eaeaea;
+    table-layout: auto;
+}
+
+th {
+
+  background: #f7f7f7;
+  padding: 0.5rem;
+}
+
+td {
+  padding: 0.5rem;
+  border: 1px solid #eaeaea;
+}
+
 
 
 @media only screen and (max-width:991px) {
