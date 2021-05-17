@@ -1,5 +1,5 @@
 ---
-title: "Analytics"
+title: "Analytics and User Feedback"
 weight: 17
 
 summary:
@@ -8,7 +8,6 @@ images:
   - ""
 lastmod: 2017-03-03T14:15:59-06:00
 ---
-# Analytics and User Feedback
 
 Add Google Analytics tracking to your site, use the “was this page helpful?” widget data, disable the widget on a single page or all pages, and change the response text.
 

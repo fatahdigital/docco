@@ -9,8 +9,6 @@ images:
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 
-# Navigation and Search
-
 Customize site navigation and search for your Docco site.
 
 ## Top-level menu 

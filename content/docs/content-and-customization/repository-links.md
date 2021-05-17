@@ -9,8 +9,6 @@ images:
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 
-## Repository Links
-
 Help your users interact with your source repository.
 
 The Docco docs and blog layouts include links for readers to edit the page or create issues for your docs or project via your site’s source repository. The current generated links for each docs or blog page are:
