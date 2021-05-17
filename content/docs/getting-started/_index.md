@@ -12,8 +12,6 @@ lastmod: 2017-03-03T14:15:59-06:00
 
 ### Chapter 1
 
-# Getting Started
-
 Docco is a Hugo theme helping you build modern documentation websites that are secure, fast, and SEO-ready — by default.
 
 This page tells you how to get started with the Docco theme, including installation and basic configuration.

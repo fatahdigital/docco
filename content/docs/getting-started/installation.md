@@ -9,8 +9,6 @@ images:
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 
-# Installation
-
 The following steps are here to help you initialize your new website. If you don’t know Hugo at all, we strongly suggest you learn more about it by following this [great documentation for beginners](https://gohugo.io/getting-started/quick-start/).
 
 ## Create your project
@@ -62,11 +60,11 @@ If the result is ```v0.75``` or earlier, or if you don’t see Extended, you’l
 
         sudo install hugo /usr/bin   
 
-#### macOS
+### macOS
 
 Install Hugo using [Brew](https://gohugo.io/getting-started/installing/#homebrew-macos).
 
-#### As an `npm` module
+### As an `npm` module
 
 You can install Hugo as an `npm` module using [`hugo-bin`](https://www.npmjs.com/package/hugo-bin). This adds `hugo-bin` to your `node_modules` folder and adds the dependency to your `package.json` file.  To install the extended version of Hugo:
 
