@@ -4,7 +4,7 @@ weight: 24
 description : "Disclaimers to help you structure your page"
 ---
 
-The notice shortcode shows 4 types of disclaimers to help you structure your page.
+The notice shortcode shows  types of d4isclaimers to help you structure your page.
 
 ### Note
 
