@@ -54,6 +54,10 @@
 
 $(document).ready(function () {
 
+  // get current URL path and assign 'active' class
+  var pathname = window.location.pathname;
+  $('.navbar-nav > .nav-item > a[href="'+pathname+'"]').addClass('active');
+
   // Add smooth scrolling to all links
   $("#TableOfContents a").on('click', function(event) {
     if (this.hash !== "") {
@@ -148,10 +152,9 @@ var text, clip = new ClipboardJS('.anchor');
     $(element).parent().replaceWith('<div class="mermaid" align="center">' + content + '</div>');
   });
 
-  
-
-
   restoreTabSelections();
+
+  
   
 }); // document 
 
