@@ -1,5 +1,6 @@
 @import "__auto-complete.scss";
 @import "_atom-one-dark-reasonable.scss";
+@import "_fonts.scss";
 
 html {
   scroll-behavior: smooth;
@@ -7,6 +8,9 @@ html {
 
 body {
   font-size: 16px;
+  font-family: "Jost",-apple-system,blinkmacsystemfont,"Segoe UI",roboto,"Helvetica Neue",arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
 }
 
 
@@ -23,6 +27,48 @@ body {
   100% {
       opacity: 1;
    }
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38.4px;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 33.6px;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28.8px;
+}
+
+h5 {
+  font-size: 14.95px;
+  line-height: 22.41px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+ul li {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 400;
 }
 
 img {
@@ -406,6 +452,8 @@ img {
 .widget-link p {
   text-align: center;
   color: #fff;
+  margin-bottom: 0;
+  padding: 18px;
 }
 
 .widget-link p a {
@@ -636,6 +684,20 @@ img {
   border-radius: 2px;
   line-height: 1.15;
   position: relative;
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  line-height: 1.3em;
+  color: #abb2bf;
+  background: #282c34;
+  border-radius: 5px;
+}
+
+.hljs-keyword, .hljs-operator {
+  color: #0b75b4;
 }
 
 // code {
