@@ -12,7 +12,7 @@
             <div class="footer-navigation">
               {{ range .Site.Menus.footer }}
               <ul>
-                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                <li><a href="{{ .URL }}"><span class="fancy-link">{{ .Name }}</span></a></li>
               </ul>
             {{ end }}
             </div>
