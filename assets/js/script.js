@@ -53,6 +53,11 @@
 // });
 
 $(document).ready(function () {
+
+  // get current URL path and assign 'active' class
+  var pathname = window.location.pathname;
+  $('.navbar-nav > .nav-item > a[href="'+pathname+'"]').addClass('active');
+
   // Add smooth scrolling to all links
   $("#TableOfContents a").on('click', function(event) {
     if (this.hash !== "") {
@@ -85,7 +90,7 @@ $(document).ready(function () {
 
 // clipboard
 var clipInit = false;
-$('code').each(function() {
+$('.content-wrapper code').each(function() {
     var code = $(this),
         text = code.text();
 
@@ -93,7 +98,7 @@ $('code').each(function() {
         if (!clipInit) {
             var text, clip = new ClipboardJS('.copy-to-clipboard', {
                 text: function(trigger) {
-                    text = $(trigger).prev('code').text();
+                    text = $(trigger).prev('.content-wrapper code').text();
                     return text.replace(/^\$\s/gm, '');
                 }
             });
@@ -147,6 +152,60 @@ var text, clip = new ClipboardJS('.anchor');
     $(element).parent().replaceWith('<div class="mermaid" align="center">' + content + '</div>');
   });
 
+  restoreTabSelections();
+
   
-}); // document ready
+  
+}); // document 
+
+function switchTab(tabGroup, tabId) {
+  allTabItems = jQuery("[data-tab-group='"+tabGroup+"']");
+  targetTabItems = jQuery("[data-tab-group='"+tabGroup+"'][data-tab-item='"+tabId+"']");
+
+  // if event is undefined then switchTab was called from restoreTabSelection
+  // so it's not a button event and we don't need to safe the selction or
+  // prevent page jump
+  var isButtonEvent = event != undefined;
+
+  if(isButtonEvent){
+    // save button position relative to viewport
+    var yposButton = event.target.getBoundingClientRect().top;
+  }
+
+  allTabItems.removeClass("active");
+  targetTabItems.addClass("active");
+
+  if(isButtonEvent){
+    // reset screen to the same position relative to clicked button to prevent page jump
+    var yposButtonDiff = event.target.getBoundingClientRect().top - yposButton;
+    window.scrollTo(window.scrollX, window.scrollY+yposButtonDiff);
+
+    // Store the selection to make it persistent
+    if(window.localStorage){
+        var selectionsJSON = window.localStorage.getItem("tabSelections");
+        if(selectionsJSON){
+          var tabSelections = JSON.parse(selectionsJSON);
+        }else{
+          var tabSelections = {};
+        }
+        tabSelections[tabGroup] = tabId;
+        window.localStorage.setItem("tabSelections", JSON.stringify(tabSelections));
+    }
+  }
+}
+
+function restoreTabSelections() {
+  if(window.localStorage){
+      var selectionsJSON = window.localStorage.getItem("tabSelections");
+      if(selectionsJSON){
+        var tabSelections = JSON.parse(selectionsJSON);
+      }else{
+        var tabSelections = {};
+      }
+      Object.keys(tabSelections).forEach(function(tabGroup) {
+        var tabItem = tabSelections[tabGroup];
+        switchTab(tabGroup, tabItem);
+      });
+  }
+}
 

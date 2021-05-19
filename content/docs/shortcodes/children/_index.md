@@ -1,6 +1,6 @@
 ---
 title : Children
-weight: 24
+weight: 25
 description : List the child pages of a page
 lastmod: 2017-03-03T14:15:59-06:00
 ---

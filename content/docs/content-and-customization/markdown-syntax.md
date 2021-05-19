@@ -9,8 +9,6 @@ images:
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 
-# Markdown Syntax Guid
-
 This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
 
 Markdown is a better way to write HTML, without all the complexities and ugliness that usually accompanies it.
@@ -107,14 +105,11 @@ Body copy written as normal, plain text will be wrapped with `<p></p>` tags in t
 
 So this body copy:
 
-
 Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.
-
 
 renders to this HTML:
 
 <p>Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.</p>
-
 
 ## Emphasis
 
@@ -161,7 +156,6 @@ and this HTML:
 ```html
 <em>rendered as italicized text</em>
 ```
-
 
 ### Strikethrough
 
@@ -222,12 +216,10 @@ Renders to:
 >
 > Mauris sit amet ligula egestas, feugiat metus tincidunt, luctus libero. Donec congue finibus tempor. Vestibulum aliquet sollicitudin erat, ut aliquet purus posuere luctus.
 
-
 ## Notices
 
 
 The old mechanism for notices overriding the block quote syntax (`>>>`) has been deprecated.
-
 
 ## Lists
 

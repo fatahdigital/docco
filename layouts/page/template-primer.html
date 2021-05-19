@@ -1,0 +1,18 @@
+{{ define "main" }}
+  {{- if .Site.IsServer -}} {{ "<!-- _default : template-primer.html -->" |safeHTML }} {{- end -}}
+  {{ partial "home-navigation.html" . }}
+  <section class="template-primer">
+    <div class="container">
+      <div class="row j-center">
+        <div class="col-lg-10">
+          <div class="template-primer-content">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{ partial "home-footer.html" . }} 
+  {{- if .Site.IsServer -}} {{ "<!-- End _default : template-primer.html -->" | safeHTML }} {{- end -}}
+{{ end }}

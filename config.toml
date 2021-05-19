@@ -132,8 +132,8 @@ facebook_url = ""
 
   [[menu.main]]
     identifire= ""
-    url = "/#pricing"
-    name = "Pricing"
+    url = "/template-primer/"
+    name = "(Hu)go Template Primer"
     weight = 3
   
   [[menu.main]]
@@ -163,8 +163,8 @@ facebook_url = ""
 
   [[menu.footer]]
     identifire= ""
-    url = "/#pricing"
-    name = "Pricing"
+    url = "/template-primer/"
+    name = "(Hu)go Template"
     weight = 3
   
   [[menu.footer]]

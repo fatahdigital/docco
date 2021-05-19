@@ -8,8 +8,6 @@ images:
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 
-## PAGES ORGANIZATION
-
 In **Hugo**, pages are the core of your site. Once it is configured, pages are definitely the added value to your documentation site.
 
 ## Folders
@@ -41,6 +39,10 @@ content
     ├── _index.md                       <-- /
     └── page-top.md                     <-- /page-top
 ```
+
+{{% notice note %}}
+`_index.md` is required in each folder, it’s your “folder home page”
+{{% /notice %}}
 
 ## Types
 

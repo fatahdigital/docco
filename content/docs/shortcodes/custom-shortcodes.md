@@ -11,7 +11,6 @@ lastmod: 2017-03-03T14:15:59-06:00
 
 ## Code highlight with clipboard
 
-
 `
 sample/custom-shortcodes.html
 `
@@ -72,7 +71,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 {{< button status="danger" url="#" >}}danger{{< /button >}}
 
-#### Button with Font Awesome
+### Button with Font Awesome
 
 {{< button icon="fa fa-download" url="#" >}}Download{{< /button >}}
 

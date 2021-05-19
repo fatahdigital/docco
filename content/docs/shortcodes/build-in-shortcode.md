@@ -8,7 +8,7 @@ images:
   - ""
 lastmod: 2017-03-03T14:15:59-06:00
 ---
-### figure
+## figure
 
 `figure` is an extension of the image syntax in markdown, which does not provide a shorthand for the more semantic [HTML5 `<figure>` element][figureelement].
 
@@ -50,7 +50,7 @@ attr
 attrlink
 : If the attribution text needs to be hyperlinked, URL of the destination.
 
-#### Example `figure` Input
+### Example figure Input
 
 
 
@@ -58,7 +58,7 @@ attrlink
 {{</* figure src="/media/spf13.jpg" title="Steve Francia" */>}}
 ```
 
-#### Example `figure` Output
+### Example figure Output
 
 ```
 <figure>

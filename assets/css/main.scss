@@ -1,5 +1,6 @@
 @import "__auto-complete.scss";
 @import "_atom-one-dark-reasonable.scss";
+@import "_fonts.scss";
 
 html {
   scroll-behavior: smooth;
@@ -7,6 +8,9 @@ html {
 
 body {
   font-size: 16px;
+  font-family: "Jost",-apple-system,blinkmacsystemfont,"Segoe UI",roboto,"Helvetica Neue",arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
 }
 
 
@@ -23,6 +27,48 @@ body {
   100% {
       opacity: 1;
    }
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38.4px;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 33.6px;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28.8px;
+}
+
+h5 {
+  font-size: 14.95px;
+  line-height: 22.41px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+ul li {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 400;
 }
 
 img {
@@ -45,6 +91,28 @@ img {
   padding: .5rem 1rem;
 }
 
+.fancy-link {
+  position: relative;
+}
+
+.fancy-link::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -2px;
+  width: 35px;
+  height: 2px;
+  background: #0b75b4;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms ease-in;
+}
+
+.fancy-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 .navigation img {
   width: 180px;
 }
@@ -58,7 +126,9 @@ img {
   color: #000;
 }
 
-.navigation .navbar-expand-lg .navbar-nav .nav-link:hover {
+
+
+.navigation .navbar-expand-lg .navbar-nav .nav-link:hover, .navigation .navbar-expand-lg .navbar-nav .nav-link.active {
   color: #0b75b4;
 }
 
@@ -165,12 +235,19 @@ img {
 
 /**** Footer *****/
 
+.footer-wrapper {
+  border: 2px solid #000;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 .footer-navigation {
   display: flex;
 }
 
 .footer-navigation ul {
   padding-left: 0;
+  margin-bottom: 0;
 }
 
 .footer-navigation ul li {
@@ -227,7 +304,7 @@ img {
 /***** home page ******/
 
 .about-section {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
 .about-summary-wrapper {
@@ -238,6 +315,68 @@ img {
   margin-bottom: 30px;
 }
 
+.about-section .button-wrapper {
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
+.section-title .title {
+  margin-bottom: 18px;
+}
+
+.feature-list {
+  margin-bottom: 40px;
+}
+
+.feature-wrapper {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.feature-list h3 {
+  position: relative;
+  padding-left: 10px;
+}
+
+.feature-list h3::before {
+  position: absolute;
+  color: #0b75b4;
+  font-family: "fontAwesome";
+  font-size: 18px;
+  line-height: 18px;
+  content: "\f00c";
+  font-weight: 400;
+  left: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.feature-section {
+  padding-top: 20px;
+}
+
+/*********** template primer *********/
+
+.template-primer {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.template-primer-content pre {
+  margin-bottom: 2rem;
+}
+
+.template-primer-content pre {
+  padding: 1rem;
+  margin: 2rem 0;
+  background: #282c34;
+  border: 0;
+  border-radius: 2px;
+  line-height: 1.15;
+  position: relative;
+}
 
 /******* Documetation Pages ********/
 
@@ -255,6 +394,10 @@ img {
 
 .doc-navigation .navbar-light .navbar-nav .nav-link {
   color: #fff;
+}
+
+.doc-navigation .navbar-light .navbar-nav .nav-link.active span.fancy-link {
+  color: #0b75b4;
 }
 
 .doc-navigation .button-link {
@@ -406,6 +549,8 @@ img {
 .widget-link p {
   text-align: center;
   color: #fff;
+  margin-bottom: 0;
+  padding: 18px;
 }
 
 .widget-link p a {
@@ -638,6 +783,20 @@ img {
   position: relative;
 }
 
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  line-height: 1.3em;
+  color: #abb2bf;
+  background: #282c34;
+  border-radius: 5px;
+}
+
+.hljs-keyword, .hljs-operator {
+  color: #0b75b4;
+}
+
 // code {
 //   border-radius: 2px;
 //   white-space: nowrap;
@@ -719,6 +878,19 @@ img {
 
 /******** Taxonomy **********/ 
 
+.content-wrapper h1 {
+  position: relative;
+}
+
+.content-wrapper h1::after {
+  content: '';
+  position: absolute;
+  border-bottom: 3px solid #0b75b4;
+  width: 10%;
+  top: 95%;
+  left: 5.5%;
+  transform: translate(-50%, -50%);
+}
 
 .content-wrapper .back-to-page-link a {
   color: #0b75b4;
@@ -921,7 +1093,144 @@ h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover
   --button-border-color: transparent;
 }
 
+/******* table *******/
 
+table {
+    border: 1px solid #eaeaea;
+    table-layout: auto;
+}
+
+th {
+
+  background: #f7f7f7;
+  padding: 0.5rem;
+}
+
+td {
+  padding: 0.5rem;
+  border: 1px solid #eaeaea;
+}
+
+/****** NOTICE **********/
+
+div.notices {
+  margin: 2rem 0;
+  position: relative;
+}
+
+div.notices p {
+  padding: 15px;
+  display: block;
+  font-size: 1rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  color: #666;
+}
+
+div.notices.note p {
+  border-top: 30px solid #6AB0DE;
+  background: #E7F2FA;
+}
+
+div.notices p:first-child:before {
+  position: absolute;
+  top: 2px;
+  color: #fff;
+  font-family: "FontAwesome";
+  font-weight: 900;
+  content: "\f06a";
+  left: 10px;
+}
+
+div.notices.note p:first-child:after {
+  content: 'Note';
+}
+
+div.notices p:first-child:after {
+  position: absolute;
+  top: 2px;
+  color: #FFF;
+  left: 2rem;
+}
+
+div.notices.info p {
+  border-top: 30px solid #F0B37E;
+  background: #FFF2DB;
+}
+
+div.notices.info p:first-child:after {
+  content: 'Info';
+}
+
+div.notices.tip p {
+  border-top: 30px solid rgba(92, 184, 92, 0.8);
+  background: #E6F9E6;
+}
+
+div.notices.tip p:first-child:after {
+  content: 'Tip';
+}
+
+div.notices.warning p {
+  border-top: 30px solid rgba(217, 83, 79, 0.8);
+  background: #FAE2E2;
+}
+
+div.notices.warning p:first-child:after {
+  content: 'Warning';
+}
+
+
+/******* tabs panel *********/
+
+.tab-panel {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.tab-nav-button {
+  border-width: 1px 1px 1px 1px !important;
+  border-color: #ccc !important;
+  border-radius: 4px 4px 0 0 !important;
+  background-color: #F6F6F6 !important;
+  float: left;
+  display: block;
+  position: relative;
+  margin-left: 4px;
+  bottom: -1px;
+}
+
+.tab-nav-button:first-child {
+  margin-left: 0px;
+}
+
+.tab-nav-button.active {
+  background-color: #fff !important;
+  border-bottom-color: #fff !important;
+}
+
+.tab-content {
+  display: block;
+  clear: both;
+  padding: 8px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc;
+
+}
+
+.tab-content .tab-item.active {
+  display: block;
+}
+
+.tab-content .tab-item {
+  display: none;
+}
+
+.tab-nav .btn:focus{
+  box-shadow: 0 0 0 0.2rem #98c7e3;
+
+}
 
 @media only screen and (max-width:991px) {
   .navigation .navbar-nav {

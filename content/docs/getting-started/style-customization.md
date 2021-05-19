@@ -9,8 +9,6 @@ images:
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 
-# STYLE CUSTOMIZATION
-
 **Hugo-theme-Docco** has been built to be as configurable as possible by defining multiple [partials](https://gohugo.io/templates/partials/)
 
 In `docco/layouts/partials/`, you will find all the partials defined for this theme. If you need to overwrite something, don’t change the code directly. Instead [follow this page](https://gohugo.io/themes/customizing/). You’d create a new partial in the `layouts/partials` folder of your local project. This partial will have the priority.

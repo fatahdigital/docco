@@ -8,7 +8,6 @@ images:
   - ""
 lastmod: 2017-03-03T14:15:59-06:00
 ---
-#  Code Highlighting
 
 Docco theme uses [highlight.js](https://highlightjs.org/) to provide code syntax highlighting.
 
