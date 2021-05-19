@@ -90,7 +90,7 @@ $(document).ready(function () {
 
 // clipboard
 var clipInit = false;
-$('code').each(function() {
+$('.content-wrapper code').each(function() {
     var code = $(this),
         text = code.text();
 
@@ -98,7 +98,7 @@ $('code').each(function() {
         if (!clipInit) {
             var text, clip = new ClipboardJS('.copy-to-clipboard', {
                 text: function(trigger) {
-                    text = $(trigger).prev('code').text();
+                    text = $(trigger).prev('.content-wrapper code').text();
                     return text.replace(/^\$\s/gm, '');
                 }
             });
