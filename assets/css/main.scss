@@ -235,12 +235,19 @@ img {
 
 /**** Footer *****/
 
+.footer-wrapper {
+  border: 2px solid #000;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 .footer-navigation {
   display: flex;
 }
 
 .footer-navigation ul {
   padding-left: 0;
+  margin-bottom: 0;
 }
 
 .footer-navigation ul li {
@@ -297,7 +304,7 @@ img {
 /***** home page ******/
 
 .about-section {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
 .about-summary-wrapper {
@@ -308,6 +315,68 @@ img {
   margin-bottom: 30px;
 }
 
+.about-section .button-wrapper {
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
+.section-title .title {
+  margin-bottom: 18px;
+}
+
+.feature-list {
+  margin-bottom: 40px;
+}
+
+.feature-wrapper {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.feature-list h3 {
+  position: relative;
+  padding-left: 10px;
+}
+
+.feature-list h3::before {
+  position: absolute;
+  color: #0b75b4;
+  font-family: "fontAwesome";
+  font-size: 18px;
+  line-height: 18px;
+  content: "\f00c";
+  font-weight: 400;
+  left: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.feature-section {
+  padding-top: 20px;
+}
+
+/*********** template primer *********/
+
+.template-primer {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.template-primer-content pre {
+  margin-bottom: 2rem;
+}
+
+.template-primer-content pre {
+  padding: 1rem;
+  margin: 2rem 0;
+  background: #282c34;
+  border: 0;
+  border-radius: 2px;
+  line-height: 1.15;
+  position: relative;
+}
 
 /******* Documetation Pages ********/
 
