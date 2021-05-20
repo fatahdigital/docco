@@ -63,6 +63,12 @@ facebook_url = ""
 #Hugo_version_link = "https://github.com/gohugoio/hugo/releases/tag/v0.72.0/"
 
 [params]
+ #header logo
+  logo = "/images/logo/docco.svg"
+  logo_alt = ""
+
+  docs_logo = "/images/logo/Docco-white-02.svg"
+
   editURL = "https://github.com/fatahdigital/docco/edit/master/exampleSite/content/" ### change url
   author = ""
   description = "Documentation for Docco Theme"
@@ -98,6 +104,10 @@ facebook_url = ""
   #  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
   navbar_logo = true
 
+  error_title = "Error"
+  error_text = "Woops. Looks like this page doesn't exist ¯\\_(ツ)_/¯."
+  error_button_text = "Go to HomePage"
+
   [outputs]
   home = [ "HTML", "RSS", "JSON"]
 
@@ -107,14 +117,14 @@ facebook_url = ""
     startLevel = 2
     endLevel = 3  
 
-
-  #header logo
-  logo = ""
-  logo_alt = ""
-
   #footer detail
   footer_description = ""
   
+
+[message-404]
+
+
+
 
 [menu]
   ## Menu bar
