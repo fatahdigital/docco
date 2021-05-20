@@ -28,7 +28,9 @@
 
     {{ block "header_css" . }}{{ end }}
 
-    <title>{{ block "title" . }}{{ .Title | default .Site.Title }}{{ end }}</title>
+    <title>{{ .Title }} {{ default "::" .Site.Params.titleSeparator }} {{ .Site.Title }}</title>
+
+    <!-- <title>{{ block "title" . }}{{ .Title | default .Site.Title }}{{ end }}</title> -->
 
     {{ partial "custom-head.html" . }}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
