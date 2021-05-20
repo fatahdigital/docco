@@ -49,8 +49,13 @@
             <div class="row">
               {{ range .Params.feature_list }}
                 <div class="col-lg-4">
-                  <div class="feature-list">
-                    <h3 class="h5">{{ . }}</h3>
+                  <div class="feature-list-wrapper">
+                    <div class="icons-wrapper">
+                      <img src="{{ .icon }}">
+                    </div>
+                    <div class="feature-list">
+                      <h3 class="h5">{{ .text }}</h3>
+                    </div>
                   </div>
                 </div>
               {{ end }}
