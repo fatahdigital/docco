@@ -1,5 +1,5 @@
 {{- if .Site.IsServer -}} {{ "<!-- Partial: logo.html -->" |safeHTML }} {{- end -}}
-
-  <h1>Partial/logo.html</h1>
-
+<a class="navbar-brand" href="{{ .Site.BaseURL }}">
+  {{ if .Site.Params.navbar_logo }}<img src="{{ .Site.Params.logo }}">{{ end }}
+</a>
 {{- if .Site.IsServer -}} {{ "<!-- End Partial: logo.html -->" | safeHTML }} {{- end -}}
