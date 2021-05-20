@@ -20,7 +20,7 @@
   {{define "breadcrumb"}}
     {{$parent := .page.Parent }}
     {{ if $parent }}
-      {{ $value := (printf "<a href='%s' class='highlight'>%s</a><span> > </span> %s" $parent.RelPermalink $parent.Title .value) }}
+      {{ $value := (printf "<a href='%s' class='highlight'>%s</a><i class='fa fa-angle-left' aria-hidden='true'></i> %s" $parent.RelPermalink $parent.Title .value) }}
       {{ template "breadcrumb" dict "page" $parent "value" $value }}
     {{else}}
       {{.value|safeHTML}}
