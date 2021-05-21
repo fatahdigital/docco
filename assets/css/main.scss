@@ -1266,6 +1266,67 @@ div.notices.warning p:first-child:after {
   margin-top: 30px;
 }
 
+/******** language button ********/
+
+.language-wrapper {
+  width: 12%;
+  margin-left: 40px;
+}
+
+.language-wrapper .lang-list {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+
+select.round {
+  background-image:
+    linear-gradient(45deg, transparent 50%, #000 50%),
+    linear-gradient(135deg, #000 50%, transparent 50%),
+    radial-gradient(#fff 70%, transparent 72%);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - .5em) .5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1.5em 1.5em;
+  background-repeat: no-repeat;
+  appearance: none;
+}
+
+select.round:focus {
+  background-image:
+    linear-gradient(45deg, #000 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, #000 50%),
+    radial-gradient(#fff 70%, transparent 72%);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    calc(100% - .5em) .5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1.5em 1.5em;
+  background-repeat: no-repeat;
+  outline: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width:991px) {
   .navigation .navbar-nav {
     text-align: center;
