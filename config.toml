@@ -75,6 +75,7 @@ facebook_url = ""
   summary = ""
   showVisitedLinks = true
   disableBreadcrumb = false
+  disableLandingPageButton = true
   disableNextPrev = false
   custom_css = ["/css/"] # Your Custom css file Name File Add in Static/css/File_name.css
   titleSeparator = "::"
@@ -120,11 +121,6 @@ facebook_url = ""
   #footer detail
   footer_description = ""
   
-
-[message-404]
-
-
-
 
 [menu]
   ## Menu bar
@@ -188,3 +184,68 @@ facebook_url = ""
     url = "/contact/"
     name = "Contact Us"
     weight = 5
+
+  [Languages.en]
+    languageName = "En"
+    languageCode = "en-us"
+    weight = 1
+    
+  [[Languages.en.menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+  [[Languages.en.menu.main]]
+  name = "about"
+  url = "/en/about/"
+  weight = 2
+
+  [[Languages.en.menu.main]]
+  url = "/en/template-primer/"
+  name = "(Hu)go Template Primer"
+  weight = 3
+
+  [[Languages.en.menu.main]]
+  name = "Docs"
+  url = "/en/docs/"
+  weight = 4
+  
+  [[Languages.en.menu.main]]
+  name = "contact"
+  url = "/en/contact/"
+  weight = 5
+  
+  [Languages.fr]
+  languageName = "Fr"
+  languageCode = "fr-fr"
+  weight = 2
+  [[Languages.fr.menu.main]]
+  name = "Accueil"
+  url = "/"
+  weight = 1
+
+  [[Languages.fr.menu.main]]
+  name = "about"
+  url = "/about/"
+  weight = 2
+
+  [[Languages.fr.menu.main]]
+  url = "/template-primer/"
+  name = "(Hu)go Template Primer"
+  weight = 3
+
+  [[Languages.fr.menu.main]]
+  name = "Docs"
+  url = "/docs/"
+  weight = 4
+
+  [[Languages.fr.menu.main]]
+  name = "contact"
+  url = "/contact/"
+  weight = 5
+
+ 
+
+
+
+
