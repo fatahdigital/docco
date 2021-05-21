@@ -19,6 +19,27 @@
             {{ end }}
            
           </ul>
+          {{- if site.IsMultiLingual }}
+          <select class="lang-list {{ if not .IsHome }}dark{{ end }}" id="select-language"
+            onchange="location = this.value;">
+            {{ $siteLanguages := site.Languages}}
+            {{ $pageLang := .Page.Lang}}
+            {{ range .Page.AllTranslations }}
+            {{ $translation := .}}
+            {{ range $siteLanguages }}
+            {{ if eq $translation.Lang .Lang }}
+            {{ $selected := false }}
+            {{ if eq $pageLang .Lang}}
+            <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}" selected>{{ .LanguageName }}
+            </option>
+            {{ else }}
+            <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}">{{ .LanguageName }}</option>
+            {{ end }}
+            {{ end }}
+            {{ end }}
+            {{ end }}
+          </select>
+          {{ end }}
           <div class="button-wrapper d-none d-lg-block d-md-none d-sm-block">
             <a class="button-link btn-large btn-transparent" href="/contact/">
               <span class="button-text">Contact Us</span>
