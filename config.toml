@@ -155,31 +155,61 @@ facebook_url = ""
     weight = 5
 
   ## Footer menu
-  [[menu.footer]]
+  [[Languages.en.menu.footer]]
     identifire= ""
     url = "/"
     name = "Home"
     weight = 1
 
-  [[menu.footer]]
+  [[Languages.en.menu.footer]]
     identifire= ""
     url = "/about/"
     name = "About"
     weight = 2
 
-  [[menu.footer]]
+  [[Languages.en.menu.footer]]
     identifire= ""
     url = "/template-primer/"
     name = "(Hu)go Template"
     weight = 3
   
-  [[menu.footer]]
+  [[Languages.en.menu.footer]]
     identifire= ""
     url = "/docs/"
     name = "Help"
     weight = 4
 
-    [[menu.footer]]
+  [[Languages.en.menu.footer]]
+    identifire= ""
+    url = "/contact/"
+    name = "Contact Us"
+    weight = 5
+
+  [[Languages.fr.menu.footer]]
+    identifire= ""
+    url = "/"
+    name = "Home"
+    weight = 1
+
+  [[Languages.fr.menu.footer]]
+    identifire= ""
+    url = "/about/"
+    name = "About"
+    weight = 2
+
+  [[Languages.fr.menu.footer]]
+    identifire= ""
+    url = "/template-primer/"
+    name = "(Hu)go Template"
+    weight = 3
+  
+  [[Languages.fr.menu.footer]]
+    identifire= ""
+    url = "/docs/"
+    name = "Help"
+    weight = 4
+
+  [[Languages.fr.menu.footer]]
     identifire= ""
     url = "/contact/"
     name = "Contact Us"
@@ -191,83 +221,84 @@ facebook_url = ""
     weight = 1
     
   [[Languages.en.menu.main]]
-  name = "Home"
-  url = "/"
-  weight = 1
+    name = "Home"
+    url = "/"
+    weight = 1
 
   [[Languages.en.menu.main]]
-  name = "about"
-  url = "/en/about/"
-  weight = 2
+    name = "about"
+    url = "/en/about/"
+    weight = 2
 
   [[Languages.en.menu.main]]
-  url = "/en/template-primer/"
-  name = "(Hu)go Template Primer"
-  weight = 3
+    url = "/en/template-primer/"
+    name = "(Hu)go Template Primer"
+    weight = 3
 
   [[Languages.en.menu.main]]
-  name = "Docs"
-  url = "/en/docs/"
-  weight = 4
+    name = "Docs"
+    url = "/en/docs/"
+    weight = 4
   
   [[Languages.en.menu.main]]
-  name = "contact"
-  url = "/en/contact/"
-  weight = 5
-  
+    name = "contact"
+    url = "/en/contact/"
+    weight = 5
+
   [Languages.fr]
-  languageName = "Fr"
-  languageCode = "fr-fr"
-  weight = 2
-  [[Languages.fr.menu.main]]
-  name = "Accueil"
-  url = "/"
-  weight = 1
+    languageName = "Fr"
+    languageCode = "fr-fr"
+    weight = 2
 
   [[Languages.fr.menu.main]]
-  name = "about"
-  url = "/fr/about/"
-  weight = 2
+    name = "Accueil"
+    url = "/"
+    weight = 1
 
   [[Languages.fr.menu.main]]
-  url = "/fr/template-primer/"
-  name = "(Hu)go Template Primer"
-  weight = 3
+    name = "about"
+    url = "/fr/about/"
+    weight = 2
 
   [[Languages.fr.menu.main]]
-  name = "Docs"
-  url = "/fr/docs/"
-  weight = 4
+    url = "/fr/template-primer/"
+    name = "(Hu)go Template Primer"
+    weight = 3
 
   [[Languages.fr.menu.main]]
-  name = "contact"
-  url = "/fr/contact/"
-  weight = 5
+    name = "Docs"
+    url = "/fr/docs/"
+    weight = 4
+
+  [[Languages.fr.menu.main]]
+    name = "contact"
+    url = "/fr/contact/"
+    weight = 5
 
  
 [[Languages.en.menu.shortcuts]]
-name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
-identifier = "ds"
-url = "https://github.com/fatahdigital/docco/"
-weight = 10
+  name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
+  identifier = "ds"
+  url = "https://github.com/fatahdigital/docco/"
+  weight = 10
 
 [[Languages.en.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-bookmark'></i> Hugo Documentation"
-identifier = "hugodoc"
-url = "https://gohugo.io/"
-weight = 20
+  name = "<i class='fas fa-fw fa-bookmark'></i> Hugo Documentation"
+  identifier = "hugodoc"
+  url = "https://gohugo.io/"
+  weight = 20
 
 
 [[Languages.fr.menu.shortcuts]]
-name = "<i class='fab fa-fw fa-github'></i> Repo GitHub"
-identifier = "ds"
-url = "https://github.com/fatahdigital/docco/"
-weight = 10
+  name = "<i class='fab fa-fw fa-github'></i> Repo GitHub"
+  identifier = "ds"
+  url = "https://github.com/fatahdigital/docco/"
+  weight = 10
 
 
 
 [[Languages.fr.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-bookmark'></i> Documentation Hugo"
-identifier = "hugodoc"
-url = "https://gohugo.io/"
-weight = 20
+  name = "<i class='fas fa-fw fa-bookmark'></i> Documentation Hugo"
+  identifier = "hugodoc"
+  url = "https://gohugo.io/"
+  weight = 20
