@@ -1322,6 +1322,38 @@ select.round:focus {
 
 
 
+/********** more links **********/
+
+.more-linkes-wrapper {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.more-linkes-wrapper h3 {
+  color: #fff;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.more-linkes-wrapper ul {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 20px;
+}
+
+.more-linkes-wrapper ul li a {
+  color: #0b75b4;
+  transition: all .3s ease;
+}
+
+.more-linkes-wrapper ul li a .fa {
+  color: #fff;
+}
+
+.more-linkes-wrapper ul li a:hover {
+  color: #fff;
+  text-decoration: none;
+}
 
 
 
