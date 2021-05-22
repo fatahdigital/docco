@@ -1435,7 +1435,7 @@ select.round:focus {
     outline: 5px auto #0b75b4;
   }
 
-  .navigation .navbar-collapse {
+  .navigation .navbar-collapse, .doc-navigation .navbar-collapse  {
     position: absolute;
     top: 86px;
     z-index: 1;
@@ -1443,17 +1443,33 @@ select.round:focus {
     width: 100%;
     left: 0;
     margin-bottom: 20px;
-    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: unset;
   }
 
-  .navigation-default.sticky.navigation .navbar-collapse {
-    top: 59px;
-    
+  .doc-navigation .navbar-collapse  {
+    background-color: #000;
+    top: 68px;
+  }
+
+  .navigation-default.sticky.navigation .navbar-collapse, .doc-navigation.navigation-default.sticky .navbar-collapse  {
+    top: 67px;
   }
 
   .navigation-default.sticky {
     margin-bottom: 0;
-    box-shadow: unset;
+  }
+
+  .doc-navigation .navbar-light .navbar-toggler {
+    color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  .navbar-toggler {
+    border: 1px solid #fff;
+    background-color: #fff;
+  }
+
+  .doc-navigation .navbar-nav {
+    text-align: center;
   }
   
 }
