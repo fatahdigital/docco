@@ -1368,6 +1368,7 @@ select.round:focus {
   }
   .navigation .navbar-expand-lg .navbar-nav .nav-link {
     padding: .5rem;
+    font-size: 24px;
   }
   .menu-section, .tableofcontent-wrapper, .search-wrapper {
     display: none!important;
@@ -1416,6 +1417,43 @@ select.round:focus {
   }
   .dropdown-toggle::after {
     display: none;
+  }
+
+  .language-wrapper {
+    width: 18%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 26px;
+  }
+
+  .navbar-collapse .navbar-nav {
+    margin-top: 20px;
+  }
+
+  button:focus {
+    outline: 5px auto #0b75b4;
+  }
+
+  .navigation .navbar-collapse {
+    position: absolute;
+    top: 86px;
+    z-index: 1;
+    background: #fff;
+    width: 100%;
+    left: 0;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .navigation-default.sticky.navigation .navbar-collapse {
+    top: 59px;
+    
+  }
+
+  .navigation-default.sticky {
+    margin-bottom: 0;
+    box-shadow: unset;
   }
   
 }
@@ -1476,5 +1514,17 @@ select.round:focus {
   .dropdown-section .dropdown .btn .fa {
     padding-left: 15px;
   }
+  
+  .language-wrapper {
+    width: 24%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 26px;
+  }
+
+  
+
+ 
  
 }
