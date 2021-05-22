@@ -1,5 +1,5 @@
 ---
-title: Code Highlighting
+title: "Code Highlighting"
 weight: 10
 
 summary:

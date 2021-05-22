@@ -1,5 +1,5 @@
 ---
-title: Navigation and Search
+title: "Navigation and Search"
 weight: 13
 
 summary:

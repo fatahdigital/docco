@@ -1,5 +1,5 @@
 ---
-title: Menu Extra Shortcuts
+title: "Menu Extra Shortcuts"
 weight: 11
 
 summary:

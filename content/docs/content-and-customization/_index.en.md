@@ -1,5 +1,5 @@
 ---
-title: Content and customization
+title: "Content and customization"
 weight: 6
 summary:
 description: 

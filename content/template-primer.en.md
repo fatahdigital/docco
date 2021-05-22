@@ -1,5 +1,5 @@
 ---
-title: "About Page"
+title: "(Hu)go Template Primer"
 layout: template-primer
 
 summary:

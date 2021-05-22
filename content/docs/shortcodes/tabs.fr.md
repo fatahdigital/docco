@@ -1,5 +1,5 @@
 ---
-title: Tabbed views
+title: "Tabbed views"
 description : "Synchronize selection of content in different tabbed views"
 ---
 

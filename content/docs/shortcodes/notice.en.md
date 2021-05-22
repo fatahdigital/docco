@@ -1,5 +1,5 @@
 ---
-title: Notice
+title: "Notice"
 weight: 24
 description : "Disclaimers to help you structure your page"
 ---

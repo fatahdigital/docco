@@ -1,5 +1,5 @@
 ---
-title: Site param
+title: "Site param"
 description : "Get value of site params variables in your page."
 ---
 
