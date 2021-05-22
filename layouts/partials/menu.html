@@ -20,15 +20,22 @@
         {{end}}
       {{end}} 
     </ul>
+    
+      
+    
     {{ $disableShortcutsTitle := .Site.Params.DisableShortcutsTitle}}
-    {{with .Site.Menus.shortcuts}}
-        <h3>{{ if not $disableShortcutsTitle}}{{ T "Shortcuts-Title"}}{{ end }}</h3>
-        <ul>
-          {{ range sort . "Weight"}}
-            <li> {{.Pre}}<a href="{{.URL | absLangURL }}">{{safeHTML .Name}}</a>{{.Post}}</li>
-          {{end}}
-        </ul>
-    {{end}}
+    <div class="more-linkes-wrapper">
+      {{with .Site.Menus.shortcuts}}
+          <h3>More Links</h3>
+          <div class="more-link">
+            <ul>
+              {{ range sort . "Weight"}}
+                <li> {{.Pre}}<a href="{{.URL | absLangURL }}">{{safeHTML .Name}}</a>{{.Post}}</li>
+              {{end}}
+            </ul>
+          </div>
+      {{end}}
+    </div>
     {{ partial "menu-footer.html" . }}
   </div>
     <!-- templates -->
