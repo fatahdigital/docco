@@ -3,13 +3,12 @@
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
         <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
         <span>
-        <!-- {{$expandMessage := T "Expand-title"}}
+        {{$expandMessage :=  "Expand Me..."}}
     	{{ if .IsNamedParams }}
     	{{.Get "default" | default $expandMessage}}
     	{{else}}
     	{{.Get 0 | default $expandMessage}}
-        {{end}} -->
-        Expan Me
+        {{end}}
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
