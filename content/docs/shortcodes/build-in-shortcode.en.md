@@ -2,12 +2,15 @@
 title: "Build in Shortcode"
 weight: 20
 
-summary:
-description: 
+summary: "Hugo ships with a set of predefined shortcodes that represent very common usage."
+description: "Hugo ships with a set of predefined shortcodes that represent very common usage."
 images: 
   - ""
 lastmod: 2017-03-03T14:15:59-06:00
 ---
+
+Hugo ships with a set of predefined shortcodes that represent very common usage. These shortcodes are provided for author convenience and to keep your markdown content clean.
+
 ## figure
 
 `figure` is an extension of the image syntax in markdown, which does not provide a shorthand for the more semantic [HTML5 `<figure>` element][figureelement].

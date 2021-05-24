@@ -1,7 +1,8 @@
 ---
-title: Button
+title: "Button"
 weight: 22
 description : "Nice buttons on your page."
+summary: "Nice buttons on your page."
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 

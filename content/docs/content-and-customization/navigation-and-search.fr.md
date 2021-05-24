@@ -1,9 +1,9 @@
 ---
-title: Navigation and Search
+title: "Navigation and Search"
 weight: 13
 
-summary:
-description: 
+summary: "Customize site navigation and search for your Docco site."
+description: "Customize site navigation and search for your Docco site."
 images: 
   - ""
 lastmod: 2017-03-03T14:15:59-06:00

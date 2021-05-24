@@ -1,6 +1,7 @@
 ---
-title:  "page 4"
-description:  "This is a demo child page"
+title: "page 4"
+description: "This is a demo child page"
+summary: "This is a demo child page"
 hidden: true
 ---
 

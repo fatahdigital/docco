@@ -2,8 +2,8 @@
 title: "Configration"
 weight: 4
 
-summary:
-description: 
+summary: "On top of Hugo global configuration, Docco lets you define the following parameters in your config.toml (here, values are default)."
+description: "On top of Hugo global configuration, Docco lets you define the following parameters in your config.toml (here, values are default)."
 images: 
   - ""
 lastmod: 2017-03-03T14:15:59-06:00

@@ -1,5 +1,7 @@
 ---
-title: Archetypes
+title: "Archetypes"
+description: "Using the command: hugo new [relative new content path], you can start a content file with the date and title automatically set. While this is a welcome feature, active writers need more: archetypes."
+summary: "Using the command: hugo new [relative new content path], you can start a content file with the date and title automatically set. While this is a welcome feature, active writers need more: archetypes."
 weight: 8
 lastmod: 2017-03-03T14:15:59-06:00
 ---

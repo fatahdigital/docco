@@ -1,10 +1,11 @@
 ---
-title: Notice
+title: "Notice"
 weight: 24
 description : "Disclaimers to help you structure your page"
+summary: "Disclaimers to help you structure your page"
 ---
 
-The notice shortcode shows  types of d4isclaimers to help you structure your page.
+The notice shortcode shows  types of disclaimers to help you structure your page.
 
 ### Note
 
