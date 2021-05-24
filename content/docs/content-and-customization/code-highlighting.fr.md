@@ -2,8 +2,8 @@
 title: "Code Highlighting"
 weight: 10
 
-summary:
-description: 
+summary: "Wrap the code block with three backticks and the name of the language. Highlight will try to auto detect the language if one is not provided."
+description: "Wrap the code block with three backticks and the name of the language. Highlight will try to auto detect the language if one is not provided."
 images: 
   - ""
 lastmod: 2017-03-03T14:15:59-06:00

@@ -2,12 +2,29 @@
 title: "Custom Shortcodes"
 weight: 21
 
-summary:
-description: 
+summary: "Hugo provides the ability to easily create custom shortcodes to meet your website’s needs."
+description: "Hugo provides the ability to easily create custom shortcodes to meet your website’s needs."
 images: 
   - ""
 lastmod: 2017-03-03T14:15:59-06:00
 ---
+
+Hugo provides the ability to easily create custom shortcodes to meet your website’s needs.
+
+## File Location
+
+To create a shortcode, place an HTML template in the layouts/shortcodes directory of your source organization. 
+
+Consider the file name carefully since the shortcode name will mirror that of the file but without the .html extension.
+
+For example, `layouts/shortcodes/myshortcode.html` will be called with either `{{</* myshortcode /*/>}}` or `{{%/* myshortcode /*/%}}` depending on the type of parameters you choose.
+
+## Shortcode Template Lookup Order
+
+Shortcode templates have a simple lookup order:
+
+  1. `/layouts/shortcodes/<SHORTCODE>.html`
+  2. `/themes/<THEME>/layouts/shortcodes/<SHORTCODE>.html`
 
 ## Code highlight with clipboard
 

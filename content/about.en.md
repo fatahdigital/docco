@@ -1,8 +1,8 @@
 ---
 title: "About Page"
 
-summary:
-description: 
+summary: "Welcome to Docco Documetation About"
+description: "Welcome to Docco Documetation About"
 images: 
   - ""
 main_title: "Welcome to Docco Documetation About"

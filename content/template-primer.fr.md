@@ -2,8 +2,8 @@
 title: "(Hu)go Template Primer"
 layout: template-primer
 
-summary:
-description: 
+summary: "Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic."
+description: "Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic."
 images: 
   - ""
 ---

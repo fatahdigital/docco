@@ -1,8 +1,8 @@
 ---
 title: "Docco Documetaion "
 
-summary:
-description: 
+summary: "Docco is a theme for the Hugo static site generator that is explicitly intended for specialized documentation sets.Docco helping you build modern documentation websites that are secure, fast, and SEO-ready — by default."
+description: "Docco is a theme for the Hugo static site generator that is explicitly intended for specialized documentation sets.Docco helping you build modern documentation websites that are secure, fast, and SEO-ready — by default."
 images: 
   - ""
 

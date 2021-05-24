@@ -2,8 +2,8 @@
 title: "Getting Started"
 weight: 1
 
-summary:
-description: 
+summary: "Docco is a Hugo theme helping you build modern documentation websites that are secure, fast, and SEO-ready — by default."
+description: "Docco is a Hugo theme helping you build modern documentation websites that are secure, fast, and SEO-ready — by default."
 images: 
   - ""
 pre: "<b>1. </b>"

@@ -2,8 +2,8 @@
 title: "Build in Shortcode"
 weight: 20
 
-summary:
-description: 
+summary: "Hugo ships with a set of predefined shortcodes that represent very common usage."
+description: "Hugo ships with a set of predefined shortcodes that represent very common usage."
 images: 
   - ""
 lastmod: 2017-03-03T14:15:59-06:00

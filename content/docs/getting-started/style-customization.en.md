@@ -2,8 +2,8 @@
 title: "Style customization"
 weight: 5
 
-summary:
-description: 
+summary: "Hugo-theme-Docco has been built to be as configurable as possible by defining multiple partials"
+description: "Hugo-theme-Docco has been built to be as configurable as possible by defining multiple partials"
 images: 
   - ""
 lastmod: 2017-03-03T14:15:59-06:00

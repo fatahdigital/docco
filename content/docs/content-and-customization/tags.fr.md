@@ -1,5 +1,7 @@
 ---
 title: "Tags"
+summary: "Docco theme support one default taxonomy of gohugo: the tag feature."
+description: "Docco theme support one default taxonomy of gohugo: the tag feature."
 weight: 18
 tags: ["documentation", "tutorial"]
 lastmod: 2017-03-03T14:15:59-06:00
@@ -12,12 +14,10 @@ lastmod: 2017-03-03T14:15:59-06:00
 Just add tags to any page: 
 
 ```markdown
----
 date: 2018-11-29T08:41:44+01:00
 title: Theme tutorial
 weight: 15
 tags: ["tutorial", "theme"] 
----
 ```
 
 ## Behavior

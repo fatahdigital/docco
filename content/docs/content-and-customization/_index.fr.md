@@ -1,8 +1,8 @@
 ---
 title: "Content and customization"
 weight: 6
-summary:
-description: 
+summary: "Find out how to create and organize your content quickly and intuitively."
+description: "Find out how to create and organize your content quickly and intuitively."
 images: 
   - ""
 pre: "<b>2. </b>"

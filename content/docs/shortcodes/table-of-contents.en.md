@@ -4,17 +4,43 @@ date: 2017-10-17T15:26:15Z
 draft: false
 weight: 23
 description: "calling custom Shortcodes into your content files."
+summary: "calling custom Shortcodes into your content files."
 TableOfContents: true
 ---
 
+Hugo can automatically parse Markdown content and create a Table of Contents you can use in your templates.
+
+The built-in .TableOfContents variables outputs a <nav id="TableOfContents"> element with a child <ul>, whose child <li> elements begin with appropriate HTML headings. See the available settings to configure what heading levels you want to include in TOC.
+
 {{% panel status="primary" title="Note" icon="far fa-lightbulb" %}}
-The `TableOfContents` field with `true` in your content’s front matter will render a table of contents.
+The `TableOfContents` field with `true` in your content’s frr willont matte render a table of contents.
 
 ```
 TableOfContents: true
 ```
 
-Setting the built-in .TableOfContents variables can configure what heading levels you want to include in TOC. See [the built-in .TableOfContents variables settings](https://gohugo.io/getting-started/configuration-markup/#table-of-contents)
+## Template Example: Basic TOC 
+
+The following is an example of a very basic single page template:
+
+`layout/_default/single.html" download="single.html" `
+```
+{{ define "main" }}
+<main>
+    <article>
+    <header>
+        <h1>{{ .Title }}</h1>
+    </header>
+        {{ .Content }}
+    </article>
+    <aside>
+        {{ .TableOfContents }}
+    </aside>
+</main>
+{{ end }}
+```
+
+Setting the built-in .TableOfContents variables can configure what heading levels you want to include in TOC. See [the built-in .TableOfContents variables settings](https://gohugo.io/getting-started/configuration-markup/#table-of-contents).
 
 {{% /panel %}}
 
