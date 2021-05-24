@@ -26,7 +26,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 this shortcode takes exactly one optional parameter to define the text that appears next to the expand/collapse icon. (default is "Expand me...")
 
-{{%/*expand "Is this learn theme rocks ?" */%}}Yes !.{{%/* /expand*/%}}
+	{{%/*expand "Is this learn theme rocks ?" */%}}Yes !.{{%/* /expand*/%}}
 
 {{%expand "Is this learn theme rocks ?" %}}Yes !{{% /expand%}}
 
