@@ -42,6 +42,7 @@ h2 {
   font-size: 32px;
   font-weight: 700;
   line-height: 38.4px;
+  margin-bottom: 16px;
 }
 
 h3 {
@@ -75,7 +76,30 @@ ul li {
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
+}
+
+dd {
+  margin-bottom: 1rem;
+}
+
+
+
+.content-wrapper img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.content-wrapper figure a img {
+  margin-left: unset;
+  margin-right: unset;
+}
+
+.content-wrapper iframe {
+  padding-bottom: 20px;
 }
 
 .t-center {
@@ -88,6 +112,15 @@ img {
 
 .d-grid {
   display: grid;
+}
+
+blockquote {
+  border-left: 10px solid #F0F2F4;
+}
+
+blockquote {
+  margin: 1.7rem 0;
+  padding-left: 0.85rem;
 }
 
 .logo {
@@ -740,13 +773,14 @@ img {
   border: 2px solid #000;
 }
 
-.next-prev-wrapper .linkIcon {
+.content-wrapper .next-prev-wrapper .linkIcon {
   width: 20%;
   font-size: 20px;
 } 
 
-.next-prev-wrapper .linkIcon  img {
-  width: 30px;
+.content-wrapper .next-prev-wrapper .linkIcon  img {
+  width: 30px!important;
+  margin: unset;
 }
 
 .linkIcon-right {
@@ -973,7 +1007,7 @@ pre .copy-to-clipboard {
   visibility: hidden;
   margin-left: 0.5em;
   position: absolute;
-  margin-top: 10px;
+  // margin-top: 10px;
 }
 
 h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover .anchor {
@@ -984,6 +1018,7 @@ h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover
 
 .panel {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .panel {
@@ -1058,7 +1093,18 @@ h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover
   background: var(--button-background-color, unset);
   border: 2px solid;
   border-color: var(--button-border-color, transparent);
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-right: 10px;
 }
+
+.btn-default {
+  color: #333 !important;
+  background-color: #fff !important;
+  border-color: #ccc !important;
+}
+
+
 .content-wrapper .button:hover {
   color: var(--button-font-hover-color, #000);
   text-decoration: none;
@@ -1110,6 +1156,7 @@ h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover
 table {
     border: 1px solid #eaeaea;
     table-layout: auto;
+    margin-bottom: 20px;
 }
 
 th {
@@ -1373,7 +1420,7 @@ select.round:focus {
   position: absolute;
   font-family: "Font Awesome 5 Free";
   font-size: 8px;
-  top: 50%;
+  top: 56%;
   left: 0;
   transform: translate(-50%, -50%);
 }
@@ -1386,6 +1433,9 @@ select.round:focus {
   margin-top: 16px;
 }
 
+.expand {
+  margin-bottom: 20px;
+}
 
 
 @media only screen and (max-width:991px) {
