@@ -363,7 +363,7 @@ blockquote {
 }
 
 .feature-list-wrapper {
-  display: flex;
+  position: relative;
 }
 
 .feature-list {
@@ -378,6 +378,16 @@ blockquote {
 .feature-list h3 {
   position: relative;
   padding-left: 10px;
+}
+
+.icons-wrapper {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.feature-list-wrapper .feature-list {
+  padding-left: 20px;
 }
 
 // .feature-list h3::before {
