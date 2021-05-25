@@ -1437,6 +1437,28 @@ select.round:focus {
   margin-bottom: 20px;
 }
 
+/******** contact section *********/
+
+
+.contact-wrapper {
+  padding-top: 45px;
+  padding-bottom: 45px;
+  position: relative;
+}
+
+.bg-shadow {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1)!important;
+  transition: .3s ease;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.contact-wrapper .button-wrapper {
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
 
 @media only screen and (max-width:991px) {
   .navigation .navbar-nav {
