@@ -43,4 +43,6 @@ feature_list:
     icon: "/images/feature-icons/code.svg"
   - text: "Analytics with Google Analytics, Google Tag Manager"
     icon: "/images/feature-icons/analytics.svg"
+
+contact_btn_url: "/fr/contact/"
 ---
