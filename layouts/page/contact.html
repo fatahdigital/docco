@@ -1,0 +1,42 @@
+{{ define "main" }}
+  {{- if .Site.IsServer -}} {{ "<!-- _default : template-primer.html -->" |safeHTML }} {{- end -}}
+  {{ partial "home-navigation.html" . }}
+  <div class="contact-section-wrapper">
+    <div class="container">
+      <div class="row j-center">
+        <div class="col-lg-8">
+          <div class="section-title">
+            <h1>{{ .Params.form_title }}</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row j-center">
+        <div class="col-lg-8">
+          <div class="form-wrapper">
+            <form method="POST" name="contact">
+              <div class="form-group">
+                <input type="text" class="form-control bg-shadow" id="name" name="name" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control bg-shadow" id="mail" name="mail" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control bg-shadow" id="subject" name="subject" placeholder="Subject">
+              </div>
+              <div class="form-group">
+                <textarea class="form-control bg-shadow" id="message" name="message" placeholder="Message"></textarea>
+              </div>
+              <div class="button-wrapper d-none d-lg-block d-md-none d-sm-block"><div class="button-link btn-large btn-transparent">
+                <span class="button-text">Submit</span>
+                <span class="button-icon"></span>
+              </div></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  {{ partial "home-footer.html" . }} 
+  {{- if .Site.IsServer -}} {{ "<!-- End _default : template-primer.html -->" | safeHTML }} {{- end -}}
+{{ end }}

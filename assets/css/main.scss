@@ -272,7 +272,7 @@ blockquote {
 /**** Footer *****/
 
 .footer-wrapper {
-  border: 2px solid #000;
+  border-top: 2px solid #000;
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -1446,11 +1446,15 @@ select.round:focus {
   position: relative;
 }
 
+.contact-wrapper .section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
 .bg-shadow {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1)!important;
   transition: .3s ease;
-  padding-top: 80px;
-  padding-bottom: 80px;
+
 }
 
 .contact-wrapper .button-wrapper {
@@ -1458,6 +1462,33 @@ select.round:focus {
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
+}
+
+.contact-section-wrapper {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.contact-section-wrapper .section-title h1 {
+  margin-bottom: 40px;
+}
+
+.form-control {
+  border: 0px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.form-wrapper .button-wrapper {
+  max-width: 150px;
+  margin-top: 30px;
+  margin-left: 5px;
+}
+
+.form-wrapper .button-link.btn-transparent span.button-icon {
+  margin-left: 32px;
 }
 
 @media only screen and (max-width:991px) {
