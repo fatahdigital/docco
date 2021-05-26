@@ -176,7 +176,7 @@ facebook_url = ""
   [[Languages.en.menu.footer]]
     identifire= ""
     url = "/docs/"
-    name = "Help"
+    name = "Docs"
     weight = 4
 
   [[Languages.en.menu.footer]]
