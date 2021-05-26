@@ -54,6 +54,16 @@
 
 $(document).ready(function () {
 
+  /**** External Link target Blank  ********/
+
+  function externalLinks() {
+    for (var c = document.getElementsByTagName("a"), a = 0; a < c.length; a++) {
+      var b = c[a];
+      b.getAttribute("href") && b.hostname !== location.hostname && (b.target = "_blank")
+    }
+  };
+  externalLinks();
+
   // get current URL path and assign 'active' class
   var pathname = window.location.pathname;
   $('.navbar-nav > .nav-item > a[href="'+pathname+'"]').addClass('active');
