@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+  {{- if .Site.IsServer -}} {{ "<!-- Layout: _default/baseof.html -->" | safeHTML }} {{- end -}}
+  <html lang="{{ .Page.Language | default "en" }}">
+    {{ partial "head.html" . }}
+  <body>
+  
+    {{ block "main" . }} {{ .Content }} {{ end }}
+
+    {{ block "custom-comments" . }}{{ partial "custom-comments.html" . }} {{ end }}
+    
+    {{ block "custom-footer" . }}{{ partial "custom-footer.html" . }} {{ end }}
+    {{ block "scripts" . }} {{ partial "script.html" }} {{ end }}
+  </body>
+  </html>
+
+
+
+{{- if .Site.IsServer -}} {{ "<!-- End Layout : _default/baseof.html -->" | safeHTML }} {{- end -}}

@@ -1,0 +1,51 @@
+{{- if .Site.IsServer -}} {{ "<!-- Partial: home-navigation.html -->" |safeHTML }} {{- end -}}
+  <section class="navigation-wrapper navigation-default navigation">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light ">
+       {{ partial "logo.html" . }}
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ">
+            {{ range .Site.Menus.main }}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ .URL }}"><span class="fancy-link">{{ .Name }}</span></a>
+            </li>
+            {{ end }}
+          </ul>
+          <div class="language-wrapper">
+            {{- if site.IsMultiLingual }}
+              <select class="lang-list round {{ if not .IsHome }}dark{{ end }}" id="select-language" onchange="location = this.value;">
+                {{ $siteLanguages := site.Languages}}
+                {{ $pageLang := .Page.Lang}}
+                {{ range .Page.AllTranslations }}
+                  {{ $translation := .}}
+                  {{ range $siteLanguages }}
+                    {{ if eq $translation.Lang .Lang }}
+                      {{ $selected := false }}
+                        {{ if eq $pageLang .Lang}}
+                          <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}" selected>{{ .LanguageName }}
+                          </option>
+                        {{ else }}
+                          <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}">{{ .LanguageName }}</option>
+                        {{ end }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+              </select>
+            {{ end }}
+          </div>
+          <div class="button-wrapper d-none d-lg-block d-md-none d-sm-block">
+            <a class="button-link btn-large btn-transparent" href="/contact/">
+              <span class="button-text">Contact Us</span>
+              <span class="button-icon"></span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+ 
+{{- if .Site.IsServer -}} {{ "<!-- End Partial: home-navigation.html -->" | safeHTML }} {{- end -}}

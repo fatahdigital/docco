@@ -1,0 +1,5 @@
+{{ define "main" }}
+  {{- if .Site.IsServer -}} {{ "<!-- docs: list.html -->" |safeHTML }} {{- end -}}
+    {{ partial "docs-code.html" . }}
+  {{- if .Site.IsServer -}} {{ "<!-- End docs: list.html -->" | safeHTML }} {{- end -}}
+{{ end }}

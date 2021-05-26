@@ -1,0 +1,20 @@
+{{- if .Site.IsServer -}} {{ "<!-- Partial: tags.html -->" |safeHTML }} {{- end -}}
+{{ $taxo := "tags" }} <!-- Use the plural form here -->
+{{ if .Params.tags }}
+<div id="{{ $taxo }}" class="tags-wrapper">
+  <div class="tags-icons"><i class="fa fa-tags" aria-hidden="true"></i><span class="title">Tags:</span></div>
+  <div class="tags-link-wrapper">
+    {{ range .Param $taxo }}
+    {{ $name := . }}        
+    {{ with $.Site.GetPage (printf "/%s/%s" $taxo ($name | urlize)) -}}
+      <a href="{{ .RelPermalink }}" class="tags-link">#{{ $name }}</a>
+    {{ end }}
+  {{ end }}
+  </div>
+ 
+
+  
+  
+</div>
+{{ end }}
+{{- if .Site.IsServer -}} {{ "<!-- End Partial: tags.html -->" | safeHTML }} {{- end -}}

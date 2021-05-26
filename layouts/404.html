@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" . }}
+<body>
+  <section id="body" style="margin-left:0px;">
+    <div id="chapter" class="container">
+      <div id="body-inner" class="row j-center">
+        <div class="col-lg-10">
+          <div class="error-wrapper">
+
+            <h1>{{ .Site.Params.error_title }}</h1>
+            <p>{{ .Site.Params.error_text }}</p>
+            <div class="button-wrapper d-none d-lg-block d-md-none d-sm-block">
+              <a class="button-link btn-large btn-transparent" href='{{ "" | relLangURL }}'>
+                <span class="button-text">{{ .Site.Params.error_button_text }}</span>
+                <span class="button-icon"></span>
+              </a>
+            </div>
+            
+            <p><img src="/images/404-image.jpg"  style="width:60%" alt="Page not found!"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</body>
+</html>

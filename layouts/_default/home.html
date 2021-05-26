@@ -1,0 +1,90 @@
+{{ define "main" }}
+  {{- if .Site.IsServer -}} {{ "<!-- _default : home.html -->" |safeHTML }} {{- end -}}
+  {{ partial "home-navigation.html" . }}
+  <section class="about-section">
+    <div class="container">
+      <div class="row j-center">
+        <div class="col-lg-8 col-md-12 col-12">
+          <div class="section-title t-center">
+            <h1 class="title">{{ .Params.main_title }}</h1>
+          </div>
+          <p class="text-center">{{ .Params.header_text }}</p>
+          <div class="button-wrapper">
+            <a class="button-link btn-large btn-transparent" href="{{ .Params.header_button_url }}">
+              <span class="button-text">{{ .Params.header_button_text }}</span>
+              <span class="button-icon"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- <section class="about-summary-wrapper">
+    <div class="container">
+      <div class="row j-center">
+        <div class="col-lg-8 col-md-8 col-8">
+          <div class="section-title t-center">
+            <h2 class="text-title">
+              {{ .Params.about_title }}
+            </h2>
+          </div>
+          <div class="sbout-summary">
+            {{ .Content }}
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="feature-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-title t-center">
+            <h2 class="title">{{ .Params.feature_title }}</h2>
+            <!-- <p>Docco Feature</p> -->
+          </div>
+          <div class="feature-section">
+            <div class="row">
+              {{ range .Params.feature_list }}
+                <div class="col-lg-4 col-md-6 col-12">
+                  <div class="feature-list-wrapper">
+                    <div class="icons-wrapper">
+                      <img src="{{ .icon }}">
+                    </div>
+                    <div class="feature-list">
+                      <h3 class="h5">{{ .text }}</h3>
+                    </div>
+                  </div>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-wrapper">
+    <div class="container">
+      <div class="row j-center">
+        <div class="col-lg-10">
+          <div class="section bg-shadow text-center">
+            <h2 class="mb-4">Didn’t find an answer to your question?</h2>
+            <p class="mb-4">Musce libero nunc, dignissim quis turpis quis, semper vehicula dolor. Suspendisse tincidunt consequat quam.</p>
+            <div class="button-wrapper d-none d-lg-block d-md-none d-sm-block">
+              <a class="button-link btn-large btn-transparent" href="{{ .Params.contact_btn_url }}">
+                <span class="button-text">Contact Us</span>
+                <span class="button-icon"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+  {{ block "home-footer" . }} {{ partial "home-footer.html" . }} {{ end }}
+  {{- if .Site.IsServer -}} {{ "<!-- End _default : home.html -->" | safeHTML }} {{- end -}}
+{{ end }}

@@ -1,0 +1,90 @@
+{{ define "main" }}
+<header class="doc-navigation navigation-default" id="myNavbar">
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <a class="navbar-brand" href="{{ .Site.BaseURL }}">
+        <img src="/images/logo/Docco-white-02.svg">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ">
+          {{ range .Site.Menus.main }}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ .URL }}">{{ .Name }} </a>
+          </li>
+          {{ end }}
+         
+        </ul>
+        <div class="button-wrapper d-none d-lg-block d-md-none d-sm-block">
+          <a class="button-link btn-large btn-transparent" href="/contact/">
+            <span class="button-text">Contact Us</span>
+            <span class="button-icon"></span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  
+</header>
+<div class="dropdown-wrapper" id="mydropdownwrapper">
+  <div class="container">
+    <div class="row  d-lg-none">
+
+      <div class="col dropdown-section  my-3">
+        <div class="dropdown">
+
+          <button class="btn btn-wrapper dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Topic Title <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+          
+          <div class="dropdown-menu pl-3 pr-3" aria-labelledby="dropdownMenuButton">
+            {{ partial  "menu.html" . }}
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col dropdown-section my-3" >
+        <div class="dropdown">
+
+          <button class="btn btn-wrapper dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="float: right;">In this Page <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+
+          <div class="dropdown-menu toc pl-3 pr-3" aria-labelledby="dropdownMenuButton">
+            <h3 class="page-menu-heading">In This Page</h3>
+            {{ .TableOfContents }}
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<section class="documetation-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3 p-0">
+        <div class="menu-section" id="sidebar">
+          {{ partial "menu.html" . }}
+        </div>
+      </div>
+      <div class="col-lg-7 p-0">
+        <div class="content-wrapper">
+          {{ partial "top-bar.html" . }}
+          <h1>Tags: #{{ .Title }}</h1>
+          <div class="back-to-page-link">
+            <a href="/docs/content-and-customization/tags/"><span>Tags</span></a>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<div class="doc-footer">
+  {{ block "home-footer" . }} {{ partial "home-footer.html" . }} {{ end }}
+</div>
+{{ end }}
