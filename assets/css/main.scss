@@ -1496,6 +1496,21 @@ select.round:focus {
   margin-left: 32px;
 }
 
+.admonition-content {
+  display: block;
+  margin: 0;
+  padding: 1rem 1rem;
+  overflow-x: auto;
+  background-color: #F6F6F6;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.admonition-content p {
+  margin-bottom: 0px;
+}
+
+
 @media only screen and (max-width:991px) {
   .navigation .navbar-nav {
     text-align: center;
