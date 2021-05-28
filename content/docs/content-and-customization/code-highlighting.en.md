@@ -11,6 +11,65 @@ lastmod: 2017-03-03T14:15:59-06:00
 
 Docco theme uses [highlight.js](https://highlightjs.org/) to provide code syntax highlighting.
 
+Hugo comes with really fast syntax highlighting from Chroma.
+
+## Generate Syntax Highlighter CSS
+
+If you run with `pygmentsUseClasses=true` in your site config, you need a style sheet.
+
+You can generate one with Hugo:
+
+```bash
+hugo gen chromastyles --style=monokai > syntax.css
+```
+
+Run `hugo gen chromastyles -h` for more options. See https://xyproto.github.io/splash/docs/ for a gallery of available styles.
+
+## Highlight Shortcode
+
+Highlighting is carried out via the built-in [`highlight` shortcode](https://gohugo.io/content-management/shortcodes/#highlight). It takes exactly one required parameter for the programming language to be highlighted and requires a closing shortcode. Note that `highlight` is *not* used for client-side javascript highlighting.
+
+Options:
+
+* `linenos`: configure line numbers. Valid values are `true`, `false`, `table`, or `inline`. `false` will turn off line numbers if it's configured to be on in site config.  `table` will give copy-and-paste friendly code blocks.
+* `hl_lines`: lists a set of line numbers or line number ranges to be highlighted.
+* `linenostart=199`: starts the line number count from 199.
+* `anchorlinenos`: Configure anchors on line numbers. Valid values are `true` or `false`;
+* `lineanchors`: Configure a prefix for the anchors on line numbers. Will be suffixed with `-`, so linking to the line number 1 with the option `lineanchors=prefix` adds the anchor `prefix-1` to the page. 
+
+### Example: Highlight Shortcode
+
+```
+{{</* highlight go "linenos=table,hl_lines=8 15-17,linenostart=199" */>}}
+// ... code
+{{</* / highlight */>}}
+```
+
+Gives this:
+
+{{< highlight go "linenos=table,hl_lines=8 15-17,linenostart=199" >}}
+  // GetTitleFunc returns a func that can be used to transform a string to
+  // title case.
+  //
+  // The supported styles are
+  //
+  // - "Go" (strings.Title)
+  // - "AP" (see https://www.apstylebook.com/)
+  // - "Chicago" (see https://www.chicagomanualofstyle.org/home.html)
+  //
+  // If an unknown or empty style is provided, AP style is what you get.
+  func GetTitleFunc(style string) func(s string) string {
+    switch strings.ToLower(style) {
+    case "go":
+      return strings.Title
+    case "chicago":
+      return transform.NewTitleConverter(transform.ChicagoStyle)
+    default:
+      return transform.NewTitleConverter(transform.APStyle)
+    }
+  }
+{{< / highlight >}}
+
 ## Markdown syntax
 Wrap the code block with three backticks and the name of the language. Highlight will try to auto detect the language if one is not provided.
 
