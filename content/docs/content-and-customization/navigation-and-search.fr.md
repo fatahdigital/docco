@@ -9,242 +9,417 @@ images:
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 
-Customize site navigation and search for your Docco site.
+Hugo has a simple yet powerful menu system.
 
-## Top-level menu 
+You can do this:
 
-The top level menu (the one that appears in the top navigation bar for the entire site) uses your site’s [`main` menu](https://gohugo.io/content-management/menus/). All Hugo sites have a main menu array of menu entries, accessible via the .Site.Menus site variable and populatable via page front matter or your site’s config.toml.
+* Place content in one or many menus
+* Handle nested menus with unlimited depth
+* Create menu entries without being attached to any content
+* Distinguish active element (and active branch)
 
-To add a page or section to this menu, add it to the site’s main menu in either config.toml or in the destination page’s front matter (in _index.md or _index.html for a section, as that’s the section landing page). For example, here’s how we added the Documentation section landing page to the main menu in this site:
+## What is a Menu in Hugo?
+
+A **menu** is a named array of menu entries accessible by name via the `.Site.Menus` site variable. For example, you can access your site's `main` menu via `.Site.Menus.main`.
+
+{{% note "Menus on Multilingual Sites" %}}
+If you make use of the [multilingual feature](/content-management/multilingual/), you can define language-independent menus.
+{{% /note %}}
+
+## Add content to menus
+
+Hugo allows you to add content to a menu via the content’s front matter.
+
+### Simple
+
+If all you need to do is add an entry to a menu, the simple form works well.
+
+#### A Single Menu
 
 ```
 ---
-title: "Docco Documentation"
-linkTitle: "Documentation"
+menu: "main"
+---
+```
+
+#### Multiple Menus
+
+```
+---
+menu: ["main", "footer"]
+---
+```
+
+#### Advanced Menus
+
+```
+---
 menu:
-  main:
+  docs:
+    parent: 'extras'
     weight: 20
 ---
 ```
 
-The menu is ordered from left to right by page weight. So, for example, a section index or page with weight: 30 would appear after the Documentation section in the menu, while one with weight: 10 would appear before it.
+## Add Non-content Entries to a Menu
 
-If you want to add a link to an external site to this menu, add it in config.toml, specifying the weight.
+You can also add entries to menus that aren’t attached to a piece of content. This takes place in your Hugo project's `config` file.
 
-```
+Here’s an example snippet pulled from a configuration file:
+
+
+{{< code-toggle file="config" >}}
 [[menu.main]]
-    name = "GitHub"
-    weight = 50
-    url = "/"
+    name = "about hugo"
+    pre = "<i class='fa fa-heart'></i>"
+    weight = -110
+    identifier = "about"
+    url = "/about/"
+[[menu.main]]
+    name = "getting started"
+    pre = "<i class='fa fa-road'></i>"
+    post = "<span class='alert'>New!</span>"
+    weight = -100
+    url = "/getting-started/"
+{{< /code-toggle >}}
+
+{{% note %}}
+The URLs must be relative to the context root. If the `baseURL` is `https://example.com/mysite/`, then the URLs in the menu must not include the context root `mysite`. Using an absolute URL will override the baseURL. If the value used for `URL` in the above example is `https://subdomain.example.com/`, the output will be `https://subdomain.example.com`.
+{{% /note %}}
+
+## Nesting
+
+All nesting of content is done via the `parent` field.
+
+The parent of an entry should be the identifier of another entry. The identifier should be unique (within a menu).
+
+The following order is used to determine an Identifier:
+
+`.Name > .LinkTitle > .Title`
+
+This means that `.Title` will be used unless `.LinkTitle` is present, etc. In practice, `.Name` and `.Identifier` are only used to structure relationships and therefore never displayed.
+
+In this example, the top level of the menu is defined in your site `config` file. All content entries are attached to one of these entries via the `.Parent` field.
+
+## Params
+
+You can also add user-defined content to menu items via the `params` field. 
+
+A common use case is to define a custom param to add a css class to a specific menu item.
+
+{{< code-toggle file="config" >}}
+[[menu.main]]
+    name = "about hugo"
+    pre = "<i class='fa fa-heart'></i>"
+    weight = -110
+    identifier = "about"
+    url = "/about/"
+    [menu.main.params]
+      class = "highlight-menu-item"
+{{</ code-toggle >}}
+
+## Menu Templates
+
+Menus are a powerful but simple feature for content management but can be easily manipulated in your templates to meet your design needs.
+
+The following is an example:
+
+layouts/partials/sidebar.html
+
+```
+<!-- sidebar start -->
+<aside>
+    <ul>
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+            {{ if .HasChildren }}
+                <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
+                    <a href="#">
+                        {{ .Pre }}
+                        <span>{{ .Name }}</span>
+                    </a>
+                </li>
+                <ul class="sub-menu">
+                    {{ range .Children }}
+                        <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+                            <a href="{{ .URL }}">{{ .Name }}</a>
+                        </li>
+                    {{ end }}
+                </ul>
+            {{ else }}
+                <li>
+                    <a href="{{ .URL }}">
+                        {{ .Pre }}
+                        <span>{{ .Name }}</span>
+                    </a>
+                </li>
+            {{ end }}
+        {{ end }}
+        <li>
+            <a href="#" target="_blank">Hardcoded Link 1</a>
+        </li>
+        <li>
+            <a href="#" target="_blank">Hardcoded Link 2</a>
+        </li>
+    </ul>
+</aside>
+```
+{{% note "`absLangURL` and `relLangURL`" %}}
+Use the `absLangURL` or `relLangURL` functions if your theme makes use of the multilingual feature. In contrast to `absURL` and `relURL`, these two functions add the correct language prefix to the url.
+{{% /note %}}
+
+## Section Menu for Lazy Bloggers
+
+To enable this menu, configure `sectionPagesMenu` in your site `config`:
+
+```
+sectionPagesMenu = "main"
 ```
 
-<!-- ### Adding a language drop-down
+The menu name can be anything, but take a note of what it is.
 
-If you configure more than one language in config.toml, the Docco theme adds a language selector drop down to the top-level menu. Selecting a language takes the user to the translated version of the current page, or the home page for the given language.
+This will create a menu with all the sections as menu items and all the sections' pages as "shadow-members". The _shadow_ implies that the pages isn't represented by a menu-item themselves, but this enables you to create a top-level menu like this:
 
-You can find out more in Multi-language support. -->
+```
+<nav class="sidebar-nav">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.main }}
+    <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+    {{ end }}
+</nav>
+```
 
-## Section menu 
+In the above, the menu item is marked as active if on the current section's list page or on a page in that section.
 
-The section menu, as shown in the left side of the docs section, is automatically built from the content tree. Like the top-level menu, it is ordered by page or section index weight (or by page creation date if weight is not set), with the page or index’s Title, or linkTitle if different, as its link title in the menu. If a section subfolder has pages other than _index.md or _index.html, those pages will appear as a submenu, again ordered by weight. For example, here’s the metadata for this page showing its weight and title:
+## Site Config menus
+
+The above is all that's needed. But if you want custom menu items, e.g. changing weight, name, or link title attribute, you can define them manually in the site config file:
+
+{{< code-toggle file="config" >}}
+[[menu.main]]
+    name = "This is the blog section"
+    title = "blog section"
+    weight = -110
+    identifier = "blog"
+    url = "/blog/"
+{{</ code-toggle >}}
+
+{{% note %}}
+The `identifier` *must* match the section name.
+{{% /note %}}
+
+## Menu Entries from the Page's front matter
+
+It's also possible to create menu entries from the page (i.e. the `.md`-file).
+
+Here is a `yaml` example:
 
 ```
 ---
-title: "Navigation and Search"
-linkTitle: "Navigation and Search"
-date: 2017-01-05
-weight: 3
-description: >
-  Customize site navigation and search for your Docco site.
+title: Menu Templates
+linktitle: Menu Templates
+menu:
+  docs:
+    title: "how to use menus in templates"
+    parent: "templates"
+    weight: 130
 ---
+...
 ```
 
-To hide a page or section from the menu, set `draft: true` in front matter.
+{{% note %}}
+You can define more than one menu. It also doesn't have to be a complex value,
+`menu` can also be a string, an array of strings, or an array of complex values
+like in the example above.
+{{% /note %}}
 
-By default, the section menu will show the current section fully expanded all the way down. This may make the left nav too long and difficult to scan for bigger sites. Try setting site param ui.sidebar_menu_compact = true in config.toml.
+### Using .Page in Menus
 
-## Breadcrumb navigation
+If you use the front matter method of defining menu entries, you'll get access to the `.Page` variable.
+This allows to use every variable that's reachable from the page variable.
 
-Breadcrumb navigation is enabled by default. To disable breadcrumb navigation, set site param ui.breadcrumb_disable = true in config.toml.
+This variable is only set when the menu entry is defined in the page's front matter.
+Menu entries from the site config don't know anything about `.Page`.
 
-## Site search options
+That's why you have to use the go template's `with` keyword or something similar in your templating language.
 
-Docco offers multiple options that let your readers search your site content, so you can pick one that suits your needs. You can choose from:
-
-* Google Custom Search Engine (GCSE), the default option, which uses Google’s index of your public site to generate a search results page.
-* Algolia DocSearch, which uses Algolia’s indexing and search mechanism, and provides an organized dropdown of search results when your readers use the search box. Algolia DocSearch is free for public documentation sites.
-* Local search with Lunr, which uses Javascript to index and search your site without the need to connect to external services. This option doesn’t require your site to be public.
-
-If you enable any of these search options in your config.toml, a search box displays in the right of your top navigation bar. By default a search box also displays at the top of the section menu in the left navigation pane, which you can disable if you prefer, or if you’re using a search option that only works with the top search box.
-
-Be aware that if you accidentally enable more than one search option in your config.toml you may get unexpected results (for example, if you have added the .js for Algolia DocSearch, you’ll get Algolia results if you enable GCSE search but forget to disable Algolia search).
-
-### Disabling the sidebar search box
-
-By default, the search box appears in both the top navigation bar and at the top of the sidebar left navigation pane. If you don’t want the sidebar search box, set sidebar_search_disable to true in config.toml:
+Here's an example:
 
 ```
-sidebar_search_disable = true
+<nav class="sidebar-nav">
+  {{ range .Site.Menus.main }}
+    <a href="{{ .URL }}" title="{{ .Title }}">
+      {{- .Name -}}
+      {{- with .Page -}}
+        <span class="date">
+        {{- dateFormat " (2006-01-02)" .Date -}}
+        </span>
+      {{- end -}}
+    </a>
+  {{ end }}
+</nav>
 ```
 
-### Configure search with a Google Custom Search Engine
+## Using .Params in Menus
 
-By default Docco uses a Google Custom Search Engine (GCSE) to search your site. To enable this feature, you’ll first need to make sure that you have built a public production version of your site, as otherwise your site won’t be crawled and indexed.
+User-defined content on menu items are accessible via `.Params`.
 
-### Setting up site search
-
-1. Deploy your site and ensure that it’s built with HUGO_ENV="production", as Google will only crawl and index Docco sites built with this setting (you probably don’t want your not-ready-for-prime-time site to be searchable!). You can specify this variable as a command line flag to Hugo:
-
-  ```
-  $ env HUGO_ENV="production" hugo
-  ```
-
-  Alternatively, if you’re using Netlify, you can specify it as a Netlify deployment setting in netlify.toml or the Netlify UI, along with the Hugo version. It may take a day or so before your site has actual search results available.
-
-2. Create a Google Custom Search Engine for your deployed site by clicking **New search engine** on the Custom Search page and following the instructions. Make a note of the ID for your new search engine.
-
-3. Add any further configuration you want to your search engine using the **Edit search engine** options. In particular you may want to do the following:
-
-* Select **Look and feel**. Change from the default **Overlay** layout to **Results only**, as this option means your search results are embedded in your search page rather than appearing in a separate box. Click **Save** to save your changes.
-
-* Edit the default result link behavior so that search results from your site don’t open in a new tab. To do this, select **Search Features** - **Advanced** - **Websearch Settings**. In the **Link Target** field, type “_parent”. Click **Save** to save your changes.
-
-> #### Tip
-Your site search results should show up within a couple of days. If it takes longer than that, you can manually request that your site is indexed by submitting a sitemap through the Google Search Console.
-
-<!-- ### Adding the search page 
-
-Once you have your search engine set up, you can add the feature to your site:
-
-1. Ensure you have a Markdown file in content/en/search.md (and one per other languages if needed) to display your search results. It only needs a title and layout: search, as in the following example:
+Here's an example:
 
 ```
----
-title: Search Results
-layout: search
----
-```
-2. Add your Google Custom Search Engine ID to the site params in config.toml. You can add different values per language if needed.
-
-```
-# Google Custom Search Engine ID. Remove or comment out to disable search.
-gcs_engine_id = "011737558837375720776:fsdu1nryfng"
-``` -->
-### Disabling GCSE search 
-
-If you don’t specify a Google Custom Search Engine ID for your project and haven’t enabled any other search options, the search box won’t appear in your site. If you’re using the default config.toml from the example site and want to disable search, just comment out or remove the relevant line.
-
-## Configure Algolia DocSearch 
-
-As an alternative to GCSE, you can use Algolia DocSearch with this theme. Algolia DocSearch is free for public documentation sites.
-
-### Sign up for Algolia DocSearch
-
-If you are accepted to the program, you will receive the JavaScript code to add to your documentation site from Algolia by email.
-
-### Adding Algolia DocSearch 
-
-1. Enable Algolia DocSearch in config.toml.
-```
-# Enable Algolia DocSearch
-algolia_docsearch = true
+<nav class="sidebar-nav">
+  {{ range .Site.Menus.main }}
+    <a href="{{ .URL }}" title="{{ .Title }}" class="{{ with .Params.class }}{{ . }}{{ end }}">
+      {{- .Name -}}
+    </a>
+  {{ end }}
+</nav>
 ```
 
-2. Remove or comment out any GCSE ID in config.toml and ensure local search is set to false as you can only have one type of search enabled. See Disabling GCSE search.
+{{% note %}}
+With Menu-level .Params they can easily exist on one menu item but not another. It's recommended to access them gracefully using the with function.
+{{% /note %}}
 
-3. Disable the sidebar search in config.toml as this is not currently supported for Algolia DocSearch. See Disabling the sidebar search box.
-+ Select **Look and feel**. Change from the default **Overlay** layout to **Results only**, as this option means your search results are embedded in your search page rather than appearing in a separate box. Click Save to **save** your changes.
+## Search for your Hugo Website
 
-+ Edit the default result link behavior so that search results from your site don’t open in a new tab. To do this, select **Search Features** - **Advanced** - **Websearch Settings**. In the **Link Target** field, type “_parent”. Click Save to **save** your changes.
+Hugo provides an alternative to embeddable scripts from Google or other search engines for static websites. Hugo allows you to provide your visitors with a custom search function by indexing your content files directly.
 
-> #### Tip
-Your site search results should show up within a couple of days. If it takes longer than that, you can manually request that your site is indexed by submitting a sitemap through the Google Search Console. 
+* [GitHub Gist for Hugo Workflow](https://gist.github.com/sebz/efddfc8fdcb6b480f567). This gist contains a simple workflow to create a search index for your static website. It uses a simple Grunt script to index all your content files and [lunr.js](https://lunrjs.com/) to serve the search results.
+* [hugo-elasticsearch](https://www.npmjs.com/package/hugo-elasticsearch). Generate [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html) indexes for Hugo static sites by parsing front matter. Hugo-Elasticsearch will generate a newline delimited JSON (NDJSON) file that can be bulk uploaded into Elasticsearch using any one of the available [clients](https://www.elastic.co/guide/en/elasticsearch/client/index.html).
+* [hugo-lunr](https://www.npmjs.com/package/hugo-lunr). A simple way to add site search to your static Hugo site using [lunr.js](https://lunrjs.com/). Hugo-lunr will create an index file of any html and markdown documents in your Hugo project.
+* [hugo-lunr-zh](https://www.npmjs.com/package/hugo-lunr-zh). A bit like Hugo-lunr, but Hugo-lunr-zh can help you separate the Chinese keywords.
+* [Github Gist for Fuse.js integration](https://gist.github.com/eddiewebb/735feb48f50f0ddd65ae5606a1cb41ae). This gist demonstrates how to leverage Hugo's existing build time processing to generate a searchable JSON index used by [Fuse.js](https://fusejs.io/) on the client side. Although this gist uses Fuse.js for fuzzy matching, any client side search tool capable of reading JSON indexes will work. Does not require npm, grunt or other build-time tools except Hugo!
+* [hugo-search-index](https://www.npmjs.com/package/hugo-search-index). A library containing Gulp tasks and a prebuilt browser script that implements search. Gulp generates a search index from project markdown files.
+* [hugofastsearch](https://gist.github.com/cmod/5410eae147e4318164258742dd053993). A usability and speed update to "GitHub Gist for Fuse.js integration" — global, keyboard-optimized search.
 
-### Adding the search page 
-Once you have your search engine set up, you can add the feature to your site:
-1. Ensure you have a Markdown file in `content/en/search.md` (and one per other languages if needed) to display your search results. It only needs a title and `layout: search`, as in the following example:
+## Commercial Search Services
 
-```
----
-title: Search Results
-layout: search
----
-```
+* [Algolia](https://www.algolia.com/)'s Search API makes it easy to deliver a great search experience in your apps and websites. Algolia Search provides hosted full-text, numerical, faceted, and geolocalized search.
+* [Bonsai](https://www.bonsai.io) is a fully-managed hosted Elasticsearch service that is fast, reliable, and simple to set up. Easily ingest your docs from Hugo into Elasticsearch following [this guide from the docs](https://docs.bonsai.io/docs/hugo).
+* [ExpertRec](https://www.expertrec.com/) is a hosted search-as-a-service solution that is fast and scalable. Set-up and integration is extremely easy and takes only a few minutes. The search settings can be modified without coding using a dashboard.
 
-2. Add your Google Custom Search Engine ID to the site params in `config.toml`. You can add different values per language if needed.
-```
-#Google Custom Search Engine ID. Remove or comment out to disable search.
-gcs_engine_id = "011737558837375720776:fsdu1nryfng"
-```
-### Disabling GCSE search 
+Docco Theme Provide `lurn` search option:
 
-If you don’t specify a Google Custom Search Engine ID for your project and haven’t enabled any other search options, the search box won’t appear in your site. If you’re using the default `config.toml` from the example site and want to disable search, just comment out or remove the relevant line.
+Example:
 
-## Configure local search with Lunr 
-
-Lunr is a Javascript-based search option that lets you index your site and make it searchable without the need for external, server-side search services. This is a good option particularly for smaller or non-public sites.
-
-To add Lunr search to your Docsy site:
-
-1. Enable local search in `config.toml`.
+/layout/prtials/search.html
 
 ```
-# Enable local search
-offlineSearch = true
+ <div class="searchbox has-search">
+    <label for="search-by"><i class="fa fa-search" aria-hidden="true"></i></label>
+    <input data-search-input id="search-by" type="search"  placeholder="{{T "Search-placeholder"}}">
+    <!-- <span data-search-clear=""  class="hide-clear"><i class="fa fa-times" aria-hidden="true"></i>
+    </span> -->
+  </div>
+  {{ $assetBusting := not .Site.Params.disableAssetsBusting }}
+  <script type="text/javascript" src="{{"js/lunr.min.js" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
+  <script type="text/javascript" src="{{"js/auto-complete.js" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
+  <script type="text/javascript">
+    {{ if .Site.IsMultiLingual }}
+        var baseurl = "{{.Site.BaseURL}}{{.Site.LanguagePrefix}}";
+    {{ else }}
+        var baseurl = "{{.Site.BaseURL}}";
+    {{ end }}
+  </script>
+  <script type="text/javascript" src="{{"js/search.js" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
 ```
 
-2. Remove or comment out any GCSE ID in config.toml and ensure Algolia DocSearch is set to false, as you can only have one type of search enabled. See Disabling GCSE search.
+Under static/js I created a search.js script. This script does most of the work.
 
-Once you’ve completed these steps, local search is enabled for your site and results appear in a drop down when you use the search box.
-
-> #### Tip
-If you’re ***testing this locally*** using Hugo’s local server functionality, you need to build your offline-search-index.xxx.json file first by running hugo. If you have the Hugo server running while you build offline-search-index.xxx.json, you may need to stop the server and restart it in order to see your search results.
-
-### Changing the summary length of the local search results
-
-You can customize the summary length by setting `offlineSearchSummaryLength` in `config.toml`.
+/stactic/js/search.js
 
 ```
-#Enable offline search with Lunr.js
-offlineSearch = true
-offlineSearchSummaryLength = 200
-```
+var lunrIndex, pagesIndex;
 
-### Changing the maximum result count of the local search
-
-You can customize the maximum result count by setting `offlineSearchMaxResults` in `config.toml`.
-
-```
-#Enable offline search with Lunr.js
-offlineSearch = true
-offlineSearchMaxResults = 25
-```
-
-### Changing the width of the local search results popover 
-
-The width of the search results popover will automatically widen according to the content.
-
-If you want to limit the width, add the following scss into `assets/scss/_variables_project.scss`.
-
-```
-body {
-    .popover.offline-search-result {
-        max-width: 460px;
-    }
+function endsWith(str, suffix) {
+    return str.indexOf(suffix, str.length - suffix.length) !== -1;
 }
+
+// Initialize lunrjs using our generated index file
+function initLunr() {
+    if (!endsWith(baseurl,"/")){
+        baseurl = baseurl+'/'
+    };
+
+    // First retrieve the index file
+    $.getJSON(baseurl +"index.json")
+        .done(function(index) {
+            pagesIndex = index;
+            // Set up lunrjs by declaring the fields we use
+            // Also provide their boost level for the ranking
+            lunrIndex = lunr(function() {
+                this.ref("uri");
+                this.field('title', {
+		    boost: 15
+                });
+                this.field('tags', {
+		    boost: 10
+                });
+                this.field("content", {
+		    boost: 5
+                });
+				
+                this.pipeline.remove(lunr.stemmer);
+                this.searchPipeline.remove(lunr.stemmer);
+				
+                // Feed lunr with each file and let lunr actually index them
+                pagesIndex.forEach(function(page) {
+		    this.add(page);
+                }, this);
+            })
+        })
+        .fail(function(jqxhr, textStatus, error) {
+            var err = textStatus + ", " + error;
+            console.error("Error getting Hugo index file:", err);
+        });
+}
+
+/**
+ * Trigger a search in lunr and transform the result
+ *
+ * @param  {String} query
+ * @return {Array}  results
+ */
+function search(queryTerm) {
+    // Find the item in our index corresponding to the lunr one to have more info
+    return lunrIndex.search(queryTerm+"^100"+" "+queryTerm+"*^10"+" "+"*"+queryTerm+"^10"+" "+queryTerm+"~2^1").map(function(result) {
+            return pagesIndex.filter(function(page) {
+                return page.uri === result.ref;
+            })[0];
+        });
+}
+
+// Let's get started
+initLunr();
+$( document ).ready(function() {
+    var searchList = new autoComplete({
+        /* selector for the search box element */
+        selector: $("#search-by").get(0),
+        /* source is the callback to perform the search */
+        source: function(term, response) {
+            response(search(term));
+        },
+        /* renderItem displays individual search results */
+        renderItem: function(item, term) {
+            var numContextWords = 2;
+            var text = item.content.match(
+                "(?:\\s?(?:[\\w]+)\\s?){0,"+numContextWords+"}" +
+                    term+"(?:\\s?(?:[\\w]+)\\s?){0,"+numContextWords+"}");
+            item.context = text;
+            return '<div class="autocomplete-suggestion" ' +
+                'data-term="' + term + '" ' +
+                'data-title="' + item.title + '" ' +
+                'data-uri="'+ item.uri + '" ' +
+                'data-context="' + item.context + '">' +
+                '» ' + item.title +
+                '<div class="context">' +
+                (item.context || '') +'</div>' +
+                '</div>';
+        },
+        /* onSelect callback fires when a search suggestion is chosen */
+        onSelect: function(e, term, item) {
+            location.href = item.getAttribute('data-uri');
+        }
+    });
+});
 ```
-### Excluding pages from local search results 
-
-To exclude pages from local search results, add `exclude_search: true` to the the frontmatter of each page:
-
-```
----
-title: "Index"
-weight: 10
-exclude_search: true
----
-```
-
-  
-
-
