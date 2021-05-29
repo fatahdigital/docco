@@ -5,6 +5,11 @@ draft: false
 weight: 23
 description: "calling custom Shortcodes into your content files."
 summary: "calling custom Shortcodes into your content files."
+menu:
+  docs:
+    parent: Shortcode
+    name: Table of Content
+    weight: 33
 TableOfContents: true
 ---
 

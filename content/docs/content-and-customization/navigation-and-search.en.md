@@ -6,10 +6,19 @@ summary: "Customize site navigation and search for your Docco site."
 description: "Customize site navigation and search for your Docco site."
 images: 
   - ""
+menu:
+  docs:
+    parent: Content and Customization
+    name: Navigation and Search
+    weight: 26
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 
-Customize site navigation and search for your Docco site.
+Hugo has a simple yet powerful menu system.
+
+
+
+<!-- Customize site navigation and search for your Docco site.
 
 ## Top-level menu 
 
@@ -36,7 +45,7 @@ If you want to add a link to an external site to this menu, add it in config.tom
     name = "GitHub"
     weight = 50
     url = "/"
-```
+``` -->
 
 <!-- ### Adding a language drop-down
 
@@ -44,7 +53,7 @@ If you configure more than one language in config.toml, the Docco theme adds a l
 
 You can find out more in Multi-language support. -->
 
-## Section menu 
+<!-- ## Section menu 
 
 The section menu, as shown in the left side of the docs section, is automatically built from the content tree. Like the top-level menu, it is ordered by page or section index weight (or by page creation date if weight is not set), with the page or index’s Title, or linkTitle if different, as its link title in the menu. If a section subfolder has pages other than _index.md or _index.html, those pages will appear as a submenu, again ordered by weight. For example, here’s the metadata for this page showing its weight and title:
 
@@ -110,7 +119,7 @@ By default Docco uses a Google Custom Search Engine (GCSE) to search your site. 
 * Edit the default result link behavior so that search results from your site don’t open in a new tab. To do this, select **Search Features** - **Advanced** - **Websearch Settings**. In the **Link Target** field, type “_parent”. Click **Save** to save your changes.
 
 > #### Tip
-Your site search results should show up within a couple of days. If it takes longer than that, you can manually request that your site is indexed by submitting a sitemap through the Google Search Console.
+Your site search results should show up within a couple of days. If it takes longer than that, you can manually request that your site is indexed by submitting a sitemap through the Google Search Console. -->
 
 <!-- ### Adding the search page 
 
@@ -130,7 +139,7 @@ layout: search
 # Google Custom Search Engine ID. Remove or comment out to disable search.
 gcs_engine_id = "011737558837375720776:fsdu1nryfng"
 ``` -->
-### Disabling GCSE search 
+<!-- ### Disabling GCSE search 
 
 If you don’t specify a Google Custom Search Engine ID for your project and haven’t enabled any other search options, the search box won’t appear in your site. If you’re using the default config.toml from the example site and want to disable search, just comment out or remove the relevant line.
 
@@ -245,6 +254,6 @@ exclude_search: true
 ---
 ```
 
-  
+   -->
 
 

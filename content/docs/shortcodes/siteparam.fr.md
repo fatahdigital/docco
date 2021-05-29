@@ -2,6 +2,11 @@
 title: "Site param"
 description : "Get value of site params variables in your page."
 summary: "Get value of site params variables in your page."
+menu:
+  docs:
+    parent: Shortcode
+    name: SiteParams
+    weight: 36
 ---
 
 `siteparam` shortcode is used to help you print values of site params. 

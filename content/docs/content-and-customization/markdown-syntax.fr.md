@@ -6,6 +6,11 @@ summary: "Markdown is a better way to write HTML, without all the complexities a
 description: "Markdown is a better way to write HTML, without all the complexities and ugliness that usually accompanies it."
 images: 
   - ""
+menu:
+  docs:
+    parent: Content and Customization
+    name: Markdown Syntax
+    weight: 23
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 

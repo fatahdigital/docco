@@ -123,6 +123,25 @@ facebook_url = ""
   
 
 [menu]
+
+  [[menu.docs]]
+    identifire = "Getting Started"
+    name = "Getting Started"
+    weight = 1
+    url = "/getting-stared/"
+  [[menu.docs]]
+    identifire = ""
+    name = "Content and Customization"
+    weight = 2
+    url = "/content-and-customization/"
+  [[menu.docs]]
+    identifire = ""
+    name = "Shortcodes"
+    weight = 3
+    url = "/content-and-customization/"
+
+
+
   ## Menu bar
   [[menu.main]]
     identifire= ""
@@ -153,6 +172,8 @@ facebook_url = ""
     url = "/contact/"
     name = "Contact Us"
     weight = 5
+  
+  
 
   ## Footer menu
   [[Languages.en.menu.footer]]

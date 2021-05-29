@@ -6,6 +6,11 @@ summary: "Hugo provides the ability to easily create custom shortcodes to meet y
 description: "Hugo provides the ability to easily create custom shortcodes to meet your website’s needs."
 images: 
   - ""
+menu:
+  docs:
+    parent: Shortcode
+    name: Custom Shortcodes
+    weight: 32
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 

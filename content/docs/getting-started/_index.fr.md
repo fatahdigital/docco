@@ -6,6 +6,11 @@ summary: "Docco is a Hugo theme helping you build modern documentation websites 
 description: "Docco is a Hugo theme helping you build modern documentation websites that are secure, fast, and SEO-ready — by default."
 images: 
   - ""
+menu:
+  docs:
+    identifire: Getting Started
+    name: Getting Started
+    weight: 10
 pre: "<b>1. </b>"
 lastmod: 2017-03-03T14:15:59-06:00
 ---

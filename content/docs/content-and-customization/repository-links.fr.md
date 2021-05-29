@@ -6,6 +6,11 @@ summary: "The Docco docs and blog layouts include links for readers to edit the 
 description: "The Docco docs and blog layouts include links for readers to edit the page or create issues for your docs or project via your site’s source repository."
 images: 
   - ""
+menu:
+  docs:
+    parent: Content and Customization
+    name: Repository Links
+    weight: 28
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 

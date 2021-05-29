@@ -3,6 +3,11 @@ title: "Notice"
 weight: 24
 description : "Disclaimers to help you structure your page"
 summary: "Disclaimers to help you structure your page"
+menu:
+  docs:
+    parent: Shortcode
+    name: Notice
+    weight: 35
 ---
 
 The notice shortcode shows  types of disclaimers to help you structure your page.

@@ -2,6 +2,11 @@
 title: "Tabbed views"
 description : "Synchronize selection of content in different tabbed views"
 summary: "Synchronize selection of content in different tabbed views"
+menu:
+  docs:
+    parent: Shortcode
+    name: Tabs
+    weight: 37
 ---
 
 Choose which content to see across the page. Very handy for providing code

@@ -6,6 +6,12 @@ summary:
 description: 
 images: 
   - ""
+menu:
+  docs:
+    parent: Getting Started
+    name: Installation
+    weight: 11
+    url: /en/installation/
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 

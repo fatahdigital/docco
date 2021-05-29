@@ -2,7 +2,7 @@
   
   {{ $currentNode := . }}
   {{ $showvisitedlinks := .Site.Params.showVisitedLinks }}
-  <section class="side-navigation-wrapper" >
+  <!-- <section class="side-navigation-wrapper" >
     <div id="header-wrapper" class="search-wrapper">
       {{if not .Site.Params.disableSearch}}
           {{ partial "search.html" . }}
@@ -35,7 +35,7 @@
     </div>
     {{ partial "menu-footer.html" . }}
   </div>
-    <!-- templates -->
+    
     {{ define "section-tree-nav" }}
       {{ $showvisitedlinks := .showvisitedlinks }}
       {{ $currentNode := .currentnode }}
@@ -101,8 +101,66 @@
         {{ end }}
       {{ end }}
     {{ end }}
-  </section>
+  </section> -->
+  <section class="side-navigation-wrapper" >
+    <div id="header-wrapper" class="search-wrapper">
+      {{if not .Site.Params.disableSearch}}
+          {{ partial "search.html" . }}
+      {{end}}
+    </div>
+    <div class="side-nav-section">
+    <ul class="topic-title">
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.docs }}
+        {{ if .HasChildren }}
+        <li>
+          <a href="{{ .URL }}">{{ .Pre }}{{ .Name }} </a>
+          <ul>
+            {{ range .Children }} 
+              <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        </li>
+        {{ else }}
+        <li><a href="">{{ .Name }}</a></li>
+      {{ end }}
+    {{ end }}
+    </ul>
+    {{ $disableShortcutsTitle := .Site.Params.DisableShortcutsTitle}}
+    <div class="more-linkes-wrapper">
+      {{with .Site.Menus.shortcuts}}
+          <h3>More Links</h3>
+          <div class="more-link">
+            <ul>
+              {{ range sort . "Weight"}}
+                <li> {{.Pre}}<a href="{{.URL | absLangURL }}">{{safeHTML .Name}}</a>{{.Post}}</li>
+              {{end}}
+            </ul>
+          </div>
+      {{end}}
+    </div>
+    {{ partial "menu-footer.html" . }}
+  </div>
+    
+  
+  <ul>
 
+  {{ $currentPage := . }}
+    {{ range .Site.Menus.docs }}
+      {{ if .HasChildren }}
+      <li>
+        <a href="{{ .URL }}">{{ .Name }} </a>
+        <ul>
+          {{ range .Children }} 
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </li>
+      {{ else }}
+      <li><a href="">{{ .Name }}</a></li>
+      {{ end }}
+    {{ end }}
+  </ul>
  
   
 

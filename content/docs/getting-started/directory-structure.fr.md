@@ -6,6 +6,11 @@ summary:
 description: 
 images: 
   - ""
+menu:
+  docs:
+    parent: Getting Started
+    name: Directory Structure
+    weight: 14
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 

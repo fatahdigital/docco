@@ -4,6 +4,11 @@ weight: 25
 description : "List the child pages of a page"
 summary: "List the child pages of a page"
 lastmod: 2017-03-03T14:15:59-06:00
+# menu:
+#   docs:
+#     identifire: Children
+#     name: Children
+#     weight: 38
 ---
 
 Use the children shortcode to list the child pages of a page and the further descendants (children's children). By default, the shortcode displays links to the child pages.

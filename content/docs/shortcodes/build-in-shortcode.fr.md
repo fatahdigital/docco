@@ -6,6 +6,11 @@ summary: "Hugo ships with a set of predefined shortcodes that represent very com
 description: "Hugo ships with a set of predefined shortcodes that represent very common usage."
 images: 
   - ""
+menu:
+  docs:
+    parent: Shortcodes
+    name: Built in Shortcode
+    weight: 31
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 ## figure

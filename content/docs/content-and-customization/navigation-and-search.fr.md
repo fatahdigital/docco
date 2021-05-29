@@ -6,6 +6,11 @@ summary: "Customize site navigation and search for your Docco site."
 description: "Customize site navigation and search for your Docco site."
 images: 
   - ""
+menu:
+  docs:
+    parent: Content and Customization
+    name: Navigation and Search
+    weight: 26
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 

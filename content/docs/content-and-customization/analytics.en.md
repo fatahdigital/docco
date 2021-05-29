@@ -6,6 +6,11 @@ summary: "The Docco theme contains built-in support for Google Analytics via Hug
 description: "The Docco theme contains built-in support for Google Analytics via Hugo’s internal template, which is included in the theme. Once you set Analytics up as described below, usage information for your site (such as page views) is sent to your Google Analytics account."
 images: 
   - ""
+menu:
+  docs:
+    parent: Content and Customization
+    name: Analytics and User Feedback
+    weight: 29
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 

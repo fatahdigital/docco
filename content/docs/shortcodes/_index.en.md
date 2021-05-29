@@ -6,6 +6,11 @@ summary: "Shortcodes are simple snippets inside your content files calling built
 description: "Shortcodes are simple snippets inside your content files calling built-in or custom templates."
 images: 
   - ""
+menu:
+  docs:
+    identifire: Shortcodes
+    name: Shortcodes
+    weight: 30
 pre: "<b>3. </b>"
 lastmod: 2017-03-03T14:15:59-06:00
 ---
