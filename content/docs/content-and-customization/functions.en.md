@@ -838,3 +838,410 @@ delimit-page-tags-final-and-output.html
 ```
 <p>Tags: tag1, tag2, and tag3</p>
 ```
+
+## eq
+
+Returns the boolean truth of arg1 == arg2.
+
+Syntax
+
+```
+eq ARG1 ARG2
+```
+
+```
+{{ if eq .Section "blog" }}current{{ end }}
+```
+
+## First
+
+Slices an array to only the first N elements.
+
+Syntax
+
+```
+first LIMIT COLLECTION
+```
+
+`first` works in a similar manner to the `limit` keyword in SQL. It reduces the array to only the `first N` elements. It takes the array and number of elements as input.
+
+`first` takes two arguments:
+1. `number of elements`
+2. `array` *or* `slice of maps or structs`
+
+layout/_default/section.html
+
+```
+{{ range first 10 .Pages }}
+  {{ .Render "summary" }}
+{{ end }}
+```
+*Note: Exclusive to `first`, LIMIT can be '0' to return an empty array.*
+
+## `first` and `where` Together
+
+Using `first` and `where` together can be very
+powerful. Below snippet gets a list of posts only from **main sections**, sorts it by the `title` parameter, and then ranges through only the first 5 posts in that list:
+
+first-and-where-together.html
+
+```
+{{ range first 5 (where site.RegularPages "Type" "in" site.Params.mainSections).ByTitle }}
+   {{ .Content }}
+{{ end }}
+```
+
+## ge
+
+Returns the boolean truth of arg1 >= arg2.
+
+Syntax
+
+```
+ge ARG1 ARG2
+```
+
+```
+{{ if ge 10 5 }}true{{ end }}
+```
+
+## gt
+
+Returns the boolean truth of arg1 > arg2.
+
+Syntax
+
+```
+gt ARG1 ARG2
+```
+```
+{{ if gt 10 5 }}true{{ end }}
+```
+
+## hugo
+
+The hugo function provides easy access to Hugo-related data.
+
+Syntax
+
+```
+hugo
+```
+
+`hugo` returns an instance that contains the following functions:
+
+hugo.Generator
+: `<meta>` tag for the version of Hugo that generated the site. `hugo.Generator` outputs a *complete* HTML tag; e.g. `<meta name="generator" content="Hugo 0.63.2" />`
+
+hugo.Version
+: the current version of the Hugo binary you are using e.g. `0.63.2`
+
+`hugo` returns an instance that contains the following functions:
+
+hugo.Environment
+: the current running environment as defined through the `--environment` cli tag
+
+hugo.CommitHash
+: the git commit hash of the current Hugo binary e.g. `0e8bed9ccffba0df554728b46c5bbf6d78ae5247`
+
+hugo.BuildDate
+: the compile date of the current Hugo binary formatted with RFC 3339 e.g. `2002-10-02T10:00:00-05:00`
+
+hugo.IsExtended 
+: whether this is the extended Hugo binary.
+
+hugo.IsProduction
+: returns true if `hugo.Environment` is set to the production environment
+
+{{% note "Use the Hugo Generator Tag" %}}
+We highly recommend using `hugo.Generator` in your website's `<head>`. `hugo.Generator` is included by default in all themes hosted on [themes.gohugo.io](https://themes.gohugo.io). The generator tag allows the Hugo team to track the usage and popularity of Hugo.
+{{% /note %}}
+
+## humanize
+
+Returns the humanized version of an argument with the first letter capitalized.
+
+Syntax
+
+```
+humanize INPUT
+```
+
+If the input is either an int64 value or the string representation of an integer, humanize returns the number with the proper ordinal appended.
+
+```
+{{humanize "my-first-post"}} → "My first post"
+{{humanize "myCamelPost"}} → "My camel post"
+{{humanize "52"}} → "52nd"
+{{humanize 103}} → "103rd"
+```
+
+## Image Functions
+
+The images namespace provides a list of filters and other image related functions.
+
+## Image Filters
+
+See [images.Filter](#filter) for how to apply these filters to an image.
+
+### Overlay
+
+{{% funcsig %}}
+images.Overlay SRC X Y
+{{% /funcsig %}}
+
+Overlay creates a filter that overlays the source image at position x y, e.g:
+
+
+```go-html-template
+{{ $logoFilter := (images.Overlay $logo 50 50 ) }}
+{{ $img := $img | images.Filter $logoFilter }}
+```
+
+A shorter version of the above, if you only need to apply the filter once:
+
+```go-html-template
+{{ $img := $img.Filter (images.Overlay $logo 50 50 )}}
+```
+
+The above will overlay `$logo` in the upper left corner of `$img` (at position `x=50, y=50`).
+
+### Brightness
+
+{{% funcsig %}}
+images.Brightness PERCENTAGE
+{{% /funcsig %}}
+
+Brightness creates a filter that changes the brightness of an image.
+The percentage parameter must be in range (-100, 100).
+
+### ColorBalance
+
+{{% funcsig %}}
+images.ColorBalance PERCENTAGERED PERCENTAGEGREEN PERCENTAGEBLUE
+{{% /funcsig %}}
+
+ColorBalance creates a filter that changes the color balance of an image.
+The percentage parameters for each color channel (red, green, blue) must be in range (-100, 500).
+
+### Colorize
+
+{{% funcsig %}}
+images.Colorize HUE SATURATION PERCENTAGE
+{{% /funcsig %}}
+
+Colorize creates a filter that produces a colorized version of an image.
+The hue parameter is the angle on the color wheel, typically in range (0, 360).
+The saturation parameter must be in range (0, 100).
+The percentage parameter specifies the strength of the effect, it must be in range (0, 100).
+
+### Contrast
+
+{{% funcsig %}}
+images.Contrast PERCENTAGE
+{{% /funcsig %}}
+
+Contrast creates a filter that changes the contrast of an image.
+The percentage parameter must be in range (-100, 100).
+
+### Gamma
+
+{{% funcsig %}}
+images.Gamma GAMMA
+{{% /funcsig %}}
+
+Gamma creates a filter that performs a gamma correction on an image.
+The gamma parameter must be positive. Gamma = 1 gives the original image.
+Gamma less than 1 darkens the image and gamma greater than 1 lightens it.
+
+### GaussianBlur
+
+{{% funcsig %}}
+images.GaussianBlur SIGMA
+{{% /funcsig %}}
+
+GaussianBlur creates a filter that applies a gaussian blur to an image.
+
+### Grayscale
+
+{{% funcsig %}}
+images.Grayscale
+{{% /funcsig %}}
+
+Grayscale creates a filter that produces a grayscale version of an image.
+
+### Hue
+
+{{% funcsig %}}
+images.Hue SHIFT
+{{% /funcsig %}}
+
+Hue creates a filter that rotates the hue of an image.
+The hue angle shift is typically in range -180 to 180.
+
+### Invert
+
+{{% funcsig %}}
+images.Invert
+{{% /funcsig %}}
+
+Invert creates a filter that negates the colors of an image.
+
+### Pixelate
+
+{{% funcsig %}}
+images.Pixelate SIZE
+{{% /funcsig %}}
+
+Pixelate creates a filter that applies a pixelation effect to an image.
+
+### Saturation
+
+{{% funcsig %}}
+images.Saturation PERCENTAGE
+{{% /funcsig %}}
+
+Saturation creates a filter that changes the saturation of an image.
+
+### Sepia
+
+{{% funcsig %}}
+images.Sepia PERCENTAGE
+{{% /funcsig %}}
+
+Sepia creates a filter that produces a sepia-toned version of an image.
+
+### Sigmoid
+
+{{% funcsig %}}
+images.Sigmoid MIDPOINT FACTOR
+{{% /funcsig %}}
+
+Sigmoid creates a filter that changes the contrast of an image using a sigmoidal function and returns the adjusted image.
+It's a non-linear contrast change useful for photo adjustments as it preserves highlight and shadow detail.
+
+### UnsharpMask
+
+{{% funcsig %}}
+images.UnsharpMask SIGMA AMOUNT THRESHOLD
+{{% /funcsig %}}
+
+UnsharpMask creates a filter that sharpens an image.
+The sigma parameter is used in a gaussian function and affects the radius of effect.
+Sigma must be positive. Sharpen radius roughly equals 3 * sigma.
+The amount parameter controls how much darker and how much lighter the edge borders become. Typically between 0.5 and 1.5.
+The threshold parameter controls the minimum brightness change that will be sharpened. Typically between 0 and 0.05.
+
+## Other Functions
+
+### Filter
+
+{{% funcsig %}}
+IMAGE | images.Filter FILTERS...
+{{% /funcsig %}}
+
+Can be used to apply a set of filters to an image:
+
+```go-html-template
+{{ $img := $img | images.Filter (images.GaussianBlur 6) (images.Pixelate 8) }}
+```
+
+Also see the [Filter Method](/content-management/image-processing/#filter).
+
+### ImageConfig
+
+Parses the image and returns the height, width, and color model.
+
+{{% funcsig %}}
+images.ImageConfig PATH
+{{% /funcsig %}}
+
+```
+{{ with (imageConfig "favicon.ico") }}
+favicon.ico: {{.Width}} x {{.Height}}
+{{ end }}
+```
+
+## index
+
+Looks up the index(es) or key(s) of the data structure passed into it.
+
+```
+index COLLECTION INDEXES
+```
+```
+index COLLECTION KEYS
+```
+
+The `index` functions returns the result of indexing its first argument by the following arguments. Each indexed item must be a map or a slice, e.g.:
+
+```
+{{ $slice := slice "a" "b" "c" }}
+{{ index $slice 1 }} => b
+{{ $map := dict "a" 100 "b" 200 }}
+{{ index $map "b" }} => 200
+```
+
+The function takes multiple indices as arguments, and this can be used to get nested values, e.g.:
+
+```
+{{ $map := dict "a" 100 "b" 200 "c" (slice 10 20 30) }}
+{{ index $map "c" 1 }} => 20
+{{ $map := dict "a" 100 "b" 200 "c" (dict "d" 10 "e" 20) }}
+{{ index $map "c" "e" }} => 20
+```
+
+## Example: Load Data from a Path Based on Front Matter Params
+
+Assume you want to add a `location = ""` field to your front matter for every article written in `content/vacations/`. You want to use this field to populate information about the location at the bottom of the article in your `single.html` template. You also have a directory in `data/locations/` that looks like the following:
+
+```
+.
+└── data
+    └── locations
+        ├── abilene.toml
+        ├── chicago.toml
+        ├── oslo.toml
+        └── provo.toml
+```
+
+Here is an example:
+
+data/locations/oslo
+```
+website = "https://www.oslo.kommune.no"
+pop_city = 658390
+pop_metro = 1717900
+```
+
+The example we will use will be an article on Oslo, whose front matter should be set to exactly the same name as the corresponding file name in `data/locations/`:
+
+```
+title = "My Norwegian Vacation"
+location = "oslo"
+```
+
+The content of `oslo.toml` can be accessed from your template using the following node path: `.Site.Data.locations.oslo`. However, the specific file you need is going to change according to the front matter.
+
+This is where the `index` function is needed. `index` takes 2 parameters in this use case:
+
+1. The node path
+2. A string corresponding to the desired data; e.g.&mdash;
+
+```
+{{ index .Site.Data.locations “oslo” }}
+```
+
+The variable for `.Params.location` is a string and can therefore replace `oslo` in the example above:
+
+```
+{{ index .Site.Data.locations .Params.location }}
+=> map[website:https://www.oslo.kommune.no pop_city:658390 pop_metro:1717900]
+```
+
+Now the call will return the specific file according to the location specified in the content's front matter, but you will likely want to write specific properties to the template. You can do this by continuing down the node path via dot notation (`.`):
+
+```
+{{ (index .Site.Data.locations .Params.location).pop_city }}
+=> 658390
+```
