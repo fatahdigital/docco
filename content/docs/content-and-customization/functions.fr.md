@@ -26,7 +26,7 @@ Assuming a key-value of `date: 2017-03-03` in a content file's front matter, you
 For formatting *any* string representations of dates defined in your front matter, The `dateFormat` function, which will still leverage the Go layout string explained below but uses a slightly different syntax.
 
 
-Hugo templates [format your dates][time] via layout strings that point to a specific reference time:
+Hugo templates [format your dates](https://golang.org/pkg/time/) via layout strings that point to a specific reference time:
 
 ```
 Mon Jan 2 15:04:05 MST 2006
@@ -34,7 +34,7 @@ Mon Jan 2 15:04:05 MST 2006
 
 While this may seem arbitrary, the numerical value of `MST` is `07`, thus making the layout string a sequence of numbers.
 
-Here is a visual explanation [taken directly from the Go docs][gdex]:
+Here is a visual explanation [taken directly from the Go docs](https://golang.org/pkg/time/#example_Time_Format):
 
 ```
  Jan 2 15:04:05 2006 MST
@@ -46,7 +46,7 @@ Here is a visual explanation [taken directly from the Go docs][gdex]:
 
 The following examples show the layout string followed by the rendered output.
 
-The examples were rendered and tested in [CST](https://en.wikipedia.org/wiki/Central_Time_Zone) and all point to the same field in a content file's front matter:
+The examples were rendered and tested in [CST](https://fr.wikipedia.org/wiki/Central_Time_Zone) and all point to the same field in a content file's front matter:
 
 ```
 date: 2017-03-03T14:15:59-06:00
@@ -221,18 +221,18 @@ The [.IsMenuCurrent](#hasmenucurrent) Example.
 Calls page or site variables into your template.
 
 
-In Hugo, you can declare site-wide params (i.e. in your [configuration](/en/docs/getting-started/configuration/)), as well as params for individual pages.
+In Hugo, you can declare site-wide params (i.e. in your [configuration](/fr/docs/getting-started/configuration/)), as well as params for individual pages.
 
 A common use case is to have a general value for the site and a more specific value for some of the pages (e.g., an image).
 
-You can use the `.Param` method to call these values into your template. The following will first look for an `image` param in a specific content's [front matter](/en/docs/content-and-customization/front-matter). If not found, Hugo will look for an `image` param in your site's configuration:
+You can use the `.Param` method to call these values into your template. The following will first look for an `image` param in a specific content's [front matter](/fr/docs/content-and-customization/front-matter). If not found, Hugo will look for an `image` param in your site's configuration:
 
 ```
 $.Param "image"
 ```
 
 {{% note %}}
-The `Param` method may not consider empty strings in a content's front matter as "not found." If you are setting preconfigured front matter fields to empty strings using Hugo's archetypes, it may be best to use the [`default` function](/functions/default/) instead of `Param`. See the [related issue on GitHub](https://github.com/gohugoio/hugo/issues/3366).
+The `Param` method may not consider empty strings in a content's front matter as "not found." If you are setting preconfigured front matter fields to empty strings using Hugo's archetypes, it may be best to use the `default` function instead of `Param`. See the [related issue on GitHub](https://github.com/gohugoio/hugo/issues/3366).
 {{% /note %}}
 
 ## .Render
@@ -403,8 +403,8 @@ Both absLangURL and `relLangURL` are similar to their `absURL` and `relURL` rela
 So for a site  `baseURL` set to `https://example.com/hugo/` and the current language is `en`:
 
 ```
-{{ "blog/" | absLangURL }} → "https://example.com/hugo/en/blog/"
-{{ "blog/" | relLangURL }} → "/hugo/en/blog/"
+{{ "blog/" | absLangURL }} → "https://example.com/hugo/fr/blog/"
+{{ "blog/" | relLangURL }} → "/hugo/fr/blog/"
 ```
 
 ## absURL
@@ -417,7 +417,7 @@ Syntax
 absURL INPUT
 ```
 
-Both absURL and relURL consider the configured value of baseURL in your site’s [config file](/en/docs/getting-started/configuration/). Given a baseURL set to https://example.com/hugo/:
+Both absURL and relURL consider the configured value of baseURL in your site’s [config file](/fr/docs/getting-started/configuration/). Given a baseURL set to https://example.com/hugo/:
 
 ```
 {{ "mystyle.css" | absURL }} → "https://example.com/hugo/mystyle.css"
@@ -547,7 +547,7 @@ apply COLLECTION FUNCTION [PARAM...]
 `apply` expects at least three parameters, depending on the function being applied.
 
 1. The first parameter is the sequence to operate on.
-2. The second parameter is the name of the function as a string, which must be the name of a valid [Hugo function](/en/docs/content-and-customization/functions).
+2. The second parameter is the name of the function as a string, which must be the name of a valid [Hugo function](/fr/docs/content-and-customization/functions).
 3. After that, the parameters to the applied function are provided, with the string `"."` standing in for each element of the sequence the function is to be applied against.
 
 Here is an example of a content file with names: as a front matter field:
@@ -1144,9 +1144,7 @@ Can be used to apply a set of filters to an image:
 
 ```go-html-template
 {{ $img := $img | images.Filter (images.GaussianBlur 6) (images.Pixelate 8) }}
-```
-
-Also see the [Filter Method](/content-management/image-processing/#filter).
+``
 
 ### ImageConfig
 

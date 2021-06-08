@@ -50,7 +50,7 @@ If you need a specific template for a sub-section, you need to adjust either the
 
 ## Example: Breadcrumb Navigation
 
-With the available [section variables and methods](#section-page-variables-and-methods) you can build powerful navigation. One common example would be a partial to show Breadcrumb navigation:
+With the available section variables and methods you can build powerful navigation. One common example would be a partial to show Breadcrumb navigation:
 
 /partials/breadcrumb.html"
 ```
@@ -90,7 +90,7 @@ With the available [section variables and methods](#section-page-variables-and-m
 : A section's parent section or a page's section.
 
 .Section
-: The [section](/content-management/sections/) this content belongs to. **Note:** For nested sections, this is the first path element in the directory, for example, `/blog/funny/mypost/ => blog`.
+: The [section](/en/docs/content-and-customization/sections/) this content belongs to. **Note:** For nested sections, this is the first path element in the directory, for example, `/blog/funny/mypost/ => blog`.
 
 .Sections
-: The [sections](/content-management/sections/) below this content.
+: The [sections](/en/docs/content-and-customization/sections/) below this content.

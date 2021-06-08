@@ -30,7 +30,7 @@ Ideally, you should install it somewhere in your `PATH` for easy use. `/usr/loca
 
 ### Homebrew (macOS)
 
-If you are on macOS and using [Homebrew][brew], you can install Hugo with the following one-liner:
+If you are on macOS and using [Homebrew](https://brew.sh/), you can install Hugo with the following one-liner:
 
 install-with-homebrew.sh
 
@@ -42,7 +42,7 @@ For more detailed explanations, read the installation guides that follow for ins
 
 ### MacPorts (macOS)
 
-If you are on macOS and using [MacPorts][macports], you can install Hugo with the following one-liner:
+If you are on macOS and using [MacPorts](https://www.macports.org/), you can install Hugo with the following one-liner:
 
 install-with-macports.sh
 
@@ -82,7 +82,7 @@ choco install hugo-extended -confirm
 
 ### Scoop (Windows)
 
-If you are on a Windows machine and use [Scoop][] for package management, you can install Hugo with the following one-liner:
+If you are on a Windows machine and use [Scoop](https://scoop.sh/) for package management, you can install Hugo with the following one-liner:
 
 ```bash
 scoop install hugo
@@ -155,7 +155,7 @@ The following aims to be a complete guide to installing Hugo on your Windows PC.
 
 ### Set up Your Directories
 
-You'll need a place to store the Hugo executable, your [content][], and the generated Hugo website:
+You'll need a place to store the Hugo executable, your [content](/fr/docs/content-and-customization/), and the generated Hugo website:
 
 1. Open Windows Explorer.
 2. Create a new folder: `C:\Hugo`, assuming you want Hugo on your C drive, although this can go anywhere
@@ -164,7 +164,7 @@ You'll need a place to store the Hugo executable, your [content][], and the gene
 
 ### Technical Users
 
-1. Download the latest zipped Hugo executable from [Hugo Releases][releases].
+1. Download the latest zipped Hugo executable from [Hugo Releases](https://github.com/gohugoio/hugo/releases).
 2. Extract all contents to your `..\Hugo\bin` folder.
 3. In PowerShell or your preferred CLI, add the `hugo.exe` executable to your PATH by navigating to `C:\Hugo\bin` (or the location of your hugo.exe file) and use the command `set PATH=%PATH%;C:\Hugo\bin`. If the `hugo` command does not work after a reboot, you may have to run the command prompt as administrator.
 
@@ -172,7 +172,7 @@ You'll need a place to store the Hugo executable, your [content][], and the gene
 
 1. Go to the [Hugo Releases](https://github.com/gohugoio/hugo/releases) page.
 2. The latest release is announced on top. Scroll to the bottom of the release announcement to see the downloads. They're all ZIP files.
-3. Find the Windows files near the bottom (they're in alphabetical order, so Windows is last) – download either the 32-bit or 64-bit file depending on whether you have 32-bit or 64-bit Windows. (If you don't know, [see here](https://esupport.trendmicro.com/en-us/home/pages/technical-support/1038680.aspx).)
+3. Find the Windows files near the bottom (they're in alphabetical order, so Windows is last) – download either the 32-bit or 64-bit file depending on whether you have 32-bit or 64-bit Windows. (If you don't know, [see here](https://esupport.trendmicro.com/fr-us/home/pages/technical-support/1038680.aspx).)
 4. Move the ZIP file into your `C:\Hugo\bin` folder.
 5. Double-click on the ZIP file and extract its contents. Be sure to extract the contents into the same `C:\Hugo\bin` folder – Windows will do this by default unless you tell it to extract somewhere else.
 6. You should now have three new files: The hugo executable (`hugo.exe`), `LICENSE`, and `README.md`.
@@ -208,7 +208,7 @@ built with love by spf13 and friends in Go.
 Complete documentation is available at https://gohugo.io/.
 ```
 
-If you do, then the installation is complete. If you don't, double-check the path that you placed the `hugo.exe` file in and that you typed that path correctly when you added it to your `PATH` variable. If you're still not getting the output, search the [Hugo discussion forum][forum] to see if others have already figured out our problem. If not, add a note---in the "Support" category---and be sure to include your command and the output.
+If you do, then the installation is complete. If you don't, double-check the path that you placed the `hugo.exe` file in and that you typed that path correctly when you added it to your `PATH` variable. If you're still not getting the output, search the [Hugo discussion forum](https://discourse.gohugo.io/) to see if others have already figured out our problem. If not, add a note---in the "Support" category---and be sure to include your command and the output.
 
 At the prompt, change your directory to the `Sites` directory.
 
@@ -248,7 +248,7 @@ Directory of C:\hugo\sites\example.com
 
 ### Snap Package
 
-In any of the [Linux distributions that support snaps][snaps], you may install the "extended" Sass/SCSS version with this command:
+In any of the [Linux distributions that support snaps](https://snapcraft.io/docs/installing-snapd), you may install the "extended" Sass/SCSS version with this command:
 
     snap install hugo --channel=extended
 
@@ -334,7 +334,7 @@ See the [`hugo-bin` documentation](https://www.npmjs.com/package/hugo-bin) for u
 
 ### Install PostCSS
 
-To build or update your site's CSS resources, you also need [`PostCSS`](https://postcss.org/) to create the final assets. If you need to install it, you must have a recent version of [NodeJS](https://nodejs.org/en/) installed on your machine so you can use `npm`, the Node package manager. By default `npm` installs tools under the directory where you run [`npm install`](https://docs.npmjs.com/cli/v6/commands/npm-install#description):
+To build or update your site's CSS resources, you also need [`PostCSS`](https://postcss.org/) to create the final assets. If you need to install it, you must have a recent version of [NodeJS](https://nodejs.org/fr/) installed on your machine so you can use `npm`, the Node package manager. By default `npm` installs tools under the directory where you run [`npm install`](https://docs.npmjs.com/cli/v6/commands/npm-install#description):
 
 ```
 sudo npm install -D autoprefixer

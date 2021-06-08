@@ -26,7 +26,7 @@ Assuming a key-value of `date: 2017-03-03` in a content file's front matter, you
 For formatting *any* string representations of dates defined in your front matter, The `dateFormat` function, which will still leverage the Go layout string explained below but uses a slightly different syntax.
 
 
-Hugo templates [format your dates][time] via layout strings that point to a specific reference time:
+Hugo templates [format your dates](https://golang.org/pkg/time/) via layout strings that point to a specific reference time:
 
 ```
 Mon Jan 2 15:04:05 MST 2006
@@ -34,7 +34,7 @@ Mon Jan 2 15:04:05 MST 2006
 
 While this may seem arbitrary, the numerical value of `MST` is `07`, thus making the layout string a sequence of numbers.
 
-Here is a visual explanation [taken directly from the Go docs][gdex]:
+Here is a visual explanation [taken directly from the Go docs](https://golang.org/pkg/time/#example_Time_Format):
 
 ```
  Jan 2 15:04:05 2006 MST
@@ -232,7 +232,7 @@ $.Param "image"
 ```
 
 {{% note %}}
-The `Param` method may not consider empty strings in a content's front matter as "not found." If you are setting preconfigured front matter fields to empty strings using Hugo's archetypes, it may be best to use the [`default` function](/functions/default/) instead of `Param`. See the [related issue on GitHub](https://github.com/gohugoio/hugo/issues/3366).
+The `Param` method may not consider empty strings in a content's front matter as "not found." If you are setting preconfigured front matter fields to empty strings using Hugo's archetypes, it may be best to use the `default` function instead of `Param`. See the [related issue on GitHub](https://github.com/gohugoio/hugo/issues/3366).
 {{% /note %}}
 
 ## .Render
@@ -1144,9 +1144,7 @@ Can be used to apply a set of filters to an image:
 
 ```go-html-template
 {{ $img := $img | images.Filter (images.GaussianBlur 6) (images.Pixelate 8) }}
-```
-
-Also see the [Filter Method](/content-management/image-processing/#filter).
+``
 
 ### ImageConfig
 

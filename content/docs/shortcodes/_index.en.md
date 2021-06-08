@@ -16,7 +16,7 @@ Shortcodes are simple snippets inside your content files calling built-in or cus
 
 But this happens to be a bad idea. Everyone uses Markdown because it's pure and simple to read even non-rendered. You should avoid HTML to keep it as simple as possible.
 
-To avoid this limitations, Hugo created [shortcodes](https://gohugo.io/extras/shortcodes/). A shortcode is a simple snippet inside a page.
+To avoid this limitations, Hugo created [shortcodes](/en/docs/shortcodes/). A shortcode is a simple snippet inside a page.
 
 **Hugo-theme-Docco** provides multiple shortcodes on top of existing ones.
 

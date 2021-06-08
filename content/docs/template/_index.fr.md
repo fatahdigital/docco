@@ -111,7 +111,7 @@ element's index.
 For a map, the first declared variable will map to each map element's
 key.
 
-```go-html-template
+```
 {{ range $elem_key, $elem_val := $map }}
    {{ $elem_key }} -- {{ $elem_val }}
 {{ end }}
@@ -121,7 +121,7 @@ key.
 
 If the _map_, _array_, or _slice_ passed into the range is zero-length then the else statement is evaluated.
 
-```go-html-template
+```
 {{ range $array }}
     {{ . }}
 {{else}}
@@ -452,7 +452,7 @@ We want the *default* behavior to be for pages to include a TOC unless otherwise
 
 ## Use Site Configuration Parameters
 
-You can arbitrarily define as many site-level parameters as you want in your [site's configuration file][config]. These parameters are globally available in your templates.
+You can arbitrarily define as many site-level parameters as you want in your site's configuration file. These parameters are globally available in your templates.
 
 For instance, you might declare the following:
 

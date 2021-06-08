@@ -36,7 +36,7 @@ The list pages and the homepage can have associated content files (i.e. `_index.
 This new model allows you to include list-specific front matter via `.Params` and also means that list templates (e.g., `layouts/_default/list.html`) have access to all page variables.
 
 {{% note %}}
-It is important to note that all `_index.md` content files will render according to a *list* template and not according to a [single page template](/templates/single-page-templates/).
+It is important to note that all `_index.md` content files will render according to a *list* template and not according to a [single page template](en/docs/templates/single-page-template/).
 {{% /note %}}
 
 ### Example Project Directory
@@ -146,7 +146,7 @@ example.com/quote/index.html
 ```
 
 {{% note %}}
-The default behavior of Hugo is to pluralize list titles; hence the inflection of the `quote` section to "Quotes" when called with the `.Title` [page variable](/variables/page/). You can change this via the `pluralizeListTitles` directive in your [site configuration](/getting-started/configuration/).
+The default behavior of Hugo is to pluralize list titles; hence the inflection of the `quote` section to "Quotes" when called with the `.Title` page variable. You can change this via the `pluralizeListTitles` directive in your [site configuration](/en/docs/getting-started/configuration/).
 {{% /note %}}
 
 ## Example List Templates
@@ -193,7 +193,7 @@ layouts/_default/taxonomy.html
 
 ## Order Content
 
-Hugo lists render the content based on metadata you provide in [front matter][]. In addition to sane defaults, Hugo also ships with multiple methods to make quick work of ordering content inside list templates:
+Hugo lists render the content based on metadata you provide in [front matter](/en/docs/content-and-customization/front-matter). In addition to sane defaults, Hugo also ships with multiple methods to make quick work of ordering content inside list templates:
 
 ### Default: Weight > Date > LinkTitle > FilePath
 
