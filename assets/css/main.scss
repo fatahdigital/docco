@@ -1510,6 +1510,33 @@ select.round:focus {
   margin-bottom: 0px;
 }
 
+.code.relative {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+.tab-button {
+  margin-bottom: 1px;
+  position: relative;
+  z-index: 1;
+  color: #333;
+  border: 1px solid #fff;
+  outline: none;
+  background-color: #fff;
+}
+
+.tab-button.active {
+  border-bottom-color: #f1f2f2;
+  background-color: #f1f2f2;
+}
+
+button:focus .tab-button {
+  outline: none!important;
+}
 
 @media only screen and (max-width:991px) {
   .navigation .navbar-nav {
