@@ -23,7 +23,7 @@ You can do this:
 A **menu** is a named array of menu entries accessible by name via the `.Site.Menus` site variable. For example, you can access your site's `main` menu via `.Site.Menus.main`.
 
 {{% note "Menus on Multilingual Sites" %}}
-If you make use of the [multilingual feature](/content-management/multilingual/), you can define language-independent menus.
+If you make use of the [multilingual feature](/en/docs/content-and-customization/multilingual/), you can define language-independent menus.
 {{% /note %}}
 
 ## Add content to menus
@@ -279,6 +279,83 @@ Here's an example:
 {{% note %}}
 With Menu-level .Params they can easily exist on one menu item but not another. It's recommended to access them gracefully using the with function.
 {{% /note %}}
+
+## Create Automatic Menu 
+
+```
+  {{ $disableShortcutsTitle := .Site.Params.DisableShortcutsTitle}}
+  {{with .Site.Menus.shortcuts}}
+   
+    <h3>{{ if not $disableShortcutsTitle}}{{ T "Shortcuts-Title"}}{{ end }}</h3>
+    <ul>
+      {{ range sort . "Weight"}}
+          <li> 
+              {{.Pre}}<a href="{{.URL | absLangURL }}">{{safeHTML .Name}}</a>{{.Post}}
+          </li>
+      {{end}}
+    </ul>
+    
+  {{end}}
+
+  {{ define "section-tree-nav" }}
+    {{ $showvisitedlinks := .showvisitedlinks }}
+    {{ $currentNode := .currentnode }}
+    {{ $currentFileUniqueID := "" }}
+    {{ with $currentNode.File }}{{ $currentFileUniqueID = .UniqueID }}{{ end }}
+    {{with .sect}}
+      {{if and .IsSection (or (not .Params.hidden) $.showhidden)}}
+        {{safeHTML .Params.head}}
+        <li data-nav-id="{{.RelPermalink}}" title="{{.Title}}" class="dd-item 
+            {{if .IsAncestor $currentNode }}parent{{end}}
+            {{if eq .File.UniqueID $currentFileUniqueID}}active{{end}}
+            {{if .Params.alwaysopen}}parent{{end}}
+            ">
+          <a href="{{.RelPermalink}}">
+              {{safeHTML .Params.Pre}}{{or .Params.menuTitle .LinkTitle .Title}}{{safeHTML .Params.Post}}
+              {{ if $showvisitedlinks}}
+                <i>Read</i>
+              {{ end }}
+          </a>
+          {{ $numberOfPages := (add (len .Pages) (len .Sections)) }}
+          {{ if ne $numberOfPages 0 }}
+            <ul>
+              {{ $currentNode.Scratch.Set "pages" .Pages }}
+              {{ if .Sections}}
+                {{ $currentNode.Scratch.Set "pages" (.Pages | union .Sections) }}
+              {{end}}
+              {{ $pages := ($currentNode.Scratch.Get "pages") }}
+              
+            {{if eq .Site.Params.ordersectionsby "title"}}  
+              {{ range $pages.ByTitle }}
+                {{ if and .Params.hidden (not $.showhidden) }} 
+                {{else}}
+                {{ template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks }}
+                {{end}}
+              {{ end }}
+            {{else}}
+              {{ range $pages.ByWeight }}
+                {{ if and .Params.hidden (not $.showhidden) }} 
+                {{else}}
+                {{ template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks }}
+                {{end}}
+              {{ end }}
+            {{end}}
+            </ul>
+          {{ end }}        
+        </li>
+      {{else}}
+        {{ if not .Params.Hidden }}
+          <li data-nav-id="{{.RelPermalink}}" title="{{.Title}}" class="dd-item {{if eq .File.UniqueID $currentFileUniqueID}}active{{end}}">
+            <a href="{{ .RelPermalink}}">
+            {{safeHTML .Params.Pre}}{{or .Params.menuTitle .LinkTitle .Title}}{{safeHTML .Params.Post}}
+            {{ if $showvisitedlinks}}<i>Read</i>{{end}}
+            </a>
+        </li>
+        {{ end }}
+      {{end}}
+    {{ end }}
+  {{ end }}
+```
 
 ## Search for your Hugo Website
 
