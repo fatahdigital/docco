@@ -1,6 +1,6 @@
 ---
 title: "Repository Links"
-weight: 16
+weight: 18
 
 summary: "The Docco docs and blog layouts include links for readers to edit the page or create issues for your docs or project via your site’s source repository."
 description: "The Docco docs and blog layouts include links for readers to edit the page or create issues for your docs or project via your site’s source repository."

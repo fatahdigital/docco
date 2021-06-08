@@ -1,6 +1,6 @@
 ---
 title: "Previews and Deployment"
-weight: 14
+weight: 17
 
 summary: "There are multiple possible options for deploying a Hugo site, including Netlify, Firebase Hosting, Bitbucket with Aerobatic, and more; you can read about them all in Hosting and Deployment."
 description: "There are multiple possible options for deploying a Hugo site, including Netlify, Firebase Hosting, Bitbucket with Aerobatic, and more; you can read about them all in Hosting and Deployment."

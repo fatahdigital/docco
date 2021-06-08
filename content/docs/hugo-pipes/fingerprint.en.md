@@ -2,7 +2,7 @@
 title: "Fingerprinting and SRI"
 summary: "Hugo Pipes allows Fingerprinting and Subresource Integrity."
 description: "Hugo Pipes allows Fingerprinting and Subresource Integrity."
-weight: 19
+weight: 24
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 

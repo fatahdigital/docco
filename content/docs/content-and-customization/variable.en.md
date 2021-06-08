@@ -2,7 +2,7 @@
 title: "Variable"
 date: 2017-10-17T15:26:15Z
 draft: false
-weight: 23
+weight: 16
 description: "calling custom Shortcodes into your content files."
 summary: "calling custom Shortcodes into your content files."
 ---

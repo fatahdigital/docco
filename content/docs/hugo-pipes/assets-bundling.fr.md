@@ -2,7 +2,7 @@
 title: "Asset bundling"
 summary: "Hugo Pipes can bundle any number of assets together."
 description: "Hugo Pipes can bundle any number of assets together."
-weight: 19
+weight: 22
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 
