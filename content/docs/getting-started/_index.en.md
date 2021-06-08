@@ -15,7 +15,7 @@ Create a Hugo site using the beautiful ananke theme.
 ## Step 1: Install Hugo
 
 {{% note %}}
-`Homebrew` and `MacPorts`, package managers for `macOS`,  can be installed from [brew.sh](https://brew.sh/) or [macports.org](https://www.macports.org/) respectively. See [install](/getting-started/installing) if you are running Windows etc.
+`Homebrew` and `MacPorts`, package managers for `macOS`,  can be installed from [brew.sh](https://brew.sh/) or [macports.org](https://www.macports.org/) respectively. See [install](/en/docs/getting-started/installation) if you are running Windows etc.
 {{% /note %}}
 
 ```
@@ -81,12 +81,12 @@ draft: true
 ```
 
 {{% note %}}
-Drafts do not get deployed; once you finish a post, update the header of the post to say `draft: false`. More info [here](/getting-started/usage/#draft-future-and-expired-content).
+Drafts do not get deployed; once you finish a post, update the header of the post to say `draft: false`.
 {{% /note %}}
 
 ## Step 5: Start the Hugo server
 
-Now, start the Hugo server with [drafts](/getting-started/usage/#draft-future-and-expired-content) enabled:
+Now, start the Hugo server with drafts enabled:
 
 ```
 ▶ hugo server -D

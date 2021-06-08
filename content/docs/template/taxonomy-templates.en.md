@@ -23,10 +23,6 @@ Taxonomy list page templates are lists and therefore have all the variables and 
 
 ## Taxonomy Terms Template
 
-### Taxonomy Terms Templates Lookup Order
-
-See [Template Lookup](/templates/lookup-order/).
-
 ### Taxonomy Methods
 
 A Taxonomy is a `map[string]WeightedPages`.
@@ -297,7 +293,7 @@ layouts/partials/all-taxonomies.html" download="all-taxonomies.html" download="a
 
 ## `.Site.GetPage` for Taxonomies
 
-Because taxonomies are lists, the [`.GetPage` function][getpage] can be used to get all the pages associated with a particular taxonomy term using a terse syntax. The following ranges over the full list of tags on your site and links to each of the individual taxonomy pages for each term without having to use the more fragile URL construction of the ["List All Site Tags" example above]({{< relref "#example-list-all-site-tags" >}}):
+Because taxonomies are lists, the `.GetPage` function can be used to get all the pages associated with a particular taxonomy term using a terse syntax. The following ranges over the full list of tags on your site and links to each of the individual taxonomy pages for each term without having to use the more fragile URL construction of the ["List All Site Tags" example above]({{< relref "#example-list-all-site-tags" >}}):
 
 links-to-all-tags.html
 ```

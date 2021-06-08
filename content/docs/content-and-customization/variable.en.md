@@ -11,7 +11,7 @@ summary: "calling custom Shortcodes into your content files."
 
 Many, but not all, site-wide variables are defined in your site’s configuration. However, Hugo provides a number of built-in variables for convenient access to global values in your templates.
 
-The following is a list of site-level (aka "global") variables. Many of these variables are defined in your site's [configuration file](/getting-started/configuration/), whereas others are built into Hugo's core for convenient usage in your templates.
+The following is a list of site-level (aka "global") variables. Many of these variables are defined in your site's [configuration file](/en/docs/getting-started/configuration/), whereas others are built into Hugo's core for convenient usage in your templates.
 
 ## Get the Site object from a partial
 
@@ -76,7 +76,7 @@ All the methods below, e.g. `.Site.RegularPages` can also be reached via the glo
 : an ordered list (ordered by defined weight) of languages.
 
 .Site.LastChange
-: a string representing the date/time of the most recent change to your site. This string is based on the [`date` variable in the front matter](/content-and-customization/front-matter) of your content pages.
+: a string representing the date/time of the most recent change to your site. This string is based on the [`date` variable in the front matter](/en/docs/content-and-customization/front-matter) of your content pages.
 
 .Site.Menus
 : all of the menus in the site.
@@ -112,7 +112,7 @@ baseURL = "https://yoursite.example.com/"
   author = "Nikola Tesla"
 {{</ code-toggle >}}
 
-You can use `.Site.Params` in a [partial template](/content-and-customization/partials/) to call the default site description:
+You can use `.Site.Params` in a [partial template](en/docs/template/partial-template/) to call the default site description:
 
 {{< code file="layouts/partials/head.html" >}}
 <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}" />
@@ -195,7 +195,7 @@ The following is a list of page-level variables. Many of these will be defined i
 : the date on which the content is scheduled to expire; `.ExpiryDate` pulls from the `expirydate` field in a content's front matter. See also `.PublishDate`, `.Date`, and `.Lastmod`.
 
 .File
-: filesystem-related data for this content file. See also [File Variables][].
+: filesystem-related data for this content file.
 
 .FuzzyWordCount
 : the approximate number of words in the content.

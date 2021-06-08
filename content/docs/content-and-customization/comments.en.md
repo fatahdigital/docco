@@ -20,13 +20,13 @@ Hugo comes with all the code you need to load Disqus into your templates. Before
 
 ### Configure Disqus
 
-Disqus comments require you set a single value in your [site's configuration file][https://gohugo.io/getting-started/configuration/] like so:
+Disqus comments require you set a single value in your [site's configuration file][/en/docs/getting-started/configuration/] like so:
 
 {{< code-toggle copy="false" >}}
 disqusShortname = "yourdiscussshortname"
 {{</ code-toggle >}}
 
-For many websites, this is enough configuration. However, you also have the option to set the following in the [front matter][] of a single content file:
+For many websites, this is enough configuration. However, you also have the option to set the following in the [front matter](/en/docs/content-and-customization/front-matter) of a single content file:
 
 * `disqus_identifier`
 * `disqus_title`
@@ -34,7 +34,7 @@ For many websites, this is enough configuration. However, you also have the opti
 
 ### Render Hugo's Built-in Disqus Partial Template
 
-Disqus has its own [internal template](https://gohugo.io/templates/internal/#disqus) available, to render it add the following code where you want comments to appear:
+Disqus has its own internal template available, to render it add the following code where you want comments to appear:
 
 ```
 {{ template "_internal/disqus.html" . }}

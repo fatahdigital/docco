@@ -34,9 +34,6 @@ In addition to using a single site config file, one can use the `configDir` dire
 
 - Each file's content must be top-level, for example:
 
-
-
-
 {{< code-toggle file="config" >}}
 [Params]
   foo = "bar"
@@ -100,7 +97,7 @@ buildFuture (false)
 : Include content with publishdate in the future.
 
 caches
-: See [Configure File Caches](/getting-started/configuration/#configure-file-caches)
+: Since Hugo 0.52 you can configure more than just the cacheDir.
 
 canonifyURLs (false)
 : Enable to turn relative URLs into absolute.
@@ -139,7 +136,7 @@ enableGitInfo (false)
 : Enable `.GitInfo` object for each page (if the Hugo site is versioned by Git). This will then update the `Lastmod` parameter for each page using the last git commit date for that content file.
 
 enableInlineShortcodes (false)
-: Enable inline shortcode support. See [Inline Shortcodes](/templates/shortcode-templates/#inline-shortcodes).
+: Enable inline shortcode support.
 
 enableMissingTranslationPlaceholders (false)
 : Show a placeholder instead of the default value or an empty string if a translation is missing.
@@ -148,7 +145,7 @@ enableRobotsTXT (false)
 : Enable generation of `robots.txt` file.
 
 frontmatter
-: See [Front matter Configuration](/getting-started/configuration/#configure-front-matter).
+: See [Front matter Configuration](/en/docs/getting-started/configuration/#configure-front-matter).
 
 footnoteAnchorPrefix ("")
 : Prefix for footnote anchors.
@@ -265,7 +262,7 @@ title ("")
 : Site title.
 
 titleCaseStyle ("AP")
-: See [Configure Title Case](/getting-started/configuration/#configure-title-case)
+: See [Configure Title Case](/en/docs/getting-started/configuration/#configure-title-case)
 
 uglyURLs (false)
 : When enabled, creates URL of the form `/filename.html` instead of `/filename/`.

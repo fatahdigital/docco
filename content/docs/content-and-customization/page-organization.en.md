@@ -95,7 +95,7 @@ anywhere:
 
 But you can get it by `.Site.GetPage`. Here is an example:
 
-```go-html-template
+```
 {{ $headless := .Site.GetPage "/some-headless-bundle" }}
 {{ $reusablePages := $headless.Resources.Match "author*" }}
 <h2>Authors</h2>

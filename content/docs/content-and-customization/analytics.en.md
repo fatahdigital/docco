@@ -108,7 +108,7 @@ You can then render your custom Disqus partial template as follows:
 An internal template for the [Open Graph protocol](https://ogp.me/), metadata that enables a page to become a rich object in a social graph.
 This format is used for Facebook and some other sites.
 
-Hugo's Open Graph template is configured using a mix of configuration variables and [front-matter](/content-management/front-matter/) on individual pages.
+Hugo's Open Graph template is configured using a mix of configuration variables and [front-matter](/en/docs/content-and-customization/front-matter/) on individual pages.
 
 {{< code-toggle file="config" >}}
 [params]
@@ -132,7 +132,7 @@ tags = []
 
 Hugo uses the page title and description for the title and description metadata.
 The first 6 URLs from the `images` array are used for image metadata.
-If [page bundles](/content-management/page-bundles/) are used and the `images` array is empty or undefined, images with filenames matching `*feature*` or `*cover*,*thumbnail*` are used for image metadata.
+If [page bundles](/en/docs/content-and-customization/page-organization/) are used and the `images` array is empty or undefined, images with filenames matching `*feature*` or `*cover*,*thumbnail*` are used for image metadata.
 
 Various optional metadata can also be set:
 
@@ -158,7 +158,7 @@ metadata used to attach rich media to Tweets linking to your site.
 
 ### Configure Twitter Cards
 
-Hugo's Twitter Card template is configured using a mix of configuration variables and [front-matter](/content-management/front-matter/) on individual pages.
+Hugo's Twitter Card template is configured using a mix of configuration variables and [front-matter](/en/docs/content-and-customization/front-matter/) on individual pages.
 
 {{< code-toggle file="config" >}}
 [params]
@@ -172,7 +172,7 @@ description = "Text about this post"
 images = ["post-cover.png"]
 {{</ code-toggle >}}
 
-If `images` aren't specified in the page front-matter, then hugo searches for [image page resources](/content-management/image-processing/) with `feature`, `cover`, or `thumbnail` in their name.
+If `images` aren't specified in the page front-matter, then hugo searches for image page resources with `feature`, `cover`, or `thumbnail` in their name.
 If no image resources with those names are found, the images defined in the [site config](/getting-started/configuration/) are used instead.
 If no images are found at all, then an image-less Twitter `summary` card is used instead of `summary_large_image`.
 

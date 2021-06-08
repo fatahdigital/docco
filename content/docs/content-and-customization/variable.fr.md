@@ -11,7 +11,7 @@ summary: "calling custom Shortcodes into your content files."
 
 Many, but not all, site-wide variables are defined in your site’s configuration. However, Hugo provides a number of built-in variables for convenient access to global values in your templates.
 
-The following is a list of site-level (aka "global") variables. Many of these variables are defined in your site's [configuration file](/getting-started/configuration/), whereas others are built into Hugo's core for convenient usage in your templates.
+The following is a list of site-level (aka "global") variables. Many of these variables are defined in your site's [configuration file](/fr/docs/getting-started/configuration/), whereas others are built into Hugo's core for convenient usage in your templates.
 
 ## Get the Site object from a partial
 
@@ -76,7 +76,7 @@ All the methods below, e.g. `.Site.RegularPages` can also be reached via the glo
 : an ordered list (ordered by defined weight) of languages.
 
 .Site.LastChange
-: a string representing the date/time of the most recent change to your site. This string is based on the [`date` variable in the front matter](/content-and-customization/front-matter) of your content pages.
+: a string representing the date/time of the most recent change to your site. This string is based on the [`date` variable in the front matter](/fr/docs/content-and-customization/front-matter) of your content pages.
 
 .Site.Menus
 : all of the menus in the site.
@@ -112,7 +112,7 @@ baseURL = "https://yoursite.example.com/"
   author = "Nikola Tesla"
 {{</ code-toggle >}}
 
-You can use `.Site.Params` in a [partial template](/content-and-customization/partials/) to call the default site description:
+You can use `.Site.Params` in a [partial template](en/docs/template/partial-template/) to call the default site description:
 
 {{< code file="layouts/partials/head.html" >}}
 <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}" />
@@ -195,7 +195,7 @@ The following is a list of page-level variables. Many of these will be defined i
 : the date on which the content is scheduled to expire; `.ExpiryDate` pulls from the `expirydate` field in a content's front matter. See also `.PublishDate`, `.Date`, and `.Lastmod`.
 
 .File
-: filesystem-related data for this content file. See also [File Variables][].
+: filesystem-related data for this content file.
 
 .FuzzyWordCount
 : the approximate number of words in the content.
@@ -323,7 +323,7 @@ https://remarkjs.com)
 : a generated summary of the content for easily showing a snippet in a summary view. The breakpoint can be set manually by inserting <code>&lt;!&#x2d;&#x2d;more&#x2d;&#x2d;&gt;</code> at the appropriate place in the content page, or the summary can be written independent of the page text.  
 
 .TableOfContents
-: the rendered [table of contents](/en/docs/shortcodes/table-of-contents/) for the page.
+: the rendered [table of contents](/fr/docs/shortcodes/table-of-contents/) for the page.
 
 .Title
 : the title for this page.
@@ -351,7 +351,7 @@ https://remarkjs.com)
 
 ## Section Variables and Methods
 
-Also see [Sections](/en/docs/content-and-customization/sections/).
+Also see [Sections](/fr/docs/content-and-customization/sections/).
 
 .CurrentSection
 : The page's current section. The value can be the page itself if it is a section or the homepage.
@@ -372,10 +372,10 @@ Also see [Sections](/en/docs/content-and-customization/sections/).
 : A section's parent section or a page's section.
 
 .Section
-: The [Sections](/en/docs/content-and-customization/sections/) this content belongs to. **Note:** For nested sections, this is the first path element in the directory, for example, `/blog/funny/mypost/ => blog`.
+: The [Sections](/fr/docs/content-and-customization/sections/) this content belongs to. **Note:** For nested sections, this is the first path element in the directory, for example, `/blog/funny/mypost/ => blog`.
 
 .Sections
-: The [Sections](/en/docs/content-and-customization/sections/) below this content.
+: The [Sections](/fr/docs/content-and-customization/sections/) below this content.
 
 ## The `.Pages` Variable {#pages}
 
