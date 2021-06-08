@@ -1,5 +1,6 @@
 ---
 title: "Tabbed views"
+weight: 35
 description : "Synchronize selection of content in different tabbed views"
 summary: "Synchronize selection of content in different tabbed views"
 ---

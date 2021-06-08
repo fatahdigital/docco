@@ -2,7 +2,7 @@
 title: "Tags"
 summary: "Docco theme support one default taxonomy of gohugo: the tag feature."
 description: "Docco theme support one default taxonomy of gohugo: the tag feature."
-weight: 18
+weight: 20
 tags: ["documentation", "tutorial"]
 lastmod: 2017-03-03T14:15:59-06:00
 ---

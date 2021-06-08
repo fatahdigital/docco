@@ -1,12 +1,12 @@
 ---
 title: "ShortCode"
-weight: 19
+weight: 27
 
 summary: "Shortcodes are simple snippets inside your content files calling built-in or custom templates."
 description: "Shortcodes are simple snippets inside your content files calling built-in or custom templates."
 images: 
   - ""
-pre: "<b>3. </b>"
+pre: "<b>5. </b>"
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 

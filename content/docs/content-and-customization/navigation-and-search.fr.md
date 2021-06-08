@@ -1,6 +1,6 @@
 ---
 title: "Navigation and Search"
-weight: 13
+weight: 11
 
 summary: "Customize site navigation and search for your Docco site."
 description: "Customize site navigation and search for your Docco site."

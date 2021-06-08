@@ -2,7 +2,7 @@
 title: "SASS / SCSS"
 summary: "Hugo Pipes allows the processing of SASS and SCSS files."
 description: "Docco theme support one default taxonomy of gohugo: the tag feature."
-weight: 19
+weight: 26
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 

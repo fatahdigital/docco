@@ -2,7 +2,8 @@
 title: "Hugo Pipes Overview"
 summary: "Docco theme support one default taxonomy of gohugo: the tag feature."
 description: "Docco theme support one default taxonomy of gohugo: the tag feature."
-weight: 19
+weight: 21
+pre: "<b>4. </b>"
 lastmod: 2017-03-03T14:15:59-06:00
 ---
 
