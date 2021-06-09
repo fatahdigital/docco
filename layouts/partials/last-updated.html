@@ -4,9 +4,6 @@
    
       
       <div class="editedDate">
-
-       
-
         <span>Last Updated {{ .Lastmod.Format "January 2, 2006" }}.</span>
         <span class="editedDate-text">
         {{ $ageDays := div (sub now.Unix .Lastmod.Unix) 86400 }}
