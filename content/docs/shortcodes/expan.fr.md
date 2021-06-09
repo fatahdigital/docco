@@ -1,6 +1,6 @@
 ---
 title : "Expand"
-weight: 23
+weight: 31
 description : "Displays an expandable/collapsible section of text on your page."
 summary: "Displays an expandable/collapsible section of text on your page."
 lastmod: 2017-03-03T14:15:59-06:00
