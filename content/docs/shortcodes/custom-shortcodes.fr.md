@@ -1,6 +1,6 @@
 ---
 title: "Custom Shortcodes"
-weight: 21
+weight: 29
 
 summary: "Hugo provides the ability to easily create custom shortcodes to meet your website’s needs."
 description: "Hugo provides the ability to easily create custom shortcodes to meet your website’s needs."

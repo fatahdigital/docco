@@ -1,6 +1,6 @@
 ---
 title: "Markdown Syntax"
-weight: 9
+weight: 15
 
 summary: "Markdown is a better way to write HTML, without all the complexities and ugliness that usually accompanies it."
 description: "Markdown is a better way to write HTML, without all the complexities and ugliness that usually accompanies it."

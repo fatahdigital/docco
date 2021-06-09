@@ -1,5 +1,6 @@
 ---
 title: "Site param"
+weight: 30
 description : "Get value of site params variables in your page."
 summary: "Get value of site params variables in your page."
 ---
