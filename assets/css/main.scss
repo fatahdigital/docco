@@ -69,6 +69,10 @@ p {
   line-height: 27px;
 }
 
+ul {
+  list-style: square;
+}
+
 ul li {
   font-size: 18px;
   line-height: 27px;
@@ -579,8 +583,13 @@ blockquote {
   flex-direction: row;
 }
 
-.menu-footer-wrapper  .widget {
+.menu-footer-wrapper .widget {
   margin-left: 10px;
+}
+
+
+.menu-footer-wrapper .widget:first-child {
+  margin-left: 0;
 }
 
 .widget .github-button {
@@ -669,6 +678,7 @@ blockquote {
   padding-bottom: 5px;
   padding-top: 5px;
   position: relative;
+  font-size: 16px;
   // padding-left: 10px;
 }
 
@@ -719,8 +729,13 @@ blockquote {
   box-shadow: inset 3px 0px 0px #000;
 }
 
+#TableOfContents ul li:first-child {
+  box-shadow: inset 3px 0px 0px #000;
+}
 
-
+#TableOfContents ul li ul li:first-child {
+  box-shadow: unset;
+}
 
 /******** breadcrumb **********/
 
@@ -825,7 +840,7 @@ blockquote {
 /******** content section *******/
 .content-wrapper pre {
   padding: 1rem;
-  margin: 0.5rem 0.5rem 0;
+  margin: 1rem 0 1rem 0;
   background: #282c34;
   border: 0;
   border-radius: 2px;
@@ -1509,7 +1524,7 @@ select.round:focus {
 
 .code.relative {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .items-stretch {
