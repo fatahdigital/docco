@@ -69,6 +69,10 @@ p {
   line-height: 27px;
 }
 
+ul {
+  list-style: square;
+}
+
 ul li {
   font-size: 18px;
   line-height: 27px;
@@ -579,8 +583,13 @@ blockquote {
   flex-direction: row;
 }
 
-.menu-footer-wrapper  .widget {
+.menu-footer-wrapper .widget {
   margin-left: 10px;
+}
+
+
+.menu-footer-wrapper .widget:first-child {
+  margin-left: 0;
 }
 
 .widget .github-button {
@@ -669,6 +678,7 @@ blockquote {
   padding-bottom: 5px;
   padding-top: 5px;
   position: relative;
+  font-size: 16px;
   // padding-left: 10px;
 }
 
@@ -719,8 +729,13 @@ blockquote {
   box-shadow: inset 3px 0px 0px #000;
 }
 
+#TableOfContents ul li:first-child {
+  box-shadow: inset 3px 0px 0px #000;
+}
 
-
+#TableOfContents ul li ul li:first-child {
+  box-shadow: unset;
+}
 
 /******** breadcrumb **********/
 
@@ -730,8 +745,8 @@ blockquote {
 .content-wrapper {
   padding-top: 50px;
   padding-bottom: 50px;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .top-bar-wrapper {
@@ -825,7 +840,7 @@ blockquote {
 /******** content section *******/
 .content-wrapper pre {
   padding: 1rem;
-  margin: 2rem 0;
+  margin: 1rem 0 1rem 0;
   background: #282c34;
   border: 0;
   border-radius: 2px;
@@ -1027,14 +1042,11 @@ h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover
 }
 
 .panel {
-  --panel-font-color: #000;
-  --panel-background-color: unset;
-  --panel-border-color: transparent;
   padding: 1.28rem;
-  color: var(--panel-font-color, #000);
-  background: var(--panel-background-color, unset);
+  color: #000;
+  background: unset;
   border: 1px solid;
-  border-color: var(--panel-border-color, transparent);
+  border-color: transparent;
 }
 
 .panel a {
@@ -1043,42 +1055,32 @@ h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover
 }
 
 .panel-primary {
-  --panel-border-color: #f0f0f0;
+  border-color: #f0f0f0;
 }
 
 .panel-notice {
-  --panel-font-color: #fff;
-  --panel-background-color: #4ba0e1;
-  --custom-link-text-color: #fff;
-  --custom-link-text-hover-color: #fff;
+  color: #fff;
+  background-color: #4ba0e1;
 }
 
 .panel-success {
-  --panel-font-color: #fff;
-  --panel-background-color: #609f43;
-  --custom-link-text-color: #fff;
-  --custom-link-text-hover-color: #fff;
+  color: #fff;
+  background-color: #609f43;
 }
 
 .panel-caution {
-  --panel-font-color: #fff;
-  --panel-background-color: #de776d;
-  --custom-link-text-color: #fff;
-  --custom-link-text-hover-color: #fff;
+  color: #fff;
+  background-color: #de776d; 
 }
 
 .panel-warning {
-  --panel-font-color: #fff;
-  --panel-background-color: #e67e22;
-  --custom-link-text-color: #fff;
-  --custom-link-text-hover-color: #fff;
+  color: #fff;
+  background-color: #e67e22;
 }
 
 .panel-danger {
-  --panel-font-color: #fff;
-  --panel-background-color: #ce3426;
-  --custom-link-text-color: #fff;
-  --custom-link-text-hover-color: #fff;
+  color: #fff;
+  background-color: #ce3426;
 }
 
 
@@ -1089,15 +1091,10 @@ h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover
   font-weight: bold;
   text-decoration: none;
   border-radius: 0.8rem;
-  --button-font-color: #000;
-  --button-font-hover-color: #000;
-  --button-background-color: #fafafa;
-  --button-background-hover-color: #f7f7f7;
-  --button-border-color: #f0f0f0;
-  color: var(--button-font-color, #000);
-  background: var(--button-background-color, unset);
+  color:#000;
+  background: #fafafa;
   border: 2px solid;
-  border-color: var(--button-border-color, transparent);
+  border-color: #f0f0f0;
   margin-bottom: 20px;
   margin-top: 20px;
   margin-right: 10px;
@@ -1111,49 +1108,64 @@ h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover
 
 
 .content-wrapper .button:hover {
-  color: var(--button-font-hover-color, #000);
+  color:#000;
   text-decoration: none;
-  background: var(--button-background-hover-color, unset);
+  background: unset;
 }
 
 .content-wrapper .button-notice {
-  --button-font-color: #fff;
-  --button-font-hover-color: #fff;
-  --button-background-color: #4ba0e1;
-  --button-background-hover-color: #3b89c5;
-  --button-border-color: transparent;
+  color: #fff;
+  background-color: #4ba0e1;
+  border-color: transparent;
+}
+
+.content-wrapper .button-notice:hover{
+  color: #fff;
+  background-color: #0b75b4;
 }
 
 .content-wrapper .button-success {
-  --button-font-color: #fff;
-  --button-font-hover-color: #fff;
-  --button-background-color: #369b08;
-  --button-background-hover-color: #256905;
-  --button-border-color: transparent;
+  color: #fff;
+  background-color: #369b08;
+  border-color: transparent;
+}
+
+.content-wrapper .button-success:hover{
+  color: #fff;
+  background-color: #256905;
 }
 
 .content-wrapper .button-caution {
-  --button-font-color: #fff;
-  --button-font-hover-color: #fff;
-  --button-background-color: #f56558;
-  --button-background-hover-color: #d45145;
-  --button-border-color: transparent;
+  color: #fff;
+  background-color: #f56558;
+  border-color: transparent;
+}
+
+.content-wrapper .button-caution:hover{
+  background-color: #d45145;
+  color: #fff;
 }
 
 .content-wrapper .button-warning {
-  --button-font-color: #fff;
-  --button-font-hover-color: #fff;
-  --button-background-color: #f5811b;
-  --button-background-hover-color: #db7012;
-  --button-border-color: transparent;
+  color: #fff;
+  background-color: #f5811b;
+  border-color: transparent;
+}
+
+.content-wrapper .button-warning:hover {
+  color: #fff;
+  background-color: #db7012;
 }
 
 .content-wrapper.button-danger {
-  --button-font-color: #fff;
-  --button-font-hover-color: #fff;
-  --button-background-color: #ce3426;
-  --button-background-hover-color: #a0281d;
-  --button-border-color: transparent;
+  color: #fff;
+  background-color: #ce3426;
+  border-color: transparent;
+}
+
+.content-wrapper.button-danger:hover {
+  color: #fff;
+  background-color: #a0281d;
 }
 
 /******* table *******/
@@ -1512,7 +1524,7 @@ select.round:focus {
 
 .code.relative {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .items-stretch {
