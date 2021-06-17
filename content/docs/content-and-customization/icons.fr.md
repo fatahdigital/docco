@@ -1,5 +1,5 @@
 ---
-title: "Icons and Logos"
+title: "Icons"
 weight: 19
 
 summary: "The Docco theme for Hugo loads the Font Awesome library, allowing you to easily display any icon or logo available in the Font Awesome free collection."
