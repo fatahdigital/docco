@@ -28,8 +28,6 @@ enableRobotsTXT = true
 # Will give values to .Lastmod etc.
 enableGitInfo = true
 
-disableKinds = ["taxonomy", "taxonomyTerm"]
-
 paginate = 10  # Number of items per page in paginated lists.
 
 ## Added Google Tags Manager id and added Google Analytics id
@@ -61,6 +59,12 @@ facebook_url = ""
 
 #Hugo version = 0.72.0
 #Hugo_version_link = "https://github.com/gohugoio/hugo/releases/tag/v0.72.0/"
+
+[frontmatter]
+  date = ["date", "publishDate", "lastmod"]
+  expiryDate = ["expiryDate"]
+  lastmod = [":git", "lastmod", "date", "publishDate"]
+  publishDate = ["publishDate", "date"]
 
 [params]
  #header logo
